@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Confetti from "react-confetti";
+import { useRouter } from "next/navigation";
 import {
   Card,
   CardHeader,
@@ -51,7 +52,7 @@ interface Step3Data {
 
 interface FormData extends Step1Data, Step3Data {}
 
-type Step = 1 | 2 | 3;
+type Step = 1 | 2 | 3 | 4;
 
 const US_STATES = [
   "Alabama",
@@ -107,6 +108,7 @@ const US_STATES = [
 ];
 
 export default function WaitlistForm() {
+  const router = useRouter();
   const [currentStep, setCurrentStep] = useState<Step>(1);
   const [showConfetti, setShowConfetti] = useState(false);
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
@@ -251,30 +253,15 @@ export default function WaitlistForm() {
       // Submit to Firebase
       await addDoc(collection(db, "waitlist"), submissionData);
 
-      // Show success message or redirect
-      alert("Thank you! Your responses have been submitted successfully.");
+      // Show final success with confetti
+      setCurrentStep(4);
+      setShowConfetti(true);
 
-      // Reset form
-      setCurrentStep(1);
-      setStep1Data({
-        fullName: "",
-        workEmail: "",
-        schoolDistrict: "",
-        position: "",
-        state: "",
-        county: "",
-      });
-      setStep3Data({
-        biggestChallenges: [],
-        timeSpentSearching: "",
-        platformsUsed: [],
-        otherPlatform: "",
-        mostChallengingPart: "",
-        policyChangesImpact: "",
-        policyChangesDetails: "",
-        toolLikelihood: "",
-        followUpInterest: "",
-      });
+      // Redirect to landing page after 4 seconds
+      setTimeout(() => {
+        setShowConfetti(false);
+        router.push("/");
+      }, 4000);
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("There was an error submitting your form. Please try again.");
@@ -500,6 +487,41 @@ export default function WaitlistForm() {
                 Thank you for your interest in GrantFinder AI. To help us build
                 the best platform for your district's needs, please take a
                 moment to answer a few quick questions.
+              </p>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  // Step 4: Final Success
+  if (currentStep === 4) {
+    return (
+      <div className="max-w-md mx-auto">
+        {showConfetti && (
+          <Confetti
+            width={windowSize.width}
+            height={windowSize.height}
+            recycle={false}
+            numberOfPieces={300}
+            gravity={0.3}
+          />
+        )}
+        <Card className="text-center">
+          <CardContent className="pt-8 pb-8">
+            <div className="mb-4">
+              <div className="text-6xl mb-4">🎉</div>
+              <h2 className="text-2xl font-bold text-green-600 mb-2">
+                Welcome to the Future!
+              </h2>
+              <p className="text-gray-600">
+                Thank you for joining our waitlist! Your responses have been
+                submitted successfully. You'll be among the first to know when
+                GrantFinder AI launches.
+              </p>
+              <p className="text-sm text-gray-500 mt-4">
+                Redirecting you back to the homepage...
               </p>
             </div>
           </CardContent>
