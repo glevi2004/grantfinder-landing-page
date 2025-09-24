@@ -453,7 +453,11 @@ export default function WaitlistForm() {
               </div>
             </CardContent>
             <CardFooter>
-              <Button type="submit" className="w-full" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                className="mt-4 w-full"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Submitting..." : "Submit"}
               </Button>
             </CardFooter>
@@ -797,7 +801,11 @@ export default function WaitlistForm() {
             </div>
           </CardContent>
           <CardFooter>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button
+              type="submit"
+              className="mt-4 w-full"
+              disabled={isSubmitting}
+            >
               {isSubmitting ? "Submitting..." : "Submit Survey"}
             </Button>
           </CardFooter>
