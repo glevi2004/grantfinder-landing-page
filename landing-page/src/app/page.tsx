@@ -41,12 +41,16 @@ export default function Home() {
           <FeatureSection />
         </div>
 
-        <FAQSection />
+        <div id="faq">
+          <FAQSection />
+        </div>
 
-        <CTASection
-          onGetStarted={handleGetStarted}
-          onScheduleDemo={handleScheduleDemo}
-        />
+        <div id="cta">
+          <CTASection
+            onGetStarted={handleGetStarted}
+            onScheduleDemo={handleScheduleDemo}
+          />
+        </div>
       </main>
 
       <Footer />

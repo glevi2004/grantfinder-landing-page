@@ -14,8 +14,8 @@ export function Navigation({ onGetStarted }: NavigationProps) {
 
   const navLinks = [
     { href: "#features", label: "Features" },
-    { href: "#how-it-works", label: "How It Works" },
-    { href: "#about", label: "About" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#cta", label: "About" },
   ];
 
   return (

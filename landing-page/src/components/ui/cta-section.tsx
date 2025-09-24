@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Calendar } from "lucide-react";
+import { ArrowRight, Mail } from "lucide-react";
 
 interface CTASectionProps {
   onGetStarted?: () => void;
@@ -19,9 +19,10 @@ export function CTASection({ onGetStarted, onScheduleDemo }: CTASectionProps) {
           </h2>
 
           <p className="text-xl text-blue-100 mb-10 max-w-3xl mx-auto leading-relaxed">
-            Join forward-thinking districts already using GrantFinder AI to
-            discover more opportunities, make confident decisions, and win more
-            funding for their students.
+            GrantFinder AI is currently in a private beta. We are partnering
+            with schooldistricts to build the future of grant management. Join
+            our waitlist to be considered for the pilot and help shape a tool
+            that meets your unique needs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -30,24 +31,23 @@ export function CTASection({ onGetStarted, onScheduleDemo }: CTASectionProps) {
               className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
               onClick={onGetStarted}
             >
-              Start Free Trial
+              Join Waitlist
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-3 text-lg"
+              className="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 text-lg font-semibold"
               onClick={onScheduleDemo}
             >
-              <Calendar className="mr-2 h-5 w-5" />
-              Schedule Demo
+              Learn More
             </Button>
           </div>
 
-          <p className="text-blue-200 text-sm">
+          {/* <p className="text-blue-200 text-sm">
             Free 30-day trial • No credit card required • Setup in under 10
             minutes
-          </p>
+          </p> */}
         </div>
       </div>
 
