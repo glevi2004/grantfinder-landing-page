@@ -40,17 +40,12 @@ const faqs: FAQItem[] = [
   {
     question: "What size districts is this designed for?",
     answer:
-      "GrantFinder AI is optimized for small-to-medium districts with lean grants teams (2-6 staff members). However, larger districts with centralized grants offices also benefit from our streamlined workflows and AI-powered efficiency gains.",
+      "GrantFinder AI is designed to be valuable for K-12 districts of all sizes, from small offices with a single coordinator to larger, multi-person grant management teams.",
   },
   {
     question: "Do you provide training and onboarding support?",
     answer:
       "Yes. We provide comprehensive onboarding including district profile setup, team training sessions, and ongoing support. Our goal is to get your team productive within the first week, with minimal disruption to your existing workflows.",
-  },
-  {
-    question: "How does pricing work?",
-    answer:
-      "We offer district-based pricing with unlimited users per district. Pricing varies by district size and includes full access to discovery, analysis, collaboration tools, and support. Contact us for a custom quote based on your specific needs.",
   },
 ];
 
