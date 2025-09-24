@@ -12,7 +12,13 @@ import {
   CardFooter,
 } from "./card";
 import { Button } from "./button";
-import { getFirestore, collection, addDoc } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 // Firebase config
@@ -114,6 +120,7 @@ export default function WaitlistForm() {
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errors, setErrors] = useState<Record<string, string>>({});
+  const [documentId, setDocumentId] = useState<string | null>(null);
 
   // Step 1 form data
   const [step1Data, setStep1Data] = useState<Step1Data>({
@@ -184,18 +191,35 @@ export default function WaitlistForm() {
 
     setIsSubmitting(true);
 
-    // Simulate brief loading
-    setTimeout(() => {
-      setCurrentStep(2);
-      setShowConfetti(true);
-      setIsSubmitting(false);
+    try {
+      // Save initial data to Firebase
+      const initialData = {
+        ...step1Data,
+        submittedAt: new Date().toISOString(),
+        timestamp: Date.now(),
+        status: "step1_completed",
+      };
 
-      // Auto-transition to step 3 after 4 seconds
+      const docRef = await addDoc(collection(db, "waitlist"), initialData);
+      setDocumentId(docRef.id);
+
+      // Show success and transition
       setTimeout(() => {
-        setShowConfetti(false);
-        setCurrentStep(3);
-      }, 4000);
-    }, 500);
+        setCurrentStep(2);
+        setShowConfetti(true);
+        setIsSubmitting(false);
+
+        // Auto-transition to step 3 after 6 seconds
+        setTimeout(() => {
+          setShowConfetti(false);
+          setCurrentStep(3);
+        }, 6000);
+      }, 500);
+    } catch (error) {
+      console.error("Error saving initial form data:", error);
+      alert("There was an error saving your information. Please try again.");
+      setIsSubmitting(false);
+    }
   };
 
   // Handle checkbox changes
@@ -238,33 +262,34 @@ export default function WaitlistForm() {
     setIsSubmitting(true);
 
     try {
-      const completeData: FormData = {
-        ...step1Data,
+      if (!documentId) {
+        throw new Error("No document ID found. Please restart the form.");
+      }
+
+      // Update the existing document with questionnaire data
+      const updateData = {
         ...step3Data,
+        completedAt: new Date().toISOString(),
+        completedTimestamp: Date.now(),
+        status: "completed",
       };
 
-      // Add timestamp
-      const submissionData = {
-        ...completeData,
-        submittedAt: new Date().toISOString(),
-        timestamp: Date.now(),
-      };
-
-      // Submit to Firebase
-      await addDoc(collection(db, "waitlist"), submissionData);
+      await updateDoc(doc(db, "waitlist", documentId), updateData);
 
       // Show final success with confetti
       setCurrentStep(4);
       setShowConfetti(true);
 
-      // Redirect to landing page after 4 seconds
+      // Redirect to landing page after 6 seconds
       setTimeout(() => {
         setShowConfetti(false);
         router.push("/");
-      }, 4000);
+      }, 6000);
     } catch (error) {
-      console.error("Error submitting form:", error);
-      alert("There was an error submitting your form. Please try again.");
+      console.error("Error updating form:", error);
+      alert(
+        "There was an error submitting your questionnaire. Please try again."
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -275,13 +300,6 @@ export default function WaitlistForm() {
     return (
       <div className="max-w-md mx-auto">
         <Card>
-          <CardHeader>
-            <CardTitle>Join the Waitlist</CardTitle>
-            <CardDescription>
-              Be the first to know when GrantFinder AI launches. All fields are
-              required.
-            </CardDescription>
-          </CardHeader>
           <form onSubmit={handleStep1Submit}>
             <CardContent className="space-y-4">
               <div>
