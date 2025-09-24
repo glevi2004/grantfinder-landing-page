@@ -1,18 +1,18 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 interface CTASectionProps {
   onGetStarted?: () => void;
   onScheduleDemo?: () => void;
 }
 
-export function CTASection({ onGetStarted, onScheduleDemo }: CTASectionProps) {
+export function CTASection({ onGetStarted }: CTASectionProps) {
   return (
     <section className="relative py-20 lg:py-32 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6">
-            Ready to Transform Your District's
+            Ready to Transform Your District&apos;s
             <span className="block bg-gradient-to-r from-blue-200 to-indigo-200 bg-clip-text text-transparent">
               Grant Success?
             </span>

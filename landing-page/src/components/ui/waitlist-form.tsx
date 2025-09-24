@@ -56,7 +56,7 @@ interface Step3Data {
   followUpInterest: string;
 }
 
-interface FormData extends Step1Data, Step3Data {}
+// interface FormData extends Step1Data, Step3Data {}
 
 type Step = 1 | 2 | 3 | 4;
 
@@ -503,11 +503,11 @@ export default function WaitlistForm() {
             <div className="mb-4">
               <div className="text-6xl mb-4">🎉</div>
               <h2 className="text-2xl font-bold text-green-600 mb-2">
-                Success! You're on the list.
+                Success! You&apos;re on the list.
               </h2>
               <p className="text-gray-600">
                 Thank you for your interest in GrantFinder AI. To help us build
-                the best platform for your district's needs, please take a
+                the best platform for your district&apos;s needs, please take a
                 moment to answer a few quick questions.
               </p>
             </div>
@@ -539,8 +539,8 @@ export default function WaitlistForm() {
               </h2>
               <p className="text-gray-600">
                 Thank you for joining our waitlist! Your responses have been
-                submitted successfully. You'll be among the first to know when
-                GrantFinder AI launches.
+                submitted successfully. You&apos;ll be among the first to know
+                when GrantFinder AI launches.
               </p>
               <p className="text-sm text-gray-500 mt-4">
                 Redirecting you back to the homepage...
@@ -574,7 +574,7 @@ export default function WaitlistForm() {
               <div className="space-y-2">
                 {[
                   "Finding relevant opportunities is too time-consuming.",
-                  "We waste time on grants we're not eligible for.",
+                  "We waste time on grants we&apos;re not eligible for.",
                   "The narrative writing and drafting process is slow.",
                   "Managing team collaboration and deadlines is disjointed.",
                   "Post-award compliance and reporting is a major burden.",
