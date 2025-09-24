@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Search, TrendingUp, Users } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRight } from "lucide-react";
 
 interface HeroSectionProps {
   onGetStarted?: () => void;
@@ -8,12 +7,6 @@ interface HeroSectionProps {
 }
 
 export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
-  const stats = [
-    { icon: Search, value: "70%", label: "Faster Grant Discovery" },
-    { icon: TrendingUp, value: "50%", label: "Fewer Ineligible Pursuits" },
-    { icon: Users, value: "2-6", label: "Staff Members Supported" },
-  ];
-
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-indigo-50 py-20 lg:py-32">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,24 +50,6 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
             >
               Learn More
             </Button>
-          </div>
-
-          {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {stats.map((stat, index) => (
-              <Card
-                key={index}
-                className="border-0 shadow-lg bg-white/80 backdrop-blur-sm"
-              >
-                <CardContent className="p-6 text-center">
-                  <stat.icon className="h-8 w-8 text-blue-600 mx-auto mb-3" />
-                  <div className="text-3xl font-bold text-gray-900 mb-1">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </CardContent>
-              </Card>
-            ))}
           </div>
         </div>
       </div>

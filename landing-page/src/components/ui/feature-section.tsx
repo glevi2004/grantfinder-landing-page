@@ -1,13 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import {
   CheckCircle,
   Search,
   Brain,
   Users,
   FileText,
-  BarChart3,
   Clock,
+  Link,
 } from "lucide-react";
 
 interface Feature {
@@ -63,17 +62,6 @@ const features: Feature[] = [
     ],
   },
   {
-    icon: BarChart3,
-    title: "Success Analytics",
-    description:
-      "Track your funding pipeline, monitor success rates, and identify opportunities for continuous improvement.",
-    benefits: [
-      "Pipeline visualization",
-      "Success rate tracking",
-      "Performance insights",
-    ],
-  },
-  {
     icon: Clock,
     title: "Deadline Management",
     description:
@@ -82,6 +70,17 @@ const features: Feature[] = [
       "Automated deadline alerts",
       "Milestone tracking",
       "Calendar integration",
+    ],
+  },
+  {
+    icon: Link,
+    title: "Seamless Integrations",
+    description:
+      "Integrates with your existing Google Workspace and Microsoft 365 for Education accounts to streamline document management and team collaboration.",
+    benefits: [
+      "Google Workspace integration",
+      "Microsoft 365 for Education support",
+      "Streamlined document management",
     ],
   },
 ];
@@ -107,31 +106,31 @@ export function FeatureSection() {
         </div>
 
         {/* Features Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((feature, index) => (
             <Card
               key={index}
               className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300"
             >
-              <CardHeader className="pb-4">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <feature.icon className="h-6 w-6 text-blue-600" />
+              <CardHeader className="pb-2">
+                <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-2">
+                  <feature.icon className="h-5 w-5 text-blue-600" />
                 </div>
-                <CardTitle className="text-xl font-semibold text-gray-900">
+                <CardTitle className="text-lg font-semibold text-gray-900">
                   {feature.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 mb-3 leading-relaxed text-base mt-[-20px]">
                   {feature.description}
                 </p>
-                <ul className="space-y-2">
+                <ul className="space-y-1">
                   {feature.benefits.map((benefit, benefitIndex) => (
                     <li
                       key={benefitIndex}
                       className="flex items-start text-sm text-gray-700"
                     >
-                      <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                      <CheckCircle className="h-3 w-3 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
                       {benefit}
                     </li>
                   ))}
@@ -139,17 +138,6 @@ export function FeatureSection() {
               </CardContent>
             </Card>
           ))}
-        </div>
-
-        {/* CTA */}
-        <div className="text-center">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-blue-300 text-blue-600 hover:bg-blue-50 px-8 py-3"
-          >
-            Explore All Features
-          </Button>
         </div>
       </div>
     </section>
