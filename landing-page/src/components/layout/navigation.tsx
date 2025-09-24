@@ -6,17 +6,15 @@ import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface NavigationProps {
-  onSignIn?: () => void;
   onGetStarted?: () => void;
 }
 
-export function Navigation({ onSignIn, onGetStarted }: NavigationProps) {
+export function Navigation({ onGetStarted }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "#features", label: "Features" },
     { href: "#how-it-works", label: "How It Works" },
-    { href: "#pricing", label: "Pricing" },
     { href: "#about", label: "About" },
   ];
 
@@ -53,17 +51,10 @@ export function Navigation({ onSignIn, onGetStarted }: NavigationProps) {
           {/* Desktop Actions */}
           <div className="hidden md:flex items-center space-x-4">
             <Button
-              variant="ghost"
-              onClick={onSignIn}
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Sign In
-            </Button>
-            <Button
               onClick={onGetStarted}
               className="bg-blue-600 hover:bg-blue-700 text-white"
             >
-              Get Started
+              Join Waitlist
             </Button>
           </div>
 
@@ -96,17 +87,10 @@ export function Navigation({ onSignIn, onGetStarted }: NavigationProps) {
               ))}
               <div className="pt-4 space-y-2">
                 <Button
-                  variant="ghost"
-                  className="w-full justify-start"
-                  onClick={onSignIn}
-                >
-                  Sign In
-                </Button>
-                <Button
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white"
                   onClick={onGetStarted}
                 >
-                  Get Started
+                  Join Waitlist
                 </Button>
               </div>
             </div>

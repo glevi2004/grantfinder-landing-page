@@ -29,7 +29,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation onSignIn={handleSignIn} onGetStarted={handleGetStarted} />
+      <Navigation onGetStarted={handleGetStarted} />
 
       <main>
         <HeroSection

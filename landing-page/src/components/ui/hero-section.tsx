@@ -46,7 +46,7 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
               onClick={onGetStarted}
             >
-              Start Free Trial
+              Join Waitlist
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <Button
@@ -55,7 +55,7 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
               className="border-gray-300 text-gray-700 hover:bg-gray-50 px-8 py-3 text-lg"
               onClick={onLearnMore}
             >
-              See How It Works
+              Learn More
             </Button>
           </div>
 
