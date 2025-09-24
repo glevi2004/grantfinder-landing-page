@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import { HeroSection } from "@/components/ui/hero-section";
 import { FeatureSection } from "@/components/ui/feature-section";
 import { FAQSection } from "@/components/ui/faq-section";
@@ -8,19 +9,10 @@ import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
-  const handleGetStarted = () => {
-    // Placeholder for future implementation
-    console.log("Get Started clicked");
-  };
+  const router = useRouter();
 
-  const handleSignIn = () => {
-    // Placeholder for future implementation
-    console.log("Sign In clicked");
-  };
-
-  const handleScheduleDemo = () => {
-    // Placeholder for future implementation
-    console.log("Schedule Demo clicked");
+  const handleJoinWaitlist = () => {
+    router.push("/waitlist");
   };
 
   const handleLearnMore = () => {
@@ -29,11 +21,11 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation onGetStarted={handleGetStarted} />
+      <Navigation onGetStarted={handleJoinWaitlist} />
 
       <main>
         <HeroSection
-          onGetStarted={handleGetStarted}
+          onGetStarted={handleJoinWaitlist}
           onLearnMore={handleLearnMore}
         />
 
@@ -47,8 +39,8 @@ export default function Home() {
 
         <div id="cta">
           <CTASection
-            onGetStarted={handleGetStarted}
-            onScheduleDemo={handleScheduleDemo}
+            onGetStarted={handleJoinWaitlist}
+            onScheduleDemo={handleLearnMore}
           />
         </div>
       </main>
