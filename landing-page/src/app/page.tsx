@@ -3,15 +3,17 @@
 import { useRouter } from "next/navigation";
 import { HeroSection } from "@/components/ui/hero-section";
 import { FeatureSection } from "@/components/ui/feature-section";
+import { WaitlistCTASection } from "@/components/ui/waitlist-cta-section";
 import { FAQSection } from "@/components/ui/faq-section";
 import { CTASection } from "@/components/ui/cta-section";
-import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
   const router = useRouter();
 
-  const handleJoinWaitlist = () => {
+  const handleJoinWaitlist = (formData?: any) => {
+    // If form data is provided, could handle it here
+    // For now, just redirect to waitlist page
     router.push("/waitlist");
   };
 
@@ -21,8 +23,6 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-background">
-      <Navigation onGetStarted={handleJoinWaitlist} />
-
       <main>
         <HeroSection
           onGetStarted={handleJoinWaitlist}
@@ -32,6 +32,8 @@ export default function Home() {
         <div id="features">
           <FeatureSection />
         </div>
+
+        <WaitlistCTASection onSubmit={handleJoinWaitlist} />
 
         <div id="faq">
           <FAQSection />

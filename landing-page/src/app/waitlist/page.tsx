@@ -6,7 +6,7 @@ export default function WaitlistPage() {
       <div className="mt-[-20px] max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-bold text-white mb-2">
-            Join the GrantFinder AI Waitlist
+            Join the GrantWare AI Waitlist
           </h1>
           <p className="text-lg text-blue-100">
             Be among the first to experience the future of grant discovery and
