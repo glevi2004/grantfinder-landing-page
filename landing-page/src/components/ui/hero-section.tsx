@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
 import { Navigation } from "@/components/layout/navigation";
 
@@ -13,6 +13,7 @@ const words = ["Discover", "Write", "Manage"];
 export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,11 +27,39 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    // Show scroll button after 2 seconds
+    const timer = setTimeout(() => {
+      setShowScrollButton(true);
+    }, 2000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const scrollToFeatures = () => {
+    const element = document.querySelector('#features');
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden bg-[#F1ECE5] h-screen flex flex-col" style={{
-      backgroundImage: `radial-gradient(circle, #D1D1D1 1.5px, transparent 1px)`,
-      backgroundSize: '20px 20px'
-    }}>
+    <section className="relative overflow-hidden bg-[#F1ECE5] h-screen flex flex-col">
+      {/* Grid Background Layer - Upper Portion Only */}
+      <div 
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          backgroundImage: `radial-gradient(circle, #D1D1D1 1px, transparent 1px)`,
+          backgroundSize: '20px 20px',
+          backgroundPosition: '0 0',
+          maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+        }}
+      />
+      
       {/* Navigation */}
       <Navigation onGetStarted={onGetStarted} />
       
@@ -55,18 +84,58 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
             opacity: 0;
           }
         }
+        @keyframes bounceDown {
+          0%, 20%, 50%, 80%, 100% {
+            transform: translateY(0);
+          }
+          40% {
+            transform: translateY(-10px);
+          }
+          60% {
+            transform: translateY(-5px);
+          }
+        }
+        @keyframes fadeInUp {
+          0% {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
         .flip-enter {
           animation: flipIn 0.4s ease-out forwards;
         }
         .flip-exit {
           animation: flipOut 0.4s ease-in forwards;
         }
+        .bounce-down {
+          animation: bounceDown 2s infinite;
+        }
+        .fade-in-up {
+          animation: fadeInUp 0.6s ease-out forwards;
+        }
       `}</style>
       
       {/* Hero Content - Centered */}
-      <div className="flex-1 flex items-center justify-center pt-10">
+      <div className="flex-1 flex items-center justify-center pt-10 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
+          
+          {/* Backed by Red Hat Badge */}
+          <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-lg px-8 py-2 mb-8 shadow-sm border border-gray-200/20">
+            <span className="text-sm font-medium text-gray-700 mr-4">Backed by</span>
+            <div className="w-20 h-0 flex items-center justify-center">
+              <img 
+                src="/Red_Hat_Logo_2019.svg.png" 
+                alt="Red Hat Logo" 
+                className="w-20 h-20 object-contain"
+              />
+            </div>
+          </div>
+          
           {/* Main Heading */}
           <h1 className="text-[64px] font-bold mb-8 leading-[1.21] font-[family-name:var(--font-source-serif)] capitalize">
             <span className="text-[#5a8bf2]">
@@ -121,6 +190,18 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
           </div>
         </div>
       </div>
+
+      {/* Scroll Indicator Button */}
+      {showScrollButton && (
+        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-20">
+          <button
+            onClick={scrollToFeatures}
+            className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-sm border border-white/50 hover:bg-white/80 transition-all duration-300 flex items-center justify-center group fade-in-up"
+          >
+            <ChevronDown className="h-6 w-6 text-[#696969] group-hover:text-[#5A8BF2] transition-colors duration-300 bounce-down" />
+          </button>
+        </div>
+      )}
     </section>
   );
 }

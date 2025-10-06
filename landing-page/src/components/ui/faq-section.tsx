@@ -20,25 +20,25 @@ const faqs: FAQItem[] = [
     question: "What Types Of Grants Does The Platform Perform?",
     answer:
       "We aggregate federal grants (Grants.gov), state Department of Education funding, and major foundation opportunities. This includes Title I, IDEA, ESSA programs, STEM grants, literacy initiatives, technology funding, and specialized programs for multilingual learners and students with disabilities.",
-    defaultOpen: true,
+    defaultOpen: false,
   },
   {
     question: "How Much Time Can We Realistically Save With GrantWare AI?",
     answer:
       "Our pilot districts report 50-70% reduction in search and eligibility review time. What used to take weeks of hunting across multiple websites now takes hours. The AI eligibility analysis eliminates the need to manually parse dense RFPs just to discover you're not eligible.",
-    defaultOpen: true,
+    defaultOpen: false,
   },
   {
     question: "Is My District Data Secure And FERPA Compliant?",
     answer:
       "Yes. We use enterprise-grade security with encryption, role-based access controls, and audit logging. Our platform is designed for organizational email/SSO integration and follows FERPA guidelines for educational data privacy. Your district data never leaves our secure environment.",
-    defaultOpen: true,
+    defaultOpen: false,
   },
   {
     question: "Can Multiple Team Members Collaborate On Grant Proposals?",
     answer:
       "Absolutely. GrantWare AI includes role-based permissions, collaborative editing, comment threads, track changes, and reviewer workflows. Team members can work simultaneously while maintaining version control and approval processes.",
-    defaultOpen: true,
+    defaultOpen: false,
   },
   {
     question: "What Size Districts Is This Designed For?",
@@ -50,7 +50,7 @@ const faqs: FAQItem[] = [
     question: "Do You Provide Training And Onboarding Support?",
     answer:
       "Yes. We provide comprehensive onboarding including district profile setup, team training sessions, and ongoing support. Our goal is to get your team productive within the first week, with minimal disruption to your existing workflows.",
-    defaultOpen: true,
+    defaultOpen: false,
   },
 ];
 
