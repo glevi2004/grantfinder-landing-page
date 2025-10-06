@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import {
   Search,
   PenLine,
@@ -69,13 +70,9 @@ const featureContent: Record<string, FeatureContent> = {
 
 export function FeatureSection() {
   const [activeTab, setActiveTab] = useState("discovery");
-  const [visitedTabs, setVisitedTabs] = useState<Set<string>>(
-    new Set(["discovery"])
-  );
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
-    setVisitedTabs((prev) => new Set([...prev, tabId]));
   };
 
   return (
@@ -103,8 +100,6 @@ export function FeatureSection() {
         {/* Tab Navigation */}
         <div className="flex items-center justify-center gap-6 mb-8 px-6 py-3">
           {tabs.map((tab, index) => {
-            const isActive = activeTab === tab.id;
-            const isVisited = visitedTabs.has(tab.id);
             const Icon = tab.icon;
 
             return (
@@ -196,11 +191,15 @@ export function FeatureSection() {
 
             {/* Right Side - Image */}
             <div className="flex-1 h-[350px] min-w-[280px]">
-              <div className="w-full h-full rounded-2xl overflow-hidden">
-                <img
-                  src={featureContent[activeTab].imageUrl}
+              <div className="w-full h-full rounded-2xl overflow-hidden relative">
+                <Image
+                  src={
+                    featureContent[activeTab].imageUrl ||
+                    "/features/discovery.png"
+                  }
                   alt={featureContent[activeTab].title}
-                  className="w-full h-full object-cover"
+                  fill
+                  className="object-cover"
                 />
               </div>
             </div>
