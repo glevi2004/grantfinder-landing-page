@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Navigation } from "@/components/layout/navigation";
 
 interface HeroSectionProps {
@@ -134,13 +133,11 @@ export function HeroSection({ onLearnMore }: HeroSectionProps) {
               <span className="text-sm font-medium text-gray-700 mr-4">
                 Backed by
               </span>
-              <div className="w-20 h-20 flex items-center justify-center">
-                <Image
+              <div className="w-20 h-0 flex items-center justify-center">
+                <img
                   src="/Red_Hat_Logo_2019.svg.png"
                   alt="Red Hat Logo"
-                  width={80}
-                  height={80}
-                  className="object-contain"
+                  className="w-20 h-20 object-contain"
                 />
               </div>
             </div>
