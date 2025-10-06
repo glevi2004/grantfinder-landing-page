@@ -37,11 +37,11 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
   }, []);
 
   const scrollToFeatures = () => {
-    const element = document.querySelector('#features');
+    const element = document.querySelector("#features");
     if (element) {
       element.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start'
+        behavior: "smooth",
+        block: "start",
       });
     }
   };
@@ -49,20 +49,22 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
   return (
     <section className="relative overflow-hidden bg-[#F1ECE5] h-screen flex flex-col">
       {/* Grid Background Layer - Upper Portion Only */}
-      <div 
+      <div
         className="absolute inset-0 pointer-events-none"
         style={{
           backgroundImage: `radial-gradient(circle, #D1D1D1 1px, transparent 1px)`,
-          backgroundSize: '20px 20px',
-          backgroundPosition: '0 0',
-          maskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)',
-          WebkitMaskImage: 'linear-gradient(to bottom, black 0%, black 60%, transparent 100%)'
+          backgroundSize: "20px 20px",
+          backgroundPosition: "0 0",
+          maskImage:
+            "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
         }}
       />
-      
+
       {/* Navigation */}
       <Navigation onGetStarted={onGetStarted} />
-      
+
       <style jsx>{`
         @keyframes flipIn {
           0% {
@@ -85,7 +87,11 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
           }
         }
         @keyframes bounceDown {
-          0%, 20%, 50%, 80%, 100% {
+          0%,
+          20%,
+          50%,
+          80%,
+          100% {
             transform: translateY(0);
           }
           40% {
@@ -118,70 +124,73 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
           animation: fadeInUp 0.6s ease-out forwards;
         }
       `}</style>
-      
+
       {/* Hero Content - Centered */}
       <div className="flex-1 flex items-center justify-center pt-10 relative z-10">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center">
-          
-          {/* Backed by Red Hat Badge */}
-          <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-lg px-8 py-2 mb-8 shadow-sm border border-gray-200/20">
-            <span className="text-sm font-medium text-gray-700 mr-4">Backed by</span>
-            <div className="w-20 h-0 flex items-center justify-center">
-              <img 
-                src="/Red_Hat_Logo_2019.svg.png" 
-                alt="Red Hat Logo" 
-                className="w-20 h-20 object-contain"
-              />
+            {/* Backed by Red Hat Badge */}
+            <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-lg px-8 py-2 mb-8 shadow-sm border border-gray-200/20">
+              <span className="text-sm font-medium text-gray-700 mr-4">
+                Backed by
+              </span>
+              <div className="w-20 h-0 flex items-center justify-center">
+                <img
+                  src="/Red_Hat_Logo_2019.svg.png"
+                  alt="Red Hat Logo"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
             </div>
-          </div>
-          
-          {/* Main Heading */}
-          <h1 className="text-[64px] font-bold mb-8 leading-[1.21] font-[family-name:var(--font-source-serif)] capitalize">
-            <span className="text-[#5a8bf2]">
-              <span 
-                className="inline-block text-center"
-                style={{ 
-                  minWidth: '280px',
-                  verticalAlign: 'top'
-                }}
-              >
-                <span 
-                  className={`inline-block ${isFlipping ? 'flip-exit' : 'flip-enter'}`}
-                  style={{ 
-                    transformStyle: 'preserve-3d',
-                    perspective: '1000px'
+
+            {/* Main Heading */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-[family-name:var(--font-source-serif)] capitalize">
+              <span className="text-[#5a8bf2]">
+                <span
+                  className="inline-block text-center"
+                  style={{
+                    minWidth: "200px",
+                    verticalAlign: "top",
                   }}
                 >
-                  {words[currentWordIndex]}
-                </span>
-              </span>{" "}
-              the Perfect Grants{" "}
-            </span>
-            <span className="text-[#696969]">for Your School District</span>
-          </h1>
+                  <span
+                    className={`inline-block ${
+                      isFlipping ? "flip-exit" : "flip-enter"
+                    }`}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      perspective: "1000px",
+                    }}
+                  >
+                    {words[currentWordIndex]}
+                  </span>
+                </span>{" "}
+                the Perfect Grants{" "}
+              </span>
+              <span className="text-[#696969]">for Your School District</span>
+            </h1>
 
-          {/* Subheading */}
-          <p className="text-lg text-[#4A4A4A] mb-8 max-w-3xl mx-auto leading-relaxed">
-            Discover high-fit opportunities, get AI-powered eligibility
-            analysis, and manage the entire grant lifecycle in one intelligent
-            workspace designed for education leaders.
-          </p>
+            {/* Subheading */}
+            <p className="text-base sm:text-lg text-[#4A4A4A] mb-6 max-w-2xl mx-auto leading-relaxed">
+              Discover high-fit opportunities, get AI-powered eligibility
+              analysis, and manage the entire grant lifecycle in one intelligent
+              workspace designed for education leaders.
+            </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
                 size="lg"
-                className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-white px-8 py-3 text-lg rounded-lg"
+                className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-white px-6 py-2.5 text-base rounded-lg"
                 onClick={onGetStarted}
               >
                 Join Waitlist
-                <ArrowRight className="ml-2 h-5 w-5" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button
                 variant="outline"
                 size="lg"
-                className="border-[#5A8BF2] text-[#5A8BF2] hover:bg-blue-50 px-8 py-3 text-lg rounded-lg"
+                className="border-[#5A8BF2] text-[#5A8BF2] hover:bg-blue-50 px-6 py-2.5 text-base rounded-lg"
                 onClick={onLearnMore}
               >
                 Learn More
@@ -193,12 +202,12 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
 
       {/* Scroll Indicator Button */}
       {showScrollButton && (
-        <div className="absolute bottom-32 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20">
           <button
             onClick={scrollToFeatures}
-            className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-sm border border-white/50 hover:bg-white/80 transition-all duration-300 flex items-center justify-center group fade-in-up"
+            className="w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-white/50 hover:bg-white/80 transition-all duration-300 flex items-center justify-center group fade-in-up"
           >
-            <ChevronDown className="h-6 w-6 text-[#696969] group-hover:text-[#5A8BF2] transition-colors duration-300 bounce-down" />
+            <ChevronDown className="h-5 w-5 text-[#696969] group-hover:text-[#5A8BF2] transition-colors duration-300 bounce-down" />
           </button>
         </div>
       )}
