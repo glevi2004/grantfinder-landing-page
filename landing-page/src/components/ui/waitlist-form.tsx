@@ -506,7 +506,7 @@ export default function WaitlistForm() {
                 Success! You&apos;re on the list.
               </h2>
               <p className="text-gray-600">
-                Thank you for your interest in GrantFinder AI. To help us build
+                Thank you for your interest in GrantWare AI. To help us build
                 the best platform for your district&apos;s needs, please take a
                 moment to answer a few quick questions.
               </p>
@@ -540,7 +540,7 @@ export default function WaitlistForm() {
               <p className="text-gray-600">
                 Thank you for joining our waitlist! Your responses have been
                 submitted successfully. You&apos;ll be among the first to know
-                when GrantFinder AI launches.
+                when GrantWare AI launches.
               </p>
               <p className="text-sm text-gray-500 mt-4">
                 Redirecting you back to the homepage...

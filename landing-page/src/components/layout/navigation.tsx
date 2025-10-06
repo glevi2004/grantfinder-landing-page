@@ -2,59 +2,81 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 // import { cn } from "@/lib/utils";
 
-interface NavigationProps {
-  onGetStarted?: () => void;
-}
-
-export function Navigation({ onGetStarted }: NavigationProps) {
+export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { href: "#features", label: "Features" },
-    { href: "#faq", label: "FAQ" },
-    { href: "#cta", label: "About" },
+    { href: "#faq", label: "FAQs" },
+    { href: "#cta", label: "Contributor Program" },
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+    setIsMenuOpen(false);
+  };
+
   return (
-    <nav className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">G</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-gray-900 text-lg">
-                GrantFinder
+    <nav className="fixed top-0 left-0 right-0 z-50 w-full">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div className="bg-white/80 backdrop-blur-md rounded-xl px-4 py-2 flex h-14 items-center justify-between shadow-sm">
+          {/* Logo - Left Side */}
+          <div className="flex items-center space-x-2 w-[160px]">
+            <button
+              onClick={scrollToTop}
+              className="flex items-center space-x-1 hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+            >
+              <span className="text-[#696969] font-bold text-lg font-[family-name:var(--font-source-serif)]">
+                GrantWare
               </span>
-              <span className="text-xs text-gray-500 -mt-1">AI</span>
-            </div>
+              <span className="text-[#5A8BF2] font-bold text-lg font-[family-name:var(--font-source-serif)]">
+                AI
+              </span>
+            </button>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation - Center */}
+          <div className="hidden md:flex items-center justify-center space-x-3 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.href}
-                href={link.href}
-                className="text-gray-600 hover:text-gray-900 transition-colors duration-200 font-medium"
+                onClick={() => handleNavClick(link.href)}
+                className="text-[#696969] hover:text-gray-900 transition-colors duration-200 font-medium text-sm capitalize px-4 py-2"
               >
                 {link.label}
-              </a>
+              </button>
             ))}
           </div>
 
-          {/* Desktop Actions */}
-          <div className="hidden md:flex items-center space-x-4">
+          {/* Desktop Actions - Right Side */}
+          <div className="hidden md:flex items-center justify-end w-[160px]">
             <Button
-              onClick={onGetStarted}
-              className="bg-blue-600 hover:bg-blue-700 text-white"
+              onClick={() =>
+                window.open(
+                  "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                  "_blank"
+                )
+              }
+              className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg px-4 py-2 h-9 font-medium text-xs"
             >
-              Join Waitlist
+              Book a Demo
+              <ArrowRight className="ml-2 h-3 w-3" />
             </Button>
           </div>
 
@@ -73,24 +95,29 @@ export function Navigation({ onGetStarted }: NavigationProps) {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t bg-white">
+          <div className="md:hidden mt-2 bg-white/80 backdrop-blur-md rounded-xl px-4 py-3 shadow-sm">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navLinks.map((link) => (
-                <a
+                <button
                   key={link.href}
-                  href={link.href}
-                  className="block px-3 py-2 text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => handleNavClick(link.href)}
+                  className="block w-full text-left px-3 py-2 text-[#696969] hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200 text-sm font-medium"
                 >
                   {link.label}
-                </a>
+                </button>
               ))}
-              <div className="pt-4 space-y-2">
+              <div className="pt-3 space-y-2">
                 <Button
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white"
-                  onClick={onGetStarted}
+                  className="w-full bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg text-xs h-9"
+                  onClick={() =>
+                    window.open(
+                      "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                      "_blank"
+                    )
+                  }
                 >
-                  Join Waitlist
+                  Book a Demo
+                  <ArrowRight className="ml-2 h-3 w-3" />
                 </Button>
               </div>
             </div>
