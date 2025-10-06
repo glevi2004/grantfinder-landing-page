@@ -1,16 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { Navigation } from "@/components/layout/navigation";
 
 interface HeroSectionProps {
-  onGetStarted?: () => void;
   onLearnMore?: () => void;
 }
 
 const words = ["Discover", "Write", "Manage"];
 
-export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
+export function HeroSection({ onLearnMore }: HeroSectionProps) {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isFlipping, setIsFlipping] = useState(false);
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -63,7 +63,7 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
       />
 
       {/* Navigation */}
-      <Navigation onGetStarted={onGetStarted} />
+      <Navigation />
 
       <style jsx>{`
         @keyframes flipIn {
@@ -134,11 +134,13 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
               <span className="text-sm font-medium text-gray-700 mr-4">
                 Backed by
               </span>
-              <div className="w-20 h-0 flex items-center justify-center">
-                <img
+              <div className="w-20 h-20 flex items-center justify-center">
+                <Image
                   src="/Red_Hat_Logo_2019.svg.png"
                   alt="Red Hat Logo"
-                  className="w-20 h-20 object-contain"
+                  width={80}
+                  height={80}
+                  className="object-contain"
                 />
               </div>
             </div>
@@ -182,7 +184,12 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
               <Button
                 size="lg"
                 className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-white px-6 py-2.5 text-base rounded-lg"
-                onClick={() => window.open('https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true', '_blank')}
+                onClick={() =>
+                  window.open(
+                    "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                    "_blank"
+                  )
+                }
               >
                 Book a Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
