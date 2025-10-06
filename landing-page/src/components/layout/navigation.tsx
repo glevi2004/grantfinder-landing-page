@@ -5,11 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
 // import { cn } from "@/lib/utils";
 
-interface NavigationProps {
-  onGetStarted?: () => void;
-}
-
-export function Navigation({ onGetStarted }: NavigationProps) {
+export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
@@ -71,7 +67,12 @@ export function Navigation({ onGetStarted }: NavigationProps) {
           {/* Desktop Actions - Right Side */}
           <div className="hidden md:flex items-center justify-end w-[160px]">
             <Button
-              onClick={() => window.open('https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true', '_blank')}
+              onClick={() =>
+                window.open(
+                  "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                  "_blank"
+                )
+              }
               className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg px-4 py-2 h-9 font-medium text-xs"
             >
               Book a Demo
@@ -108,7 +109,12 @@ export function Navigation({ onGetStarted }: NavigationProps) {
               <div className="pt-3 space-y-2">
                 <Button
                   className="w-full bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg text-xs h-9"
-                  onClick={() => window.open('https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true', '_blank')}
+                  onClick={() =>
+                    window.open(
+                      "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                      "_blank"
+                    )
+                  }
                 >
                   Book a Demo
                   <ArrowRight className="ml-2 h-3 w-3" />
