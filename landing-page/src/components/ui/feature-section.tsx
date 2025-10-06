@@ -1,7 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import { Search, PenLine, Clock, CircleCheckBig, ArrowRight } from "lucide-react";
+import {
+  Search,
+  PenLine,
+  Clock,
+  CircleCheckBig,
+  ArrowRight,
+} from "lucide-react";
 
 interface Tab {
   id: string;
@@ -33,6 +39,7 @@ const featureContent: Record<string, FeatureContent> = {
       "Plain-English reasons why each grant fits",
       "Start a project with tasks and deadlines in one click",
     ],
+    imageUrl: "/features/discovery.png",
   },
   writing: {
     title: "Guided Grant Writing",
@@ -44,6 +51,7 @@ const featureContent: Record<string, FeatureContent> = {
       "Integrates with Google Workspace and Microsoft 365",
       "Reuse past winning applications.",
     ],
+    imageUrl: "/features/writing.png",
   },
   management: {
     title: "Intelligent Grant Management",
@@ -55,22 +63,29 @@ const featureContent: Record<string, FeatureContent> = {
       "Roles & permissions for your team",
       "Share files and comments without leaving the app",
     ],
+    imageUrl: "/features/management.png",
   },
 };
 
 export function FeatureSection() {
   const [activeTab, setActiveTab] = useState("discovery");
-  const [visitedTabs, setVisitedTabs] = useState<Set<string>>(new Set(["discovery"]));
+  const [visitedTabs, setVisitedTabs] = useState<Set<string>>(
+    new Set(["discovery"])
+  );
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
-    setVisitedTabs(prev => new Set([...prev, tabId]));
+    setVisitedTabs((prev) => new Set([...prev, tabId]));
   };
 
   return (
-    <section className="py-20 bg-[#F1ECE5]" id="features" style={{
-      backgroundSize: '20px 20px'
-    }}>
+    <section
+      className="py-20 bg-[#F1ECE5]"
+      id="features"
+      style={{
+        backgroundSize: "20px 20px",
+      }}
+    >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="max-w-6xl mx-auto text-center mb-8">
@@ -79,8 +94,8 @@ export function FeatureSection() {
             <span className="text-[#5A8BF2]">win more Grants</span>
           </h2>
           <p className="text-base sm:text-lg text-[#696969] leading-relaxed max-w-5xl mx-auto">
-            From discovery to submission, GrantWare AI streamlines every step
-            of your grant management process with intelligent automation and
+            From discovery to submission, GrantWare AI streamlines every step of
+            your grant management process with intelligent automation and
             collaborative tools.
           </p>
         </div>
@@ -91,7 +106,7 @@ export function FeatureSection() {
             const isActive = activeTab === tab.id;
             const isVisited = visitedTabs.has(tab.id);
             const Icon = tab.icon;
-            
+
             return (
               <div key={tab.id} className="flex items-center gap-6">
                 <button
@@ -102,8 +117,7 @@ export function FeatureSection() {
                     className={`p-4 rounded-full transition-all duration-300 ${
                       (activeTab === "discovery" && tab.id === "discovery") ||
                       (activeTab === "writing" &&
-                        (tab.id === "discovery" ||
-                          tab.id === "writing")) ||
+                        (tab.id === "discovery" || tab.id === "writing")) ||
                       activeTab === "management"
                         ? "bg-[#5A8BF2] shadow-lg"
                         : "bg-[#E9E9EB] border-2 border-[#D7D9DD]"
@@ -113,8 +127,7 @@ export function FeatureSection() {
                       className={`h-6 w-6 ${
                         (activeTab === "discovery" && tab.id === "discovery") ||
                         (activeTab === "writing" &&
-                          (tab.id === "discovery" ||
-                            tab.id === "writing")) ||
+                          (tab.id === "discovery" || tab.id === "writing")) ||
                         activeTab === "management"
                           ? "text-[#F9F6F3]"
                           : "text-[#696969]"
@@ -127,13 +140,13 @@ export function FeatureSection() {
                 </button>
 
                 {index < tabs.length - 1 && (
-                  <ArrowRight 
+                  <ArrowRight
                     className={`h-6 w-6 transition-colors duration-300 ${
                       (activeTab === "writing" && index === 0) ||
                       activeTab === "management"
                         ? "text-[#5A8BF2]"
                         : "text-[#D7D9DD]"
-                    }`} 
+                    }`}
                   />
                 )}
               </div>
@@ -173,7 +186,7 @@ export function FeatureSection() {
                     width:
                       activeTab === "discovery"
                         ? "33.33%"
-                        : activeTab === "collaboration"
+                        : activeTab === "writing"
                         ? "66.67%"
                         : "100%",
                   }}
@@ -183,9 +196,12 @@ export function FeatureSection() {
 
             {/* Right Side - Image */}
             <div className="flex-1 h-[350px] min-w-[280px]">
-              <div className="w-full h-full bg-[#C4C4C4] rounded-2xl flex items-center justify-center overflow-hidden">
-                {/* Placeholder for image */}
-                <div className="w-full h-full bg-gradient-to-br from-gray-300 to-gray-400" />
+              <div className="w-full h-full rounded-2xl overflow-hidden">
+                <img
+                  src={featureContent[activeTab].imageUrl}
+                  alt={featureContent[activeTab].title}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </div>
           </div>
