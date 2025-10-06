@@ -1,6 +1,4 @@
 "use client";
-
-import { useRouter } from "next/navigation";
 import { HeroSection } from "@/components/ui/hero-section";
 import { FeatureSection } from "@/components/ui/feature-section";
 // import { WaitlistCTASection } from "@/components/ui/waitlist-cta-section";
@@ -9,14 +7,6 @@ import { CTASection } from "@/components/ui/cta-section";
 import { Footer } from "@/components/layout/footer";
 
 export default function Home() {
-  const router = useRouter();
-
-  const handleJoinWaitlist = (formData?: any) => {
-    // If form data is provided, could handle it here
-    // For now, just redirect to waitlist page
-    router.push("/waitlist");
-  };
-
   const handleLearnMore = () => {
     document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
   };
@@ -24,10 +14,7 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background">
       <main>
-        <HeroSection
-          onGetStarted={handleJoinWaitlist}
-          onLearnMore={handleLearnMore}
-        />
+        <HeroSection onLearnMore={handleLearnMore} />
 
         <div id="features">
           <FeatureSection />
@@ -40,10 +27,7 @@ export default function Home() {
         </div>
 
         <div id="cta">
-          <CTASection
-            onGetStarted={handleJoinWaitlist}
-            onScheduleDemo={handleLearnMore}
-          />
+          <CTASection onScheduleDemo={handleLearnMore} />
         </div>
       </main>
 
