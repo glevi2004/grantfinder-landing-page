@@ -174,7 +174,7 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
             <p className="text-base sm:text-lg text-[#4A4A4A] mb-6 max-w-2xl mx-auto leading-relaxed">
               Discover high-fit opportunities, get AI-powered eligibility
               analysis, and manage the entire grant lifecycle in one intelligent
-              workspace designed for education leaders.
+              platform designed for education leaders.
             </p>
 
             {/* CTA Buttons */}
@@ -182,9 +182,9 @@ export function HeroSection({ onGetStarted, onLearnMore }: HeroSectionProps) {
               <Button
                 size="lg"
                 className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-white px-6 py-2.5 text-base rounded-lg"
-                onClick={onGetStarted}
+                onClick={() => window.open('https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true', '_blank')}
               >
-                Join Waitlist
+                Book a Demo
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
               <Button

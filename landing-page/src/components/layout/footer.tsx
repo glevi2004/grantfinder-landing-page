@@ -4,8 +4,18 @@ export function Footer() {
   const navigationLinks = [
     { label: "Features", href: "#features" },
     { label: "FAQs", href: "#faq" },
-    { label: "About", href: "#cta" },
+    { label: "Contributor Program", href: "#cta" },
   ];
+
+  const handleNavClick = (href: string) => {
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   return (
     <footer className="bg-[#1A1D29] text-white">
@@ -13,16 +23,13 @@ export function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-[#5A8BF2] rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">G</span>
-              </div>
-              <div className="flex flex-col">
-                <span className="font-bold text-white text-xl font-[family-name:var(--font-source-serif)]">
-                  GrantWare AI
-                </span>
-                <span className="text-sm text-[#5A8BF2] -mt-1 font-semibold"></span>
-              </div>
+            <div className="flex items-center space-x-1 mb-4">
+              <span className="text-white font-bold text-xl font-[family-name:var(--font-source-serif)]">
+                GrantWare
+              </span>
+              <span className="text-[#5A8BF2] font-bold text-xl font-[family-name:var(--font-source-serif)]">
+                AI
+              </span>
             </div>
             <p className="text-gray-300 mb-6 max-w-md leading-relaxed text-base">
               AI-powered grant management workspace designed specifically for
@@ -39,12 +46,12 @@ export function Footer() {
             <ul className="space-y-3">
               {navigationLinks.map((link) => (
                 <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-gray-300 hover:text-[#5A8BF2] transition-colors duration-200 text-base"
+                  <button
+                    onClick={() => handleNavClick(link.href)}
+                    className="text-gray-300 hover:text-[#5A8BF2] transition-colors duration-200 text-base text-left"
                   >
                     {link.label}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>

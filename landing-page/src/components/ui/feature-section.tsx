@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Search, Users, Clock, CircleCheckBig, ArrowRight } from "lucide-react";
+import { Search, PenLine, Clock, CircleCheckBig, ArrowRight } from "lucide-react";
 
 interface Tab {
   id: string;
@@ -18,7 +18,7 @@ interface FeatureContent {
 
 const tabs: Tab[] = [
   { id: "discovery", label: "Discovery", icon: Search },
-  { id: "collaboration", label: "Collaboration", icon: Users },
+  { id: "writing", label: "Writing", icon: PenLine },
   { id: "management", label: "Management", icon: Clock },
 ];
 
@@ -26,81 +26,84 @@ const featureContent: Record<string, FeatureContent> = {
   discovery: {
     title: "Unified Grant Discovery",
     description:
-      "Search across federal, state, and foundation sources with natural language queries tailored to your district profile.",
+      "We match grants to your district's needs and demographics, delivering the best fits in minutes not hours. Or just ask our AI for a specific grant and we'll locate it for you.",
     benefits: [
-      "70% faster grant discovery",
-      "Aggregates all major funding sources",
-      "Natural language search interface",
-      "AI-powered matching algorithms",
+      "One search across federal, state, and foundations",
+      "Best-fit matches based on your district profile",
+      "Plain-English reasons why each grant fits",
+      "Start a project with tasks and deadlines in one click",
     ],
   },
-  collaboration: {
-    title: "Collaborative Grant Workspace",
+  writing: {
+    title: "Guided Grant Writing",
     description:
-      "Manage grants from discovery to submission with AI-assisted proposal drafting, real-time collaboration, and task tracking, all tailored to your district's profile.",
+      "Turn a high-fit match into a complete proposal. We generate a first draft from the funder's RFP—you stay in control to edit, add context, and finalize.",
     benefits: [
-      "Role-based permissions",
-      "Real-time collaboration",
-      "Integrated task management",
-      "Automated compliance checking",
+      "Full draft built from the RFP, tailored to your district profile",
+      "Use AI to edit, rewrite, or insert in district content",
+      "Integrates with Google Workspace and Microsoft 365",
+      "Reuse past winning applications.",
     ],
   },
   management: {
-    title: "Intelligent Deadline Management",
+    title: "Intelligent Grant Management",
     description:
-      "Never miss an opportunity with intelligent deadline tracking, milestone management, and automated reminders tailored to your team's workflow.",
+      "An agentic platform that keeps everything moving—opportunities, tasks, deadlines, and files—in one place. You won't need another tool.",
     benefits: [
-      "Automated deadline alerts",
-      "Milestone tracking",
-      "Calendar integration",
-      "Smart notification system",
+      "New opportunity alerts tailored to your district",
+      "Smart timelines, milestones, and tasks",
+      "Roles & permissions for your team",
+      "Share files and comments without leaving the app",
     ],
   },
 };
 
 export function FeatureSection() {
   const [activeTab, setActiveTab] = useState("discovery");
+  const [visitedTabs, setVisitedTabs] = useState<Set<string>>(new Set(["discovery"]));
+
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+    setVisitedTabs(prev => new Set([...prev, tabId]));
+  };
 
   return (
-    <section
-      className="py-20 bg-[#F1ECE5]"
-      id="features"
-      style={{
-        backgroundSize: "20px 20px",
-      }}
-    >
+    <section className="py-20 bg-[#F1ECE5]" id="features" style={{
+      backgroundSize: '20px 20px'
+    }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-8">
+        <div className="max-w-6xl mx-auto text-center mb-8">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight font-[family-name:var(--font-source-serif)] text-[#696969] capitalize">
             Everything you need to{" "}
             <span className="text-[#5A8BF2]">win more Grants</span>
           </h2>
-          <p className="text-base sm:text-lg text-[#696969] leading-relaxed max-w-3xl mx-auto">
-            From discovery to submission, GrantWare AI streamlines every step of
-            your grant management process with intelligent automation and
+          <p className="text-base sm:text-lg text-[#696969] leading-relaxed max-w-5xl mx-auto">
+            From discovery to submission, GrantWare AI streamlines every step
+            of your grant management process with intelligent automation and
             collaborative tools.
           </p>
         </div>
 
         {/* Tab Navigation */}
-        <div className="flex items-center justify-center gap-6 mb-10 px-6 py-3">
+        <div className="flex items-center justify-center gap-6 mb-8 px-6 py-3">
           {tabs.map((tab, index) => {
             const isActive = activeTab === tab.id;
+            const isVisited = visitedTabs.has(tab.id);
             const Icon = tab.icon;
-
+            
             return (
               <div key={tab.id} className="flex items-center gap-6">
                 <button
-                  onClick={() => setActiveTab(tab.id)}
+                  onClick={() => handleTabClick(tab.id)}
                   className="flex flex-col items-center gap-2 transition-all duration-300"
                 >
                   <div
                     className={`p-4 rounded-full transition-all duration-300 ${
                       (activeTab === "discovery" && tab.id === "discovery") ||
-                      (activeTab === "collaboration" &&
+                      (activeTab === "writing" &&
                         (tab.id === "discovery" ||
-                          tab.id === "collaboration")) ||
+                          tab.id === "writing")) ||
                       activeTab === "management"
                         ? "bg-[#5A8BF2] shadow-lg"
                         : "bg-[#E9E9EB] border-2 border-[#D7D9DD]"
@@ -109,28 +112,28 @@ export function FeatureSection() {
                     <Icon
                       className={`h-6 w-6 ${
                         (activeTab === "discovery" && tab.id === "discovery") ||
-                        (activeTab === "collaboration" &&
+                        (activeTab === "writing" &&
                           (tab.id === "discovery" ||
-                            tab.id === "collaboration")) ||
+                            tab.id === "writing")) ||
                         activeTab === "management"
                           ? "text-[#F9F6F3]"
                           : "text-[#696969]"
                       }`}
                     />
                   </div>
-                  <p className="text-sm sm:text-base text-[#696969] font-normal">
+                  <p className="text-base sm:text-lg text-[#696969] font-normal">
                     {tab.label}
                   </p>
                 </button>
 
                 {index < tabs.length - 1 && (
-                  <ArrowRight
+                  <ArrowRight 
                     className={`h-6 w-6 transition-colors duration-300 ${
-                      (activeTab === "collaboration" && index === 0) ||
+                      (activeTab === "writing" && index === 0) ||
                       activeTab === "management"
                         ? "text-[#5A8BF2]"
                         : "text-[#D7D9DD]"
-                    }`}
+                    }`} 
                   />
                 )}
               </div>
@@ -139,11 +142,11 @@ export function FeatureSection() {
         </div>
 
         {/* Feature Content */}
-        <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-6 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-8 px-7">
             {/* Left Side - Content */}
-            <div className="flex-1 flex flex-col gap-8 py-3">
-              <div className="flex flex-col gap-4">
+            <div className="flex-1 flex flex-col gap-8 py-4">
+              <div className="flex flex-col gap-5">
                 <h3 className="text-xl sm:text-2xl font-semibold font-[family-name:var(--font-source-serif)] text-[#696969] capitalize leading-tight">
                   {featureContent[activeTab].title}
                 </h3>
@@ -152,9 +155,9 @@ export function FeatureSection() {
                 </p>
                 <div className="flex flex-col gap-3 p-3">
                   {featureContent[activeTab].benefits.map((benefit, index) => (
-                    <div key={index} className="flex items-center gap-2">
+                    <div key={index} className="flex items-center gap-3">
                       <CircleCheckBig className="h-5 w-5 text-[#5A8BF2] flex-shrink-0" />
-                      <p className="text-sm sm:text-base text-[#696969]">
+                      <p className="text-base sm:text-lg text-[#696969]">
                         {benefit}
                       </p>
                     </div>

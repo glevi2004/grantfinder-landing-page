@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { HeroSection } from "@/components/ui/hero-section";
 import { FeatureSection } from "@/components/ui/feature-section";
-import { WaitlistCTASection } from "@/components/ui/waitlist-cta-section";
+// import { WaitlistCTASection } from "@/components/ui/waitlist-cta-section";
 import { FAQSection } from "@/components/ui/faq-section";
 import { CTASection } from "@/components/ui/cta-section";
 import { Footer } from "@/components/layout/footer";
@@ -33,7 +33,7 @@ export default function Home() {
           <FeatureSection />
         </div>
 
-        <WaitlistCTASection onSubmit={handleJoinWaitlist} />
+        {/* <WaitlistCTASection onSubmit={handleJoinWaitlist} /> */}
 
         <div id="faq">
           <FAQSection />

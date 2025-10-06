@@ -15,6 +15,7 @@ export function Navigation({ onGetStarted }: NavigationProps) {
   const navLinks = [
     { href: "#features", label: "Features" },
     { href: "#faq", label: "FAQs" },
+    { href: "#cta", label: "Contributor Program" },
   ];
 
   const scrollToTop = () => {
@@ -70,10 +71,10 @@ export function Navigation({ onGetStarted }: NavigationProps) {
           {/* Desktop Actions - Right Side */}
           <div className="hidden md:flex items-center justify-end w-[160px]">
             <Button
-              onClick={onGetStarted}
-              className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg px-4 py-2 h-9 font-medium text-xs capitalize"
+              onClick={() => window.open('https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true', '_blank')}
+              className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg px-4 py-2 h-9 font-medium text-xs"
             >
-              Join Waitlist
+              Book a Demo
               <ArrowRight className="ml-2 h-3 w-3" />
             </Button>
           </div>
@@ -107,9 +108,9 @@ export function Navigation({ onGetStarted }: NavigationProps) {
               <div className="pt-3 space-y-2">
                 <Button
                   className="w-full bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg text-xs h-9"
-                  onClick={onGetStarted}
+                  onClick={() => window.open('https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true', '_blank')}
                 >
-                  Join Waitlist
+                  Book a Demo
                   <ArrowRight className="ml-2 h-3 w-3" />
                 </Button>
               </div>
