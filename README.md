@@ -1,2 +1,2 @@
 # landing-page
-# grantfinder-landing-page
+# GrantWare AI-landing-page
