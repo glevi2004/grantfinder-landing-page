@@ -51,14 +51,14 @@ export default function AboutPage() {
       name: "Dr. Rebecca Aviles",
       role: "Assistant Superintendent for Elementary Education",
       description:
-        "Dr. Rebecca Aviles-Rodriguez is a dedicated educator and servant leader with over 20+ years of experience who has utilized her unique experiences serving diverse communities to implement rigorous academic programming, support data-driven school cultures, and spearhead the mentorship and growth of administrative teams through her eclectic style of leadership. Currently serving at Peekskill City School District.",
+        "Dr. Rebecca Aviles is a dedicated educator and servant leader with over 20+ years of experience who has utilized her unique experiences serving diverse communities to implement rigorous academic programming, support data-driven school cultures, and spearhead the mentorship and growth of administrative teams through her eclectic style of leadership. Currently serving at Peekskill City School District.",
       image: "/Rebecca-Aviles.jpeg",
     },
     {
       name: "Robert Rodriguez",
       role: "Assistant Superintendent for Human Resources",
       description:
-        "Robert Rodriguez is a decorated and recognized educator with over 20+ years of experience, currently serving as Assistant Superintendent of Schools in the Uniondale Union Free School District. His extensive background in educational leadership and human resources brings invaluable insight to GrantWare AI.",
+        "Robert Rodriguez is a decorated and recognized educator with over 20+ years of experience, currently serving as Assistant Superintendent of Schools in the Uniondale Union Free School District.",
       image: "/Robert Rodriguez New.JPG",
     },
     {

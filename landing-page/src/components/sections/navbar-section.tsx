@@ -2,9 +2,9 @@
 
 import { Menu } from "lucide-react";
 import { ReactNode } from "react";
+import { useRouter } from "next/navigation";
 
 import { Button, type ButtonProps } from "@/components/ui/button";
-import { ModeToggle } from "@/components/ui/mode-toggle";
 import {
   Navbar as NavbarComponent,
   NavbarLeft,
@@ -17,13 +17,10 @@ import {
   NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
 import { GrantWareLogo } from "@/components/ui/grantware-logo";
-import { ShineBorder } from "@/components/ui/shine-border";
-import { useBackgroundPattern } from "@/contexts/background-pattern-context";
 
 interface NavItem {
   title: string;
@@ -53,8 +50,6 @@ interface NavbarProps {
 export default function NavbarSection({
   logo,
   name = "GrantWare AI",
-  homeUrl = "/",
-  showThemeToggle = true,
   actions = [
     {
       text: "Book a Call",
@@ -67,7 +62,7 @@ export default function NavbarSection({
   ],
   className,
 }: NavbarProps = {}) {
-  const { pattern, setPattern } = useBackgroundPattern();
+  const router = useRouter();
   
   const featuresItems: NavItem[] = [
     {
@@ -121,12 +116,19 @@ export default function NavbarSection({
   ];
 
   const scrollToCTA = () => {
-    const element = document.querySelector("#cta");
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
+    // Check if we're on the about page
+    if (window.location.pathname === "/about") {
+      // Navigate to home page with CTA hash for smooth scrolling
+      router.push("/#cta");
+    } else {
+      // On home page, scroll to CTA section
+      const element = document.querySelector("#cta");
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
     }
   };
 
