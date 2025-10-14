@@ -1,22 +1,9 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Source_Serif_4 } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
-const sourceSerif = Source_Serif_4({
-  variable: "--font-source-serif",
-  subsets: ["latin"],
-  weight: ["400", "600", "700"],
-});
+import { ThemeProvider } from "@/components/contexts/theme-provider";
+import { BackgroundPatternProvider } from "@/contexts/background-pattern-context";
+import { geistSans, geistMono, sourceSerif } from "@/lib/fonts";
 
 export const metadata: Metadata = {
   title: "GrantWare AI - AI-Powered Grant Management for K-12 Districts",
@@ -30,11 +17,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <BackgroundPatternProvider>
+            {children}
+          </BackgroundPatternProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

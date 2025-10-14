@@ -10,6 +10,9 @@ import {
   ArrowRight,
 } from "lucide-react";
 
+import { Section } from "@/components/ui/section";
+import { cn } from "@/lib/utils";
+
 interface Tab {
   id: string;
   label: string;
@@ -23,77 +26,88 @@ interface FeatureContent {
   imageUrl?: string;
 }
 
-const tabs: Tab[] = [
-  { id: "discovery", label: "Discovery", icon: Search },
-  { id: "writing", label: "Writing", icon: PenLine },
-  { id: "management", label: "Management", icon: Clock },
-];
+interface FeatureSectionProps {
+  title?: React.ReactNode;
+  subtitle?: string;
+  tabs?: Tab[];
+  featureContent?: Record<string, FeatureContent>;
+  defaultTab?: string;
+  className?: string;
+}
 
-const featureContent: Record<string, FeatureContent> = {
-  discovery: {
-    title: "Unified Grant Discovery",
-    description:
-      "We match grants to your district's needs and demographics, delivering the best fits in minutes not hours. Or just ask our AI for a specific grant and we'll locate it for you.",
-    benefits: [
-      "One search across federal, state, and foundations",
-      "Best-fit matches based on your district profile",
-      "Plain-English reasons why each grant fits",
-      "Start a project with tasks and deadlines in one click",
-    ],
-    imageUrl: "/features/discovery.png",
+export function FeatureSection({
+  title = (
+    <>
+      Everything you need to{" "}
+      <span className="text-primary">win more Grants</span>
+    </>
+  ),
+  subtitle = "From discovery to submission, GrantWare AI streamlines every step of your grant management process with intelligent automation and collaborative tools.",
+  tabs = [
+    { id: "discovery", label: "Discovery", icon: Search },
+    { id: "writing", label: "Writing", icon: PenLine },
+    { id: "management", label: "Management", icon: Clock },
+  ],
+  featureContent = {
+    discovery: {
+      title: "Unified Grant Discovery",
+      description:
+        "We match grants to your district's needs and demographics, delivering the best fits in minutes not hours. Or just ask our AI for a specific grant and we'll locate it for you.",
+      benefits: [
+        "One search across federal, state, and foundations",
+        "Best-fit matches based on your district profile",
+        "Plain-English reasons why each grant fits",
+        "Start a project with tasks and deadlines in one click",
+      ],
+      imageUrl: "/features/discovery.png",
+    },
+    writing: {
+      title: "Guided Grant Writing",
+      description:
+        "Turn a high-fit match into a complete proposal. We generate a first draft from the funder's RFP—you stay in control to edit, add context, and finalize.",
+      benefits: [
+        "Full draft built from the RFP, tailored to your district profile",
+        "Use AI to edit, rewrite, or insert in district content",
+        "Integrates with Google Workspace and Microsoft 365",
+        "Reuse past winning applications.",
+      ],
+      imageUrl: "/features/writing.png",
+    },
+    management: {
+      title: "Intelligent Grant Management",
+      description:
+        "An agentic platform that keeps everything moving—opportunities, tasks, deadlines, and files—in one place. You won't need another tool.",
+      benefits: [
+        "New opportunity alerts tailored to your district",
+        "Smart timelines, milestones, and tasks",
+        "Roles & permissions for your team",
+        "Share files and comments without leaving the app",
+      ],
+      imageUrl: "/features/management.png",
+    },
   },
-  writing: {
-    title: "Guided Grant Writing",
-    description:
-      "Turn a high-fit match into a complete proposal. We generate a first draft from the funder's RFP—you stay in control to edit, add context, and finalize.",
-    benefits: [
-      "Full draft built from the RFP, tailored to your district profile",
-      "Use AI to edit, rewrite, or insert in district content",
-      "Integrates with Google Workspace and Microsoft 365",
-      "Reuse past winning applications.",
-    ],
-    imageUrl: "/features/writing.png",
-  },
-  management: {
-    title: "Intelligent Grant Management",
-    description:
-      "An agentic platform that keeps everything moving—opportunities, tasks, deadlines, and files—in one place. You won't need another tool.",
-    benefits: [
-      "New opportunity alerts tailored to your district",
-      "Smart timelines, milestones, and tasks",
-      "Roles & permissions for your team",
-      "Share files and comments without leaving the app",
-    ],
-    imageUrl: "/features/management.png",
-  },
-};
-
-export function FeatureSection() {
-  const [activeTab, setActiveTab] = useState("discovery");
+  defaultTab = "discovery",
+  className,
+}: FeatureSectionProps) {
+  const [activeTab, setActiveTab] = useState(defaultTab);
 
   const handleTabClick = (tabId: string) => {
     setActiveTab(tabId);
   };
 
   return (
-    <section
-      className="py-20 bg-[#F1ECE5]"
+    <Section
+      className={cn("bg-muted/30", className)}
       id="features"
-      style={{
-        backgroundSize: "20px 20px",
-      }}
     >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-container mx-auto">
         {/* Section Header */}
-        <div className="max-w-6xl mx-auto text-center mb-8">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight font-[family-name:var(--font-source-serif)] text-[#696969] capitalize">
-            Everything you need to{" "}
-            <span className="text-[#5A8BF2]">win more Grants</span>
+        <div className="max-w-6xl mx-auto text-center mb-12">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 leading-tight font-[family-name:var(--font-source-serif)] text-muted-foreground">
+            {title}
           </h2>
-          <p className="text-base sm:text-lg text-[#696969] leading-relaxed max-w-5xl mx-auto">
-            From discovery to submission, GrantWare AI streamlines every step of
-            your grant management process with intelligent automation and
-            collaborative tools.
+          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-5xl mx-auto">
+            {subtitle}
           </p>
         </div>
 
@@ -101,6 +115,9 @@ export function FeatureSection() {
         <div className="flex items-center justify-center gap-6 mb-8 px-6 py-3">
           {tabs.map((tab, index) => {
             const Icon = tab.icon;
+            const tabIndex = tabs.findIndex(t => t.id === tab.id);
+            const activeIndex = tabs.findIndex(t => t.id === activeTab);
+            const isActive = tabIndex <= activeIndex;
 
             return (
               <div key={tab.id} className="flex items-center gap-6">
@@ -109,39 +126,31 @@ export function FeatureSection() {
                   className="flex flex-col items-center gap-2 transition-all duration-300"
                 >
                   <div
-                    className={`p-4 rounded-full transition-all duration-300 ${
-                      (activeTab === "discovery" && tab.id === "discovery") ||
-                      (activeTab === "writing" &&
-                        (tab.id === "discovery" || tab.id === "writing")) ||
-                      activeTab === "management"
-                        ? "bg-[#5A8BF2] shadow-lg"
-                        : "bg-[#E9E9EB] border-2 border-[#D7D9DD]"
-                    }`}
+                    className={cn(
+                      "p-4 rounded-full transition-all duration-300",
+                      isActive
+                        ? "bg-primary shadow-lg"
+                        : "bg-muted border-2 border-border"
+                    )}
                   >
                     <Icon
-                      className={`h-6 w-6 ${
-                        (activeTab === "discovery" && tab.id === "discovery") ||
-                        (activeTab === "writing" &&
-                          (tab.id === "discovery" || tab.id === "writing")) ||
-                        activeTab === "management"
-                          ? "text-[#F9F6F3]"
-                          : "text-[#696969]"
-                      }`}
+                      className={cn(
+                        "h-6 w-6",
+                        isActive ? "text-primary-foreground" : "text-muted-foreground"
+                      )}
                     />
                   </div>
-                  <p className="text-base sm:text-lg text-[#696969] font-normal">
+                  <p className="text-base sm:text-lg text-muted-foreground font-normal">
                     {tab.label}
                   </p>
                 </button>
 
                 {index < tabs.length - 1 && (
                   <ArrowRight
-                    className={`h-6 w-6 transition-colors duration-300 ${
-                      (activeTab === "writing" && index === 0) ||
-                      activeTab === "management"
-                        ? "text-[#5A8BF2]"
-                        : "text-[#D7D9DD]"
-                    }`}
+                    className={cn(
+                      "h-6 w-6 transition-colors duration-300",
+                      activeIndex > index ? "text-primary" : "text-border"
+                    )}
                   />
                 )}
               </div>
@@ -151,21 +160,21 @@ export function FeatureSection() {
 
         {/* Feature Content */}
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-8 px-7">
+          <div className="flex flex-col lg:flex-row items-center gap-8">
             {/* Left Side - Content */}
             <div className="flex-1 flex flex-col gap-8 py-4">
               <div className="flex flex-col gap-5">
-                <h3 className="text-xl sm:text-2xl font-semibold font-[family-name:var(--font-source-serif)] text-[#696969] capitalize leading-tight">
+                <h3 className="text-xl sm:text-2xl font-semibold font-[family-name:var(--font-source-serif)] text-foreground leading-tight">
                   {featureContent[activeTab].title}
                 </h3>
-                <p className="text-base sm:text-lg text-[#696969] leading-relaxed">
+                <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                   {featureContent[activeTab].description}
                 </p>
                 <div className="flex flex-col gap-3 p-3">
                   {featureContent[activeTab].benefits.map((benefit, index) => (
                     <div key={index} className="flex items-center gap-3">
-                      <CircleCheckBig className="h-5 w-5 text-[#5A8BF2] flex-shrink-0" />
-                      <p className="text-base sm:text-lg text-[#696969]">
+                      <CircleCheckBig className="h-5 w-5 text-primary flex-shrink-0" />
+                      <p className="text-base sm:text-lg text-muted-foreground">
                         {benefit}
                       </p>
                     </div>
@@ -174,16 +183,11 @@ export function FeatureSection() {
               </div>
 
               {/* Progress Bar */}
-              <div className="w-full max-w-[500px] h-2.5 bg-[#E9E9EB] rounded-full overflow-hidden">
+              <div className="w-full max-w-[500px] h-2.5 bg-muted rounded-full overflow-hidden">
                 <div
-                  className="h-full bg-[#5A8BF2] rounded-full transition-all duration-500 ease-in-out"
+                  className="h-full bg-primary rounded-full transition-all duration-500 ease-in-out"
                   style={{
-                    width:
-                      activeTab === "discovery"
-                        ? "33.33%"
-                        : activeTab === "writing"
-                        ? "66.67%"
-                        : "100%",
+                    width: `${((tabs.findIndex(t => t.id === activeTab) + 1) / tabs.length) * 100}%`,
                   }}
                 />
               </div>
@@ -191,7 +195,7 @@ export function FeatureSection() {
 
             {/* Right Side - Image */}
             <div className="flex-1 h-[350px] min-w-[280px]">
-              <div className="w-full h-full rounded-2xl overflow-hidden relative">
+              <div className="w-full h-full rounded-2xl overflow-hidden relative border border-border shadow-lg">
                 <Image
                   src={
                     featureContent[activeTab].imageUrl ||
@@ -206,6 +210,6 @@ export function FeatureSection() {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 }

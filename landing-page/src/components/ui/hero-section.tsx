@@ -1,186 +1,48 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, ChevronDown } from "lucide-react";
-import { useState, useEffect } from "react";
-import { Navigation } from "@/components/layout/navigation";
+import { ArrowRight } from "lucide-react";
 
 interface HeroSectionProps {
   onLearnMore?: () => void;
 }
 
-const words = ["Discover", "Write", "Manage"];
-
 export function HeroSection({ onLearnMore }: HeroSectionProps) {
-  const [currentWordIndex, setCurrentWordIndex] = useState(0);
-  const [isFlipping, setIsFlipping] = useState(false);
-  const [showScrollButton, setShowScrollButton] = useState(false);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIsFlipping(true);
-      setTimeout(() => {
-        setCurrentWordIndex((prev) => (prev + 1) % words.length);
-        setIsFlipping(false);
-      }, 400); // Half of the flip animation duration
-    }, 3000); // Change word every 3 seconds
-
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    // Show scroll button after 2 seconds
-    const timer = setTimeout(() => {
-      setShowScrollButton(true);
-    }, 2000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const scrollToFeatures = () => {
-    const element = document.querySelector("#features");
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  };
 
   return (
-    <section className="relative overflow-hidden bg-[#F1ECE5] h-screen flex flex-col">
-      {/* Grid Background Layer - Upper Portion Only */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `radial-gradient(circle, #D1D1D1 1px, transparent 1px)`,
-          backgroundSize: "20px 20px",
-          backgroundPosition: "0 0",
-          maskImage:
-            "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
-          WebkitMaskImage:
-            "linear-gradient(to bottom, black 0%, black 60%, transparent 100%)",
-        }}
-      />
-
-      {/* Navigation */}
-      <Navigation />
-
-      <style jsx>{`
-        @keyframes flipIn {
-          0% {
-            transform: rotateX(90deg);
-            opacity: 0;
-          }
-          100% {
-            transform: rotateX(0deg);
-            opacity: 1;
-          }
-        }
-        @keyframes flipOut {
-          0% {
-            transform: rotateX(0deg);
-            opacity: 1;
-          }
-          100% {
-            transform: rotateX(-90deg);
-            opacity: 0;
-          }
-        }
-        @keyframes bounceDown {
-          0%,
-          20%,
-          50%,
-          80%,
-          100% {
-            transform: translateY(0);
-          }
-          40% {
-            transform: translateY(-10px);
-          }
-          60% {
-            transform: translateY(-5px);
-          }
-        }
-        @keyframes fadeInUp {
-          0% {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .flip-enter {
-          animation: flipIn 0.4s ease-out forwards;
-        }
-        .flip-exit {
-          animation: flipOut 0.4s ease-in forwards;
-        }
-        .bounce-down {
-          animation: bounceDown 2s infinite;
-        }
-        .fade-in-up {
-          animation: fadeInUp 0.6s ease-out forwards;
-        }
-      `}</style>
-
-      {/* Hero Content - Centered */}
-      <div className="flex-1 flex items-center justify-center pt-10 relative z-10">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto text-center">
-            {/* Backed by Red Hat Badge */}
-            <div className="inline-flex items-center bg-white/30 backdrop-blur-sm rounded-lg px-8 py-2 mb-8 shadow-sm border border-gray-200/20">
-              <span className="text-sm font-medium text-gray-700 mr-4">
-                Backed by
+    <section className="relative bg-white h-[1393px] max-w-[1312px] mx-auto">
+      <div className="flex flex-col items-center h-full">
+        <div className="flex flex-col gap-24 h-full pt-20 pb-0 px-8 w-full">
+          {/* Content */}
+          <div className="flex flex-col gap-12 items-center relative z-10 w-full">
+            {/* Badge */}
+            <div className="flex gap-2 items-center justify-center px-2.5 py-1 rounded-full border border-zinc-200">
+              <span className="text-zinc-500 font-semibold text-xs leading-4">
+                Built By School Districts For School Districts
               </span>
-              <div className="w-20 h-0 flex items-center justify-center">
-                <img
-                  src="/Red_Hat_Logo_2019.svg.png"
-                  alt="Red Hat Logo"
-                  className="w-20 h-20 object-contain"
-                />
-              </div>
+              <a
+                href="#"
+                className="flex gap-1 items-center cursor-pointer"
+              >
+                <span className="text-zinc-950 font-semibold text-xs leading-4">
+                  Read more
+                </span>
+                <ArrowRight className="h-3 w-3" />
+              </a>
             </div>
 
             {/* Main Heading */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight font-[family-name:var(--font-source-serif)] capitalize">
-              <span className="text-[#5a8bf2]">
-                <span
-                  className="inline-block text-center"
-                  style={{
-                    minWidth: "200px",
-                    verticalAlign: "top",
-                  }}
-                >
-                  <span
-                    className={`inline-block ${
-                      isFlipping ? "flip-exit" : "flip-enter"
-                    }`}
-                    style={{
-                      transformStyle: "preserve-3d",
-                      perspective: "1000px",
-                    }}
-                  >
-                    {words[currentWordIndex]}
-                  </span>
-                </span>{" "}
-                the Perfect Grants{" "}
-              </span>
-              <span className="text-[#696969]">for Your School District</span>
+            <h1 className="bg-gradient-to-r from-zinc-950 to-zinc-950 bg-clip-text text-transparent font-semibold leading-none text-[76px] text-center w-full whitespace-pre-wrap font-[family-name:var(--font-source-serif)]">
+              Discover The Perfect Grants For Your School District
             </h1>
 
             {/* Subheading */}
-            <p className="text-base sm:text-lg text-[#4A4A4A] mb-6 max-w-2xl mx-auto leading-relaxed">
-              Discover high-fit opportunities, get AI-powered eligibility
-              analysis, and manage the entire grant lifecycle in one intelligent
-              platform designed for education leaders.
+            <p className="font-medium leading-7 text-xl text-center text-zinc-500 w-[544px] whitespace-pre-wrap font-[family-name:var(--font-geist-sans)]">
+              Discover high-fit opportunities, get AI-powered eligibility analysis, and manage the entire grant lifecycle in one intelligent platform designed for education leaders.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex gap-4 items-start">
               <Button
-                size="lg"
-                className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-white px-6 py-2.5 text-base rounded-lg"
+                className="bg-gradient-to-b from-zinc-900 to-zinc-900/80 hover:from-zinc-800 hover:to-zinc-800/80 text-white rounded-md px-4 py-2 h-9 font-medium text-sm shadow-sm"
                 onClick={() =>
                   window.open(
                     "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
@@ -188,33 +50,45 @@ export function HeroSection({ onLearnMore }: HeroSectionProps) {
                   )
                 }
               >
-                Book a Demo
-                <ArrowRight className="ml-2 h-4 w-4" />
+                Book a Call
               </Button>
               <Button
                 variant="outline"
-                size="lg"
-                className="border-[#5A8BF2] text-[#5A8BF2] hover:bg-blue-50 px-6 py-2.5 text-base rounded-lg"
+                className="bg-gradient-to-t from-zinc-50 to-zinc-100 border border-zinc-200 hover:bg-zinc-100 text-zinc-950 rounded-md px-4 py-2 h-9 font-medium text-sm"
                 onClick={onLearnMore}
               >
                 Learn More
               </Button>
             </div>
           </div>
+
+          {/* Illustration */}
+          <div className="flex-1 min-h-0 min-w-0 relative rounded-xl w-full z-0">
+            {/* Glows */}
+            <div className="absolute h-[1069px] left-[-217px] right-[-248px] top-[-285px]">
+              <div className="w-full h-full bg-gradient-to-br from-primary/20 to-primary/10 rounded-full blur-3xl" />
+            </div>
+
+            {/* Frame */}
+            <div className="absolute bg-zinc-50 flex flex-col gap-2.5 items-start left-0 pb-0 pt-2 px-2 right-0 rounded-2xl top-0">
+              <div className="aspect-[1232/753] pointer-events-none relative rounded-lg w-full">
+                <div className="absolute inset-0 rounded-lg">
+                  {/* Placeholder for the main illustration */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-zinc-100 to-zinc-200 rounded-lg flex items-center justify-center">
+                    <div className="text-zinc-500 text-lg font-medium">
+                      Grant Management Dashboard
+                    </div>
+                  </div>
+                </div>
+                <div className="absolute border border-white inset-0 rounded-lg" />
+              </div>
+            </div>
+
+            {/* Fade */}
+            <div className="absolute bg-gradient-to-b from-transparent inset-0 to-white/90 to-[85.5%]" />
+          </div>
         </div>
       </div>
-
-      {/* Scroll Indicator Button */}
-      {showScrollButton && (
-        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 z-20">
-          <button
-            onClick={scrollToFeatures}
-            className="w-10 h-10 rounded-full bg-white/60 backdrop-blur-sm border border-white/50 hover:bg-white/80 transition-all duration-300 flex items-center justify-center group fade-in-up"
-          >
-            <ChevronDown className="h-5 w-5 text-[#696969] group-hover:text-[#5A8BF2] transition-colors duration-300 bounce-down" />
-          </button>
-        </div>
-      )}
     </section>
   );
 }

@@ -2,16 +2,15 @@
 
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight } from "lucide-react";
-// import { cn } from "@/lib/utils";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 export function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "#features", label: "Features" },
-    { href: "#faq", label: "FAQs" },
-    { href: "#cta", label: "Contributor Program" },
+    { href: "#features", label: "Features", hasDropdown: true },
+    { href: "#faq", label: "FAQs", hasDropdown: true },
+    { href: "#about", label: "About", hasDropdown: false },
   ];
 
   const scrollToTop = () => {
@@ -35,94 +34,98 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="bg-white/80 backdrop-blur-md rounded-xl px-4 py-2 flex h-14 items-center justify-between shadow-sm">
-          {/* Logo - Left Side */}
-          <div className="flex items-center space-x-2 w-[160px]">
+        <div className="bg-white max-w-[1312px] mx-auto">
+          <div className="flex items-center justify-between px-8 py-4">
+            {/* Logo - Left Side */}
+            <div className="flex items-center">
+              <button
+                onClick={scrollToTop}
+                className="flex items-center hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+              >
+                <span className="text-zinc-950 font-bold text-lg font-[family-name:var(--font-geist-sans)]">
+                  GrantWare AI
+                </span>
+              </button>
+            </div>
+
+            {/* Desktop Navigation - Center */}
+            <div className="hidden md:flex items-center space-x-2">
+              {navLinks.map((link) => (
+                <div key={link.href} className="flex items-center">
+                  <button
+                    onClick={() => handleNavClick(link.href)}
+                    className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-zinc-100 transition-colors duration-200 text-zinc-950 font-medium text-sm"
+                  >
+                    {link.label}
+                    {link.hasDropdown && (
+                      <ChevronDown className="h-3 w-3" />
+                    )}
+                  </button>
+                </div>
+              ))}
+            </div>
+
+            {/* Desktop Actions - Right Side */}
+            <div className="hidden md:flex items-center">
+              <Button
+                onClick={() =>
+                  window.open(
+                    "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                    "_blank"
+                  )
+                }
+                className="bg-gradient-to-b from-zinc-900 to-zinc-900/80 hover:from-zinc-800 hover:to-zinc-800/80 text-white rounded-md px-4 py-2 h-9 font-medium text-sm shadow-sm"
+              >
+                Book a call
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
             <button
-              onClick={scrollToTop}
-              className="flex items-center space-x-1 hover:opacity-80 transition-opacity duration-200 cursor-pointer"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-zinc-950 hover:text-zinc-700 transition-colors duration-200"
             >
-              <span className="text-[#696969] font-bold text-lg font-[family-name:var(--font-source-serif)]">
-                GrantWare
-              </span>
-              <span className="text-[#5A8BF2] font-bold text-lg font-[family-name:var(--font-source-serif)]">
-                AI
-              </span>
+              {isMenuOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
 
-          {/* Desktop Navigation - Center */}
-          <div className="hidden md:flex items-center justify-center space-x-3 absolute left-1/2 transform -translate-x-1/2">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => handleNavClick(link.href)}
-                className="text-[#696969] hover:text-gray-900 transition-colors duration-200 font-medium text-sm capitalize px-4 py-2"
-              >
-                {link.label}
-              </button>
-            ))}
-          </div>
-
-          {/* Desktop Actions - Right Side */}
-          <div className="hidden md:flex items-center justify-end w-[160px]">
-            <Button
-              onClick={() =>
-                window.open(
-                  "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
-                  "_blank"
-                )
-              }
-              className="bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg px-4 py-2 h-9 font-medium text-xs"
-            >
-              Book a Demo
-              <ArrowRight className="ml-2 h-3 w-3" />
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-600 hover:text-gray-900 transition-colors duration-200"
-          >
-            {isMenuOpen ? (
-              <X className="h-6 w-6" />
-            ) : (
-              <Menu className="h-6 w-6" />
-            )}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-2 bg-white/80 backdrop-blur-md rounded-xl px-4 py-3 shadow-sm">
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => handleNavClick(link.href)}
-                  className="block w-full text-left px-3 py-2 text-[#696969] hover:text-gray-900 hover:bg-gray-50 rounded-md transition-colors duration-200 text-sm font-medium"
-                >
-                  {link.label}
-                </button>
-              ))}
-              <div className="pt-3 space-y-2">
-                <Button
-                  className="w-full bg-[#5A8BF2] hover:bg-[#4A6EDB] text-[#F5F5F5] rounded-lg text-xs h-9"
-                  onClick={() =>
-                    window.open(
-                      "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
-                      "_blank"
-                    )
-                  }
-                >
-                  Book a Demo
-                  <ArrowRight className="ml-2 h-3 w-3" />
-                </Button>
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-white border-t border-zinc-200">
+              <div className="px-8 py-4 space-y-2">
+                {navLinks.map((link) => (
+                  <button
+                    key={link.href}
+                    onClick={() => handleNavClick(link.href)}
+                    className="flex items-center justify-between w-full text-left px-3 py-2 text-zinc-950 hover:bg-zinc-50 rounded-md transition-colors duration-200 text-sm font-medium"
+                  >
+                    {link.label}
+                    {link.hasDropdown && (
+                      <ChevronDown className="h-4 w-4" />
+                    )}
+                  </button>
+                ))}
+                <div className="pt-4">
+                  <Button
+                    className="w-full bg-gradient-to-b from-zinc-900 to-zinc-900/80 hover:from-zinc-800 hover:to-zinc-800/80 text-white rounded-md text-sm h-9"
+                    onClick={() =>
+                      window.open(
+                        "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+                        "_blank"
+                      )
+                    }
+                  >
+                    Book a call
+                  </Button>
+                </div>
               </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
     </nav>
   );

@@ -1,37 +1,32 @@
 "use client";
-import { HeroSection } from "@/components/ui/hero-section";
-import { FeatureSection } from "@/components/ui/feature-section";
-// import { WaitlistCTASection } from "@/components/ui/waitlist-cta-section";
+
+import NavbarSection from "@/components/sections/navbar-section";
+import HeroSection from "@/components/sections/hero-section";
+import { PinnedFeaturesSection } from "@/components/ui/pinned-features-section";
 import { FAQSection } from "@/components/ui/faq-section";
 import { CTASection } from "@/components/ui/cta-section";
 import { Footer } from "@/components/layout/footer";
+import { BackgroundPatternProvider } from "@/contexts/background-pattern-context";
 
 export default function Home() {
-  const handleLearnMore = () => {
-    document.getElementById("features")?.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
-    <div className="min-h-screen bg-background">
-      <main>
-        <HeroSection onLearnMore={handleLearnMore} />
+    <BackgroundPatternProvider>
+      <main className="min-h-screen w-full overflow-hidden bg-background text-foreground">
+        <NavbarSection />
+        <HeroSection />
+      
+      <PinnedFeaturesSection />
 
-        <div id="features">
-          <FeatureSection />
-        </div>
+      <div id="faq">
+        <FAQSection />
+      </div>
 
-        {/* <WaitlistCTASection onSubmit={handleJoinWaitlist} /> */}
+      <div id="cta">
+        <CTASection />
+      </div>
 
-        <div id="faq">
-          <FAQSection />
-        </div>
-
-        <div id="cta">
-          <CTASection onScheduleDemo={handleLearnMore} />
-        </div>
+        <Footer />
       </main>
-
-      <Footer />
-    </div>
+    </BackgroundPatternProvider>
   );
 }
