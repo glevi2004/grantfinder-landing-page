@@ -22,9 +22,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
       >
         <ThemeProvider>
-          <BackgroundPatternProvider>
-            {children}
-          </BackgroundPatternProvider>
+          <BackgroundPatternProvider>{children}</BackgroundPatternProvider>
         </ThemeProvider>
       </body>
     </html>

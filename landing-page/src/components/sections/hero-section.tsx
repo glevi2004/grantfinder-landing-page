@@ -1,18 +1,15 @@
 "use client";
 
-import { ArrowRightIcon } from "lucide-react";
+import { Menu } from "lucide-react";
 import Image from "next/image";
 import { ReactNode } from "react";
 
-import { Badge } from "@/components/ui/badge";
 import { Button, type ButtonProps } from "@/components/ui/button";
 import Glow from "@/components/ui/glow";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import { Section } from "@/components/ui/section";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
-import { BackgroundBeams } from "@/components/ui/background-beams";
-import { useBackgroundPattern } from "@/contexts/background-pattern-context";
 
 interface HeroButtonProps {
   text: string;
@@ -47,24 +44,7 @@ export default function HeroSection({
       priority
     />
   ),
-  badge = (
-    <Badge 
-      variant="outline" 
-      className="animate-appear border-border/20 bg-background/80 backdrop-blur-md shadow-lg hover:bg-background/90 transition-all duration-300"
-    >
-      <span className="text-muted-foreground text-xs font-semibold">
-        Built By School Districts For School Districts
-      </span>
-      <span className="mx-2 text-muted-foreground/50">•</span>
-      <a 
-        href="#about" 
-        className="flex items-center gap-1 text-foreground text-xs font-semibold hover:text-primary transition-colors duration-200"
-      >
-        Read more
-        <ArrowRightIcon className="size-3" />
-      </a>
-    </Badge>
-  ),
+  badge = false,
   buttons = [
     {
       text: "Book a Call",
@@ -86,45 +66,175 @@ export default function HeroSection({
   ],
   className,
 }: HeroProps) {
-  const { pattern } = useBackgroundPattern();
+  const scrollToSection = (href: string) => {
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "start",
+        });
+      }
+    }
+  };
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <Section
       className={cn(
-        "fade-bottom overflow-hidden pb-0 sm:pb-0 md:pb-0 relative isolate",
-        className,
+        "overflow-hidden pt-0 pb-0 sm:pt-0 sm:pb-0 md:pt-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
+        className
       )}
     >
-      {/* Background Patterns - Extend behind navbar */}
-      {pattern === "grid" && (
-        <InteractiveGridPattern
-          className={cn(
-            "fixed inset-0 w-full h-screen -z-10"
-          )}
-          numSquares={70}
-          maxOpacity={1.0}
-          width={50}
-          height={50}
-        />
-      )}
-      {pattern === "beams" && (
-        <div className="fixed inset-0 w-full h-screen -z-10">
-          <BackgroundBeams />
+      {/* Base blue gradient - matching Cluely's hero with faster transition to lighter tones */}
+      {/* Navbar */}
+      <nav className="w-full mb-12">
+        <div className="container mx-auto px-6 md:px-12 lg:px-18 py-4">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <button
+              onClick={scrollToTop}
+              className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            >
+              <span className="font-sans text-xl font-bold text-white">
+                GrantWare <span className="text-white/90">AI</span>
+              </span>
+            </button>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-1">
+              <button
+                onClick={() => scrollToSection("#features")}
+                className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
+              >
+                Pricing
+              </button>
+              <button
+                onClick={() => scrollToSection("#faq")}
+                className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
+              >
+                Enterprise
+              </button>
+              <button
+                onClick={() => {
+                  if (window.location.pathname === "/about") {
+                    window.scrollTo({ top: 0, behavior: "smooth" });
+                  } else {
+                    window.location.href = "/about";
+                  }
+                }}
+                className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
+              >
+                Careers
+              </button>
+              <button
+                onClick={() => scrollToSection("#faq")}
+                className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
+              >
+                Blog
+              </button>
+            </div>
+
+            {/* CTA Button & Mobile Menu */}
+            <div className="flex items-center gap-4">
+              <Button
+                asChild
+                className="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg"
+              >
+                <a
+                  href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a Call
+                </a>
+              </Button>
+
+              {/* Mobile Menu */}
+              <Sheet>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    size="icon"
+                    className="shrink-0 md:hidden text-white hover:bg-white/10"
+                  >
+                    <Menu className="size-5" />
+                    <span className="sr-only">Toggle navigation menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right">
+                  <nav className="grid gap-6 text-lg font-medium">
+                    <button
+                      onClick={scrollToTop}
+                      className="flex items-center gap-2 text-xl font-bold"
+                    >
+                      <span className="font-sans text-xl font-bold">
+                        GrantWare <span className="text-primary">AI</span>
+                      </span>
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("#features")}
+                      className="text-muted-foreground hover:text-foreground text-left"
+                    >
+                      Pricing
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("#faq")}
+                      className="text-muted-foreground hover:text-foreground text-left"
+                    >
+                      Enterprise
+                    </button>
+                    <button
+                      onClick={() => (window.location.href = "/about")}
+                      className="text-muted-foreground hover:text-foreground text-left"
+                    >
+                      Careers
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("#faq")}
+                      className="text-muted-foreground hover:text-foreground text-left"
+                    >
+                      Blog
+                    </button>
+                    <Button
+                      variant="default"
+                      size="lg"
+                      asChild
+                      className="mt-4 bg-blue-600 hover:bg-blue-700"
+                    >
+                      <a
+                        href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Book a Call
+                      </a>
+                    </Button>
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
         </div>
-      )}
-      
+      </nav>
       <div className="max-w-container mx-auto flex flex-col gap-12 pt-[0px] sm:gap-16">
         <div className="flex flex-col items-center gap-8 text-center sm:gap-12 z-[2] relative">
           {/* Badge */}
           {badge !== false && badge}
 
           {/* Main Heading */}
-          <h1 className="animate-appear from-foreground to-foreground dark:to-muted-foreground relative z-10 inline-block bg-linear-to-r bg-clip-text text-5xl leading-none font-semibold text-balance text-transparent drop-shadow-[0_25px_50px_rgba(0,0,0,0.25)] sm:text-6xl sm:leading-none md:text-[76px] md:leading-none font-[family-name:var(--font-source-serif)] max-w-[1248px]">
+          <h1 className="animate-appear relative z-10 inline-block text-5xl leading-none font-semibold text-balance text-white sm:text-6xl sm:leading-none md:text-[76px] md:leading-none font-[family-name:var(--font-source-serif)] max-w-[1248px]">
             {title}
           </h1>
 
           {/* Description */}
-          <p className="animate-appear text-muted-foreground relative z-10 max-w-[544px] font-medium text-balance opacity-0 delay-100 text-xl leading-7">
+          <p className="animate-appear text-white relative z-10 max-w-[544px] font-medium text-balance opacity-0 delay-100 text-xl leading-7">
             {description}
           </p>
 

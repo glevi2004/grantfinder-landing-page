@@ -110,10 +110,10 @@
 :root {
   /* Brand colors - Using GrantWare AI Blue instead of orange */
   --brand: #5a8bf2;
-  --brand-foreground: #7CB3FF;
+  --brand-foreground: #7cb3ff;
 
   /* Customized shadcn/ui colors */
-  --background: #FFFFFF;
+  --background: #ffffff;
   --foreground: #09090b;
   --card: #ffffff;
   --card-foreground: #09090b;
@@ -158,7 +158,7 @@
 
 .dark {
   /* Brand colors - Using GrantWare AI Blue */
-  --brand: #7CB3FF;
+  --brand: #7cb3ff;
   --brand-foreground: #5a8bf2;
 
   /* Customized shadcn/ui colors */
@@ -209,7 +209,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply text-foreground antialiased;
   }
 }
 

@@ -34,7 +34,7 @@ export function Navigation() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 w-full">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div className="bg-white max-w-[1312px] mx-auto">
+        <div className="max-w-[1312px] mx-auto">
           <div className="flex items-center justify-between px-8 py-4">
             {/* Logo - Left Side */}
             <div className="flex items-center">
@@ -57,9 +57,7 @@ export function Navigation() {
                     className="flex items-center gap-2 px-4 py-2 rounded-md hover:bg-zinc-100 transition-colors duration-200 text-zinc-950 font-medium text-sm"
                   >
                     {link.label}
-                    {link.hasDropdown && (
-                      <ChevronDown className="h-3 w-3" />
-                    )}
+                    {link.hasDropdown && <ChevronDown className="h-3 w-3" />}
                   </button>
                 </div>
               ))}
@@ -104,9 +102,7 @@ export function Navigation() {
                     className="flex items-center justify-between w-full text-left px-3 py-2 text-zinc-950 hover:bg-zinc-50 rounded-md transition-colors duration-200 text-sm font-medium"
                   >
                     {link.label}
-                    {link.hasDropdown && (
-                      <ChevronDown className="h-4 w-4" />
-                    )}
+                    {link.hasDropdown && <ChevronDown className="h-4 w-4" />}
                   </button>
                 ))}
                 <div className="pt-4">
