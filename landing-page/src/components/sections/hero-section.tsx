@@ -11,6 +11,7 @@ import { Section } from "@/components/ui/section";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { GrantConnectionsBeam } from "@/components/ui/grant-connections-beam";
 import TypingText from "@/components/ui/shadcn-io/typing-text/index";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
 import { cn } from "@/lib/utils";
 
 interface HeroButtonProps {
@@ -47,7 +48,7 @@ export default function HeroSection({
   badge = false,
   buttons = [
     {
-      text: "Book a Call",
+      text: "Book Your 15-Minute Demo",
       href: "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
       variant: "default",
       target: "_blank",
@@ -94,7 +95,7 @@ export default function HeroSection({
     >
       {/* Base blue gradient - matching Cluely's hero with faster transition to lighter tones */}
       {/* Navbar */}
-      <nav className="w-full mb-12">
+      <nav className="w-full">
         <div className="container mx-auto py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
@@ -255,34 +256,38 @@ export default function HeroSection({
             {/* CTA Buttons */}
             {buttons !== false && buttons.length > 0 && (
               <div className="animate-appear relative z-10 flex justify-center lg:justify-start gap-4 opacity-0 delay-300">
-                {buttons.map((button, index) => (
-                  <Button
-                    key={index}
-                    variant={button.variant || "default"}
-                    size="lg"
-                    className="h-10 px-5"
-                    asChild={!!button.href}
-                    onClick={button.onClick}
-                  >
-                    {button.href ? (
-                      <a
-                        href={button.href}
-                        target={button.target}
-                        rel={button.rel}
-                      >
-                        {button.icon}
-                        {button.text}
-                        {button.iconRight}
-                      </a>
-                    ) : (
-                      <>
-                        {button.icon}
-                        {button.text}
-                        {button.iconRight}
-                      </>
-                    )}
-                  </Button>
-                ))}
+                {buttons.map((button, index) => {
+                  const ButtonComponent = index === 0 ? ShimmerButton : Button;
+
+                  return (
+                    <ButtonComponent
+                      key={index}
+                      variant={button.variant || "default"}
+                      size="lg"
+                      className="h-10 px-5"
+                      asChild={!!button.href}
+                      onClick={button.onClick}
+                    >
+                      {button.href ? (
+                        <a
+                          href={button.href}
+                          target={button.target}
+                          rel={button.rel}
+                        >
+                          {button.icon}
+                          {button.text}
+                          {button.iconRight}
+                        </a>
+                      ) : (
+                        <>
+                          {button.icon}
+                          {button.text}
+                          {button.iconRight}
+                        </>
+                      )}
+                    </ButtonComponent>
+                  );
+                })}
               </div>
             )}
           </div>
