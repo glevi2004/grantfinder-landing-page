@@ -144,10 +144,7 @@ export default function HeroSection({
 
             {/* CTA Button & Mobile Menu */}
             <div className="flex items-center gap-4">
-              <Button
-                asChild
-                className="hidden md:inline-flex bg-blue-600 hover:bg-blue-700 text-white font-medium shadow-lg"
-              >
+              <ShimmerButton asChild className="hidden md:inline-flex">
                 <a
                   href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
                   target="_blank"
@@ -155,7 +152,7 @@ export default function HeroSection({
                 >
                   Book a Call
                 </a>
-              </Button>
+              </ShimmerButton>
 
               {/* Mobile Menu */}
               <Sheet>
@@ -203,12 +200,7 @@ export default function HeroSection({
                     >
                       Blog
                     </button>
-                    <Button
-                      variant="default"
-                      size="lg"
-                      asChild
-                      className="mt-4 bg-blue-600 hover:bg-blue-700"
-                    >
+                    <ShimmerButton size="lg" asChild className="mt-4">
                       <a
                         href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
                         target="_blank"
@@ -216,7 +208,7 @@ export default function HeroSection({
                       >
                         Book a Call
                       </a>
-                    </Button>
+                    </ShimmerButton>
                   </nav>
                 </SheetContent>
               </Sheet>

@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import HeroSection from "@/components/sections/hero-section";
 import { PinnedFeaturesSection } from "@/components/ui/pinned-features-section";
+import AboutSection from "@/components/sections/about-section";
 import { FAQSection } from "@/components/ui/faq-section";
 import { CTASection } from "@/components/ui/cta-section";
 import { Footer } from "@/components/layout/footer";
@@ -43,6 +44,8 @@ export default function Home() {
         <HeroSection />
 
         <PinnedFeaturesSection />
+
+        <AboutSection />
 
         <div id="faq">
           <FAQSection />
