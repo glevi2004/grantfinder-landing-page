@@ -34,7 +34,7 @@ interface HeroProps {
 }
 
 export default function HeroSection({
-  description = "Discover high-fit opportunities, get AI-powered eligibility analysis, and manage the entire grant lifecycle in one intelligent platform designed for education leaders.",
+  description = "Discover high-fit opportunities, get AI-powered eligibility analysis, and manage the entire grant lifecycle in one intelligent platform.",
   mockup = (
     <Image
       src="/dashboard.png"

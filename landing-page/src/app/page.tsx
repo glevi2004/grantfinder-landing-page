@@ -69,7 +69,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Book a Call
+          Book a Demo
         </a>
       </ShimmerButton>
 
