@@ -246,7 +246,7 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.5 }}
             >
-              <h2 className="text-4xl font-bold font-[family-name:var(--font-source-serif)] text-white mb-14">
+              <h2 className="text-[#5788d8] md:text-white text-4xl font-bold font-[family-name:var(--font-source-serif)] mb-14">
                 Experience From
               </h2>
             </motion.div>
