@@ -9,14 +9,14 @@ export function Footer() {
   ];
 
   const handleNavClick = (href: string) => {
-    if (href.startsWith('/')) {
+    if (href.startsWith("/")) {
       window.location.href = href;
     } else {
       const element = document.querySelector(href);
       if (element) {
         element.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
+          behavior: "smooth",
+          block: "start",
         });
       }
     }
@@ -29,10 +29,10 @@ export function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-1 mb-4">
-              <span className="text-foreground font-bold text-2xl font-sans">
+              <span className="text-foreground font-bold text-2xl font-[family-name:var(--font-source-serif)]">
                 GrantWare
               </span>
-              <span className="text-primary font-bold text-2xl font-sans">
+              <span className="text-primary font-bold text-2xl font-[family-name:var(--font-source-serif)]">
                 AI
               </span>
             </div>

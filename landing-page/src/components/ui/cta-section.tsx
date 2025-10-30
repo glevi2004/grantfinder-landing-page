@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useRef } from "react";
+import { ReactNode, useRef, useEffect, useState } from "react";
 
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
@@ -58,12 +58,17 @@ export function CTASection({
   const rightRef2 = useRef<HTMLDivElement>(null);
   const rightRef3 = useRef<HTMLDivElement>(null);
   const centerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Section
       ref={containerRef}
       className={cn(
-        "relative overflow-hidden bg-gradient-to-br from-[#FF6B47] to-[#FF8C6B] py-24 sm:py-32",
+        "relative overflow-hidden bg-gradient-to-br from-[#5788d8] to-[#7ea9e0] py-24 sm:py-32",
         className
       )}
       id="cta"
@@ -101,7 +106,7 @@ export function CTASection({
       </div>
 
       {/* Animated Beams */}
-      {containerRef.current && centerRef.current && (
+      {mounted && (
         <>
           <AnimatedBeam
             containerRef={containerRef}

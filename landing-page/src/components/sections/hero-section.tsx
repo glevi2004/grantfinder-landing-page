@@ -103,7 +103,7 @@ export default function HeroSection({
               onClick={scrollToTop}
               className="flex items-center gap-2 hover:opacity-80 transition-opacity"
             >
-              <span className="font-sans text-xl font-bold text-white">
+              <span className="text-xl font-bold text-white font-[family-name:var(--font-source-serif)]">
                 GrantWare <span className="text-white/90">AI</span>
               </span>
             </button>
@@ -114,31 +114,19 @@ export default function HeroSection({
                 onClick={() => scrollToSection("#features")}
                 className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
               >
-                Pricing
+                Features
               </button>
               <button
                 onClick={() => scrollToSection("#faq")}
                 className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
               >
-                Enterprise
+                FAQs
               </button>
               <button
-                onClick={() => {
-                  if (window.location.pathname === "/about") {
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  } else {
-                    window.location.href = "/about";
-                  }
-                }}
+                onClick={() => scrollToSection("#about")}
                 className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
               >
-                Careers
-              </button>
-              <button
-                onClick={() => scrollToSection("#faq")}
-                className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
-              >
-                Blog
+                About Us
               </button>
             </div>
 
@@ -189,10 +177,10 @@ export default function HeroSection({
                       Enterprise
                     </button>
                     <button
-                      onClick={() => (window.location.href = "/about")}
+                      onClick={() => scrollToSection("#about")}
                       className="text-muted-foreground hover:text-foreground text-left"
                     >
-                      Careers
+                      About Us
                     </button>
                     <button
                       onClick={() => scrollToSection("#faq")}

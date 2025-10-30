@@ -45,7 +45,9 @@ export default function Home() {
 
         <PinnedFeaturesSection />
 
-        <AboutSection />
+        <div id="about">
+          <AboutSection />
+        </div>
 
         <div id="faq">
           <FAQSection />
