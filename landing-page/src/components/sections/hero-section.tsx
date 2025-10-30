@@ -94,7 +94,7 @@ export default function HeroSection({
   return (
     <Section
       className={cn(
-        "px-8 sm:px-12 md:px-16 lg:px-28 overflow-hidden pb-0 pt-0 sm:pb-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
+        "px-8 sm:px-12 md:px-16 lg:px-28 overflow-hidden !pt-0 pb-0 sm:pb-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
         className
       )}
     >
