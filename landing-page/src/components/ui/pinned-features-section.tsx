@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Search, PenLine, Clock, CircleCheckBig } from "lucide-react";
 import { Section } from "@/components/ui/section";
@@ -85,15 +85,74 @@ export function PinnedFeaturesSection({
 }: PinnedFeaturesSectionProps) {
   // Track which feature image to display
   const [activeFeature, setActiveFeature] = useState<string>("search");
+  const [viewedFeatures, setViewedFeatures] = useState<Set<string>>(
+    new Set(["search"])
+  );
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const scrollLocked = useRef(false);
 
   // Get the currently active feature data
   const currentFeature =
     features.find((f) => f.id === activeFeature) || features[0];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!sectionRef.current) return;
+
+      const section = sectionRef.current;
+      const rect = section.getBoundingClientRect();
+      const viewportHeight = window.innerHeight;
+
+      // Check if section is in view
+      const isInView = rect.top < viewportHeight && rect.bottom > 0;
+
+      if (!isInView) {
+        return;
+      }
+
+      // Calculate how far down the section we've scrolled
+      // When section top reaches top of viewport, progress starts at 0
+      // When section has scrolled its full height, progress is at 1
+      const sectionHeight = rect.height;
+      const scrolledIntoSection = -rect.top;
+      const scrollProgress = Math.max(
+        0,
+        Math.min(1, scrolledIntoSection / (sectionHeight * 0.6))
+      );
+
+      // Each feature needs 1/3 of the scroll progress
+      // First feature: 0 - 0.33
+      // Second feature: 0.33 - 0.66
+      // Third feature: 0.66 - 1.0
+      let targetFeatureIndex = 0;
+      if (scrollProgress >= 0.66) {
+        targetFeatureIndex = 2;
+      } else if (scrollProgress >= 0.33) {
+        targetFeatureIndex = 1;
+      }
+
+      const targetFeatureId = features[targetFeatureIndex].id;
+
+      // Update active feature if it changed
+      if (targetFeatureId !== activeFeature) {
+        setActiveFeature(targetFeatureId);
+        setViewedFeatures((prev) => new Set([...prev, targetFeatureId]));
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [activeFeature, features, viewedFeatures]);
+
   return (
     <Section
+      ref={sectionRef}
       className={cn(
-        "bg-background relative pt-12 sm:pt-16 md:pt-20",
+        "bg-background relative pt-12 sm:pt-16 md:pt-20 min-h-screen",
         className
       )}
       id="features"
@@ -154,9 +213,12 @@ export function PinnedFeaturesSection({
             <Accordion
               type="single"
               collapsible
-              defaultValue="search"
+              value={activeFeature}
               onValueChange={(value) => {
-                if (value) setActiveFeature(value);
+                if (value) {
+                  setActiveFeature(value);
+                  setViewedFeatures((prev) => new Set([...prev, value]));
+                }
               }}
             >
               {features.map((feature) => (
