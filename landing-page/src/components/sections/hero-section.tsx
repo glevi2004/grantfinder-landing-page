@@ -130,19 +130,8 @@ export default function HeroSection({
               </button>
             </div>
 
-            {/* CTA Button & Mobile Menu */}
+            {/* Mobile Menu */}
             <div className="flex items-center gap-4">
-              <ShimmerButton asChild className="hidden md:inline-flex">
-                <a
-                  href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Book a Call
-                </a>
-              </ShimmerButton>
-
-              {/* Mobile Menu */}
               <Sheet>
                 <SheetTrigger asChild>
                   <Button
