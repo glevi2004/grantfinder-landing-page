@@ -90,11 +90,17 @@ export function PinnedFeaturesSection({
     features.find((f) => f.id === activeFeature) || features[0];
 
   return (
-    <Section className={cn("bg-background relative", className)} id="features">
+    <Section
+      className={cn(
+        "bg-background relative pt-12 sm:pt-16 md:pt-20",
+        className
+      )}
+      id="features"
+    >
       <div className="max-w-container mx-auto">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-24">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 leading-tight font-[family-name:var(--font-source-serif)]">
+        <div className="max-w-4xl mx-auto text-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight font-[family-name:var(--font-source-serif)]">
             {title}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">

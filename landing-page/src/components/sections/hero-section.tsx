@@ -89,7 +89,7 @@ export default function HeroSection({
   return (
     <Section
       className={cn(
-        "px-8 sm:px-12 md:px-16 lg:px-28 overflow-hidden pt-0 pb-0 sm:pt-0 sm:pb-0 md:pt-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
+        "px-8 sm:px-12 md:px-16 lg:px-28 overflow-hidden pb-0 sm:pt-0 sm:pb-0 md:pt-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
         className
       )}
     >
@@ -216,7 +216,7 @@ export default function HeroSection({
           </div>
         </div>
       </nav>
-      <div className="max-w-container mx-auto pt-[0px]">
+      <div className="max-w-container mx-auto">
         <div className="grid lg:grid-cols-[65%_35%] gap-12 items-center z-[2] relative">
           {/* Left side - Text content */}
           <div className="flex flex-col gap-8 text-center lg:text-left">
@@ -292,7 +292,7 @@ export default function HeroSection({
 
         {/* Dashboard Mockup - Full width below */}
         {mockup !== false && (
-          <div className="relative w-full max-w-4xl mx-auto pt-16 pb-12 z-[1]">
+          <div className="mt-[-20px] relative w-full max-w-4xl mx-auto z-[1]">
             <MockupFrame
               className="animate-appear opacity-0 delay-700"
               size="small"
