@@ -4,8 +4,7 @@ export function Footer() {
   const navigationLinks = [
     { label: "Features", href: "#features" },
     { label: "FAQs", href: "#faq" },
-    { label: "Contributor Program", href: "#cta" },
-    { label: "About", href: "/about" },
+    { label: "About Us", href: "#about" },
   ];
 
   const handleNavClick = (href: string) => {
