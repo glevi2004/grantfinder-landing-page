@@ -3,6 +3,7 @@ import "./globals.css";
 
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { BackgroundPatternProvider } from "@/contexts/background-pattern-context";
+import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 import { geistSans, geistMono, sourceSerif } from "@/lib/fonts";
 
 export const metadata: Metadata = {
@@ -21,11 +22,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
       >
-        <ThemeProvider>
-          <BackgroundPatternProvider>
-            {children}
-          </BackgroundPatternProvider>
-        </ThemeProvider>
+        <SmoothScrollProvider>
+          <ThemeProvider>
+            <BackgroundPatternProvider>{children}</BackgroundPatternProvider>
+          </ThemeProvider>
+        </SmoothScrollProvider>
       </body>
     </html>
   );

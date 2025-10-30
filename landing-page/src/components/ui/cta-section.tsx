@@ -1,12 +1,12 @@
 "use client";
 
-import { ReactNode } from "react";
+import { ReactNode, useRef, useEffect, useState } from "react";
 
 import { Button, type ButtonProps } from "@/components/ui/button";
 import { Section } from "@/components/ui/section";
+import { ShimmerButton } from "@/components/ui/shimmer-button";
+import { AnimatedBeam } from "@/components/ui/shadcn-io/animated-beam/index";
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "lucide-react";
-import { InteractiveGridPattern } from "@/components/ui/interactive-grid-pattern";
 
 interface CTAButtonProps {
   text: string;
@@ -27,24 +27,19 @@ interface CTASectionProps {
 }
 
 export function CTASection({
-  title = (
-    <>
-      Join Our{" "}
-      <span className="text-primary">Contributor Program</span>
-    </>
-  ),
-  description = "GrantWare AI is currently in beta. Schedule a call to join our Contributor Program and get early access: receive weekly updates, resources, and feedback forms; help pilot our platform and provide feedback to shape its development; early contributors may secure priority access and discounted first-year pricing.",
+  title = "Ready to see GrantWare in action?",
+  description,
   buttons = [
     {
-      text: "Book a Demo",
+      text: "Book Your 15-Minute Demo",
       href: "https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true",
+      variant: "default",
       target: "_blank",
       rel: "noopener noreferrer",
-      iconRight: <ArrowRight className="ml-2 h-5 w-5" />,
     },
     {
       text: "Learn More",
-      variant: "outline",
+      variant: "glow",
       onClick: () => {
         const element = document.querySelector("#features");
         if (element) {
@@ -55,71 +50,167 @@ export function CTASection({
   ],
   className,
 }: CTASectionProps) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const leftRef1 = useRef<HTMLDivElement>(null);
+  const leftRef2 = useRef<HTMLDivElement>(null);
+  const leftRef3 = useRef<HTMLDivElement>(null);
+  const rightRef1 = useRef<HTMLDivElement>(null);
+  const rightRef2 = useRef<HTMLDivElement>(null);
+  const rightRef3 = useRef<HTMLDivElement>(null);
+  const centerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
-    <Section className={cn("relative overflow-hidden bg-background", className)} id="cta">
-      {/* Interactive Grid Background */}
-      <InteractiveGridPattern
-        className={cn(
-          "absolute inset-0 w-full h-full"
-        )}
-        numSquares={70}
-        maxOpacity={1.0}
-        width={50}
-        height={50}
-      />
+    <Section
+      ref={containerRef}
+      className={cn(
+        "relative overflow-hidden bg-gradient-to-br from-[#5788d8] to-[#7ea9e0] py-24 sm:py-32",
+        className
+      )}
+      id="cta"
+    >
+      {/* Left side beams */}
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:block">
+        <div
+          ref={leftRef1}
+          className="absolute left-0 top-[-150px] w-32 h-32 rounded-full border-4 border-[#A8C5FF]/40"
+        />
+        <div
+          ref={leftRef2}
+          className="absolute left-[-50px] top-0 w-40 h-40 rounded-full border-4 border-[#B8F8E4]/40"
+        />
+        <div
+          ref={leftRef3}
+          className="absolute left-0 top-[150px] w-32 h-32 rounded-full border-4 border-[#FFE5A8]/40"
+        />
+      </div>
 
-      <div className="max-w-container mx-auto relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 px-6 py-16 sm:py-20">
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
-            </span>
-            <span className="text-sm font-medium text-primary">Limited Beta Access</span>
-          </div>
+      {/* Right side beams */}
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block">
+        <div
+          ref={rightRef1}
+          className="absolute right-0 top-[-150px] w-32 h-32 rounded-full border-4 border-[#A8C5FF]/40"
+        />
+        <div
+          ref={rightRef2}
+          className="absolute right-[-50px] top-0 w-40 h-40 rounded-full border-4 border-[#B8F8E4]/40"
+        />
+        <div
+          ref={rightRef3}
+          className="absolute right-0 top-[150px] w-32 h-32 rounded-full border-4 border-[#FFE5A8]/40"
+        />
+      </div>
 
+      {/* Animated Beams */}
+      {mounted && (
+        <>
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftRef1}
+            toRef={centerRef}
+            gradientStartColor="#A8C5FF"
+            gradientStopColor="#B8F8E4"
+            curvature={-100}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftRef2}
+            toRef={centerRef}
+            gradientStartColor="#B8F8E4"
+            gradientStopColor="#FFE5A8"
+            curvature={0}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={leftRef3}
+            toRef={centerRef}
+            gradientStartColor="#FFE5A8"
+            gradientStopColor="#A8C5FF"
+            curvature={100}
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={centerRef}
+            toRef={rightRef1}
+            gradientStartColor="#A8C5FF"
+            gradientStopColor="#B8F8E4"
+            curvature={-100}
+            reverse
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={centerRef}
+            toRef={rightRef2}
+            gradientStartColor="#B8F8E4"
+            gradientStopColor="#FFE5A8"
+            curvature={0}
+            reverse
+          />
+          <AnimatedBeam
+            containerRef={containerRef}
+            fromRef={centerRef}
+            toRef={rightRef3}
+            gradientStartColor="#FFE5A8"
+            gradientStopColor="#A8C5FF"
+            curvature={100}
+            reverse
+          />
+        </>
+      )}
+
+      <div className="max-w-container mx-auto relative z-10" ref={centerRef}>
+        <div className="max-w-4xl mx-auto text-center space-y-8 px-6">
           {/* Heading */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight font-[family-name:var(--font-source-serif)]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight font-[family-name:var(--font-source-serif)] text-white">
             {title}
           </h2>
 
-          {/* Description */}
-          <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            {description}
-          </p>
+          {/* Description (optional) */}
+          {description && (
+            <p className="text-base sm:text-lg text-white/90 leading-relaxed max-w-3xl mx-auto">
+              {description}
+            </p>
+          )}
 
           {/* Buttons */}
           {buttons !== false && buttons.length > 0 && (
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-              {buttons.map((button, index) => (
-                <Button
-                  key={index}
-                  variant={button.variant || "default"}
-                  size="lg"
-                  className="h-12 px-8 font-semibold text-base shadow-lg hover:shadow-xl transition-all duration-300"
-                  asChild={!!button.href}
-                  onClick={button.onClick}
-                >
-                  {button.href ? (
-                    <a
-                      href={button.href}
-                      target={button.target}
-                      rel={button.rel}
-                    >
-                      {button.icon}
-                      {button.text}
-                      {button.iconRight}
-                    </a>
-                  ) : (
-                    <>
-                      {button.icon}
-                      {button.text}
-                      {button.iconRight}
-                    </>
-                  )}
-                </Button>
-              ))}
+              {buttons.map((button, index) => {
+                const ButtonComponent = index === 0 ? ShimmerButton : Button;
+
+                return (
+                  <ButtonComponent
+                    key={index}
+                    variant={button.variant || "default"}
+                    size="lg"
+                    className="h-10 px-5"
+                    asChild={!!button.href}
+                    onClick={button.onClick}
+                  >
+                    {button.href ? (
+                      <a
+                        href={button.href}
+                        target={button.target}
+                        rel={button.rel}
+                      >
+                        {button.icon}
+                        {button.text}
+                        {button.iconRight}
+                      </a>
+                    ) : (
+                      <>
+                        {button.icon}
+                        {button.text}
+                        {button.iconRight}
+                      </>
+                    )}
+                  </ButtonComponent>
+                );
+              })}
             </div>
           )}
         </div>
