@@ -82,6 +82,62 @@ export default function AboutSection() {
       image: "/Dharit Shah.jpeg",
       linkedin: "https://www.linkedin.com/in/dharit-shah/",
     },
+    {
+      name: "Arpit Kothari",
+      role: "Director of Software Engineering at Fidelity Investments",
+      description:
+        "As Director of Software Engineering at Fidelity Investments, Arpit brings extensive experience in building scalable enterprise systems and leading high-performing engineering teams. His expertise in software architecture and product development helps guide GrantWare AI's technical strategy and platform scalability.",
+      image: "/Arpit.png",
+      linkedin: "https://www.linkedin.com/in/arpit-kothari/",
+    },
+    {
+      name: "Lisa Vu",
+      role: "Software Engineer at Google",
+      description:
+        "As a Software Engineer at Google, Lisa brings expertise in building large-scale distributed systems and innovative product features. Her experience in developing cutting-edge technology solutions and best practices in software engineering helps ensure GrantWare AI delivers a world-class user experience.",
+      image: "/lisa.png",
+      linkedin: "https://www.linkedin.com/in/lisa-vu/",
+    },
+    {
+      name: "Vince Conzola",
+      role: "Principal Interaction Designer at Red Hat",
+      description:
+        "As Principal Interaction Designer at Red Hat, Vince brings extensive experience in user experience design and creating intuitive, user-centered interfaces. His expertise in interaction design and design thinking helps ensure GrantWare AI delivers an exceptional and accessible user experience for education leaders.",
+      image: "/vince.png",
+      linkedin: "https://www.linkedin.com/in/vince-conzola-623a672/",
+    },
+    {
+      name: "Colette Basiliere",
+      role: "Founding Software Engineer at Ringlet",
+      description:
+        "As Founding Software Engineer at Ringlet, Colette brings startup expertise and a deep understanding of building products from the ground up. Her experience in full-stack development and early-stage product engineering helps guide GrantWare AI's innovation and rapid iteration as we build the future of grant management.",
+      image: "/colette.png",
+      linkedin: "https://www.linkedin.com/in/colettebasiliere/",
+    },
+    {
+      name: "Ziba Cranmer",
+      role: "Director of BU SPARK!",
+      description:
+        "As Director of BU SPARK! at Boston University, Ziba connects students, faculty, and community partners to create meaningful technology solutions. Her expertise in innovation ecosystems, student entrepreneurship, and technology for social impact helps GrantWare AI build strong partnerships with educational institutions and understand the unique needs of the education sector.",
+      image: "/ziba.png",
+      linkedin: "https://www.linkedin.com/in/zibacranmer/",
+    },
+    {
+      name: "James Grady",
+      role: "Principal at Design Axl",
+      description:
+        "As Principal at Design Axl, James brings extensive expertise in product design, design strategy, and creating impactful user experiences. His deep understanding of design systems and user-centered methodologies helps GrantWare AI craft intuitive, accessible solutions that truly serve the needs of education professionals.",
+      image: "/grady.png",
+      linkedin: "https://www.linkedin.com/in/jamesjgrady/",
+    },
+    {
+      name: "Asad Malik",
+      role: "AI Researcher at Boston University",
+      description:
+        "As an AI Researcher at Boston University, Asad brings cutting-edge expertise in artificial intelligence and machine learning research. His deep understanding of AI methodologies and academic research helps ensure GrantWare AI leverages the latest advancements in AI technology to deliver innovative solutions for education funding.",
+      image: "/asad.png",
+      linkedin: "https://www.linkedin.com/in/asadmalik93/",
+    },
   ];
 
   return (
@@ -118,9 +174,14 @@ export default function AboutSection() {
             </h2>
           </div>
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="w-full flex flex-wrap justify-center gap-x-8 gap-y-12">
             {advisors.map((advisor, index) => (
-              <AdvisorCard key={advisor.name} advisor={advisor} index={index} />
+              <div
+                key={advisor.name}
+                className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] flex"
+              >
+                <AdvisorCard advisor={advisor} index={index} />
+              </div>
             ))}
           </div>
         </div>
@@ -245,7 +306,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 // AdvisorCard component
 function AdvisorCard({ advisor, index }: { advisor: Advisor; index: number }) {
   return (
-    <div className="flex flex-col items-center text-center bg-background dark:bg-muted/20 py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-all duration-500">
+    <div className="flex flex-col items-center text-center bg-background dark:bg-muted/20 py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-all duration-500 w-full h-full">
       <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5">
         <Image
           src={advisor.image || "/images/placeholder.jpg"}

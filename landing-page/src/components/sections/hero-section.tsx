@@ -109,7 +109,7 @@ export default function HeroSection({
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-1">
+            <div className="hidden md:flex items-center gap-1 mr-42">
               <button
                 onClick={() => scrollToSection("#features")}
                 className="px-3 py-2 text-sm font-normal text-white/90 hover:text-white transition-colors"
@@ -194,14 +194,14 @@ export default function HeroSection({
         </div>
       </nav>
       <div className="max-w-container mx-auto">
-        <div className="grid lg:grid-cols-[65%_35%] gap-12 items-center z-[2] relative">
+        <div className="grid lg:grid-cols-[65%_35%] gap-12 items-center z-[2] relative pt-8 pb-12 lg:pt-0 lg:pb-0">
           {/* Left side - Text content */}
-          <div className="flex flex-col gap-8 text-center lg:text-left">
+          <div className="flex flex-col gap-6 sm:gap-8 text-center lg:text-left px-4 sm:px-0">
             {/* Badge */}
             {badge !== false && badge}
 
             {/* Main Heading */}
-            <h1 className="animate-appear relative z-10 text-3xl leading-none font-semibold text-white sm:text-4xl sm:leading-none md:text-5xl md:leading-none font-[family-name:var(--font-source-serif)]">
+            <h1 className="animate-appear relative z-10 text-3xl leading-tight font-semibold text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight font-[family-name:var(--font-source-serif)]">
               Automated Funding <br />
               <TypingText
                 text={["Discovery", "Writing", "Management"]}
@@ -209,7 +209,7 @@ export default function HeroSection({
                 typingSpeed={100}
                 deletingSpeed={50}
                 pauseDuration={2000}
-                className="text-3xl sm:text-4xl md:text-5xl leading-none font-semibold text-white italic block my-1"
+                className="text-3xl sm:text-4xl md:text-5xl leading-tight font-semibold text-white italic block my-1"
                 cursorClassName="bg-white h-7 sm:h-8 md:h-10"
                 showCursor={true}
               />
@@ -218,13 +218,13 @@ export default function HeroSection({
             </h1>
 
             {/* Description */}
-            <p className="animate-appear text-white relative z-10 mx-auto lg:mx-0 font-medium text-balance opacity-0 delay-100 text-xl">
+            <p className="animate-appear text-white relative z-10 mx-auto lg:mx-0 font-medium text-balance opacity-0 delay-100 text-base sm:text-lg md:text-xl max-w-2xl">
               {description}
             </p>
 
             {/* CTA Buttons */}
             {buttons !== false && buttons.length > 0 && (
-              <div className="animate-appear relative z-10 flex justify-center lg:justify-start gap-4 opacity-0 delay-300">
+              <div className="animate-appear relative z-10 flex flex-col sm:flex-row justify-center lg:justify-start gap-3 sm:gap-4 opacity-0 delay-300">
                 {buttons.map((button, index) => {
                   const ButtonComponent = index === 0 ? ShimmerButton : Button;
 
@@ -269,7 +269,7 @@ export default function HeroSection({
 
         {/* Dashboard Mockup - Full width below */}
         {mockup !== false && (
-          <div className="mt-[-20px] relative w-full max-w-4xl mx-auto z-[1]">
+          <div className="mt-8 sm:mt-12 lg:mt-[-20px] relative w-full max-w-4xl mx-auto z-[1] px-4 sm:px-0">
             <MockupFrame
               className="animate-appear opacity-0 delay-700"
               size="small"
