@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 
 import { ThemeProvider } from "@/components/contexts/theme-provider";
@@ -22,6 +23,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${sourceSerif.variable} antialiased`}
       >
+        {/* Google Analytics */}
+        <Script
+          src="process.env.GOOGLE_ANALYTICS_URL"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-FE1T0FBYJM');
+          `}
+        </Script>
+
         <SmoothScrollProvider>
           <ThemeProvider>
             <BackgroundPatternProvider>{children}</BackgroundPatternProvider>
