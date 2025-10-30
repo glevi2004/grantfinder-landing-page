@@ -31,14 +31,14 @@ export function Footer() {
               <span className="text-foreground font-bold text-2xl font-[family-name:var(--font-source-serif)]">
                 GrantWare
               </span>
-              <span className="text-primary font-bold text-2xl font-[family-name:var(--font-source-serif)]">
+              <span className="text-[#4169e1] font-bold text-2xl font-[family-name:var(--font-source-serif)]">
                 AI
               </span>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md leading-relaxed text-base">
-              AI-powered grant management workspace designed specifically for
-              K-12 school districts. Transform how your team discovers,
-              evaluates, and wins education funding.
+              Discover high-fit opportunities, get AI-powered eligibility
+              analysis, and manage the entire grant lifecycle in one intelligent
+              platform.
             </p>
           </div>
 
@@ -67,9 +67,6 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-muted-foreground text-sm">
               © {currentYear} GrantWare AI. All rights reserved.
-            </p>
-            <p className="text-muted-foreground text-sm">
-              Built by school districts, for school districts.
             </p>
           </div>
         </div>

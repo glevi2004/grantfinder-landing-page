@@ -74,38 +74,38 @@ export function CTASection({
       id="cta"
     >
       {/* Left side beams */}
-      <div className="absolute left-0 top-1/2 -translate-y-1/2 hidden lg:block">
+      <div className="absolute left-6 sm:left-8 lg:left-0 top-1/2 -translate-y-1/2">
         <div
           ref={leftRef1}
-          className="absolute left-0 top-[-150px] w-32 h-32 rounded-full border-4 border-[#A8C5FF]/40"
+          className="absolute left-0 top-[-120px] sm:top-[-140px] lg:top-[-150px] w-1 h-1 lg:w-32 lg:h-32 rounded-full lg:border-4 lg:border-[#A8C5FF]/40"
         />
         <div
           ref={leftRef2}
-          className="absolute left-[-50px] top-0 w-40 h-40 rounded-full border-4 border-[#B8F8E4]/40"
+          className="absolute left-0 top-0 lg:left-[-50px] w-1 h-1 lg:w-40 lg:h-40 rounded-full lg:border-4 lg:border-[#B8F8E4]/40"
         />
         <div
           ref={leftRef3}
-          className="absolute left-0 top-[150px] w-32 h-32 rounded-full border-4 border-[#FFE5A8]/40"
+          className="absolute left-0 top-[120px] sm:top-[140px] lg:top-[150px] w-1 h-1 lg:w-32 lg:h-32 rounded-full lg:border-4 lg:border-[#FFE5A8]/40"
         />
       </div>
 
       {/* Right side beams */}
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block">
+      <div className="absolute right-6 sm:right-8 lg:right-0 top-1/2 -translate-y-1/2">
         <div
           ref={rightRef1}
-          className="absolute right-0 top-[-150px] w-32 h-32 rounded-full border-4 border-[#A8C5FF]/40"
+          className="absolute right-0 top-[-120px] sm:top-[-140px] lg:top-[-150px] w-1 h-1 lg:w-32 lg:h-32 rounded-full lg:border-4 lg:border-[#A8C5FF]/40"
         />
         <div
           ref={rightRef2}
-          className="absolute right-[-50px] top-0 w-40 h-40 rounded-full border-4 border-[#B8F8E4]/40"
+          className="absolute right-0 top-0 lg:right-[-50px] w-1 h-1 lg:w-40 lg:h-40 rounded-full lg:border-4 lg:border-[#B8F8E4]/40"
         />
         <div
           ref={rightRef3}
-          className="absolute right-0 top-[150px] w-32 h-32 rounded-full border-4 border-[#FFE5A8]/40"
+          className="absolute right-0 top-[120px] sm:top-[140px] lg:top-[150px] w-1 h-1 lg:w-32 lg:h-32 rounded-full lg:border-4 lg:border-[#FFE5A8]/40"
         />
       </div>
 
-      {/* Animated Beams */}
+      {/* Animated Beams - Desktop only */}
       {mounted && (
         <>
           <AnimatedBeam
@@ -115,6 +115,7 @@ export function CTASection({
             gradientStartColor="#A8C5FF"
             gradientStopColor="#B8F8E4"
             curvature={-100}
+            className="hidden lg:block"
           />
           <AnimatedBeam
             containerRef={containerRef}
@@ -123,6 +124,7 @@ export function CTASection({
             gradientStartColor="#B8F8E4"
             gradientStopColor="#FFE5A8"
             curvature={0}
+            className="hidden lg:block"
           />
           <AnimatedBeam
             containerRef={containerRef}
@@ -131,6 +133,7 @@ export function CTASection({
             gradientStartColor="#FFE5A8"
             gradientStopColor="#A8C5FF"
             curvature={100}
+            className="hidden lg:block"
           />
           <AnimatedBeam
             containerRef={containerRef}
@@ -140,6 +143,7 @@ export function CTASection({
             gradientStopColor="#B8F8E4"
             curvature={-100}
             reverse
+            className="hidden lg:block"
           />
           <AnimatedBeam
             containerRef={containerRef}
@@ -149,6 +153,7 @@ export function CTASection({
             gradientStopColor="#FFE5A8"
             curvature={0}
             reverse
+            className="hidden lg:block"
           />
           <AnimatedBeam
             containerRef={containerRef}
@@ -158,6 +163,7 @@ export function CTASection({
             gradientStopColor="#A8C5FF"
             curvature={100}
             reverse
+            className="hidden lg:block"
           />
         </>
       )}
