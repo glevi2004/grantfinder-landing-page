@@ -1,8 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { Section } from "@/components/ui/section";
+import { motion } from "framer-motion";
 import Glow from "@/components/ui/glow";
 
 // List of logos in the /public/logos/ directory
@@ -33,6 +35,8 @@ interface Advisor {
 }
 
 export default function AboutSection() {
+  const [showAllAdvisors, setShowAllAdvisors] = useState(false);
+
   const teamMembers: TeamMember[] = [
     {
       name: "Ryan Rodriguez",
@@ -59,6 +63,38 @@ export default function AboutSection() {
 
   const advisors: Advisor[] = [
     {
+      name: "Dharit Shah",
+      role: "Senior Data Scientist at Red Hat",
+      description:
+        "As a seasoned Senior Data Scientist at Red Hat, Dharit brings extensive experience in AI and machine learning. With a Master's degree in Information Systems from Northeastern University, he provides cutting-edge technical guidance to ensure GrantWare AI stays at the forefront of innovation.",
+      image: "/Dharit Shah.jpeg",
+      linkedin: "https://www.linkedin.com/in/dharit-shah-22032959/",
+    },
+    {
+      name: "Arpit Kothari",
+      role: "Director of Software Engineering at Fidelity Investments",
+      description:
+        "As Director of Software Engineering at Fidelity Investments, Arpit brings extensive experience in building scalable enterprise systems and leading high-performing engineering teams. His expertise in software architecture and product development helps guide GrantWare AI's technical strategy and platform scalability.",
+      image: "/Arpit.png",
+      linkedin: "https://www.linkedin.com/in/kothariarpit/",
+    },
+    {
+      name: "Lisa Vu",
+      role: "Software Engineer at Google",
+      description:
+        "As a Software Engineer at Google, Lisa brings expertise in building large-scale distributed systems and innovative product features. Her experience in developing cutting-edge technology solutions and best practices in software engineering helps ensure GrantWare AI delivers a world-class user experience.",
+      image: "/lisa.png",
+      linkedin: "https://www.linkedin.com/in/lisaqvu/",
+    },
+    {
+      name: "Vince Conzola",
+      role: "Principal Interaction Designer at Red Hat",
+      description:
+        "As Principal Interaction Designer at Red Hat, Vince brings extensive experience in user experience design and creating intuitive, user-centered interfaces. His expertise in interaction design and design thinking helps ensure GrantWare AI delivers an exceptional and accessible user experience for education leaders.",
+      image: "/vince.png",
+      linkedin: "https://www.linkedin.com/in/vince-conzola-623a672/",
+    },
+    {
       name: "Dr. Rebecca Aviles",
       role: "Assistant Superintendent for Elementary Education",
       description:
@@ -72,39 +108,7 @@ export default function AboutSection() {
       description:
         "Robert Rodriguez is a decorated and recognized educator with over 20+ years of experience, currently serving as Assistant Superintendent of Schools in the Uniondale Union Free School District.",
       image: "/Robert Rodriguez New.JPG",
-      linkedin: "https://www.linkedin.com/in/robert-rodriguez/",
-    },
-    {
-      name: "Dharit Shah",
-      role: "Senior Data Scientist at Red Hat",
-      description:
-        "As a seasoned Senior Data Scientist at Red Hat, Dharit brings extensive experience in AI and machine learning. With a Master's degree in Information Systems from Northeastern University, he provides cutting-edge technical guidance to ensure GrantWare AI stays at the forefront of innovation.",
-      image: "/Dharit Shah.jpeg",
-      linkedin: "https://www.linkedin.com/in/dharit-shah/",
-    },
-    {
-      name: "Arpit Kothari",
-      role: "Director of Software Engineering at Fidelity Investments",
-      description:
-        "As Director of Software Engineering at Fidelity Investments, Arpit brings extensive experience in building scalable enterprise systems and leading high-performing engineering teams. His expertise in software architecture and product development helps guide GrantWare AI's technical strategy and platform scalability.",
-      image: "/Arpit.png",
-      linkedin: "https://www.linkedin.com/in/arpit-kothari/",
-    },
-    {
-      name: "Lisa Vu",
-      role: "Software Engineer at Google",
-      description:
-        "As a Software Engineer at Google, Lisa brings expertise in building large-scale distributed systems and innovative product features. Her experience in developing cutting-edge technology solutions and best practices in software engineering helps ensure GrantWare AI delivers a world-class user experience.",
-      image: "/lisa.png",
-      linkedin: "https://www.linkedin.com/in/lisa-vu/",
-    },
-    {
-      name: "Vince Conzola",
-      role: "Principal Interaction Designer at Red Hat",
-      description:
-        "As Principal Interaction Designer at Red Hat, Vince brings extensive experience in user experience design and creating intuitive, user-centered interfaces. His expertise in interaction design and design thinking helps ensure GrantWare AI delivers an exceptional and accessible user experience for education leaders.",
-      image: "/vince.png",
-      linkedin: "https://www.linkedin.com/in/vince-conzola-623a672/",
+      linkedin: "https://www.linkedin.com/in/robert-rodriguez-919230126/",
     },
     {
       name: "Colette Basiliere",
@@ -149,11 +153,17 @@ export default function AboutSection() {
       >
         {/* Meet Our Team */}
         <div className="max-w-container mx-auto px-4 pb-8 md:pb-24">
-          <div className="text-center mb-16 relative z-10">
+          <motion.div
+            className="text-center mb-16 relative z-10"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-4xl font-semibold tracking-tight font-[family-name:var(--font-source-serif)] text-white">
               About Us
             </h2>
-          </div>
+          </motion.div>
           <Glow
             variant="top"
             className="animate-appear-zoom opacity-0 delay-500"
@@ -161,39 +171,82 @@ export default function AboutSection() {
 
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
             {teamMembers.map((member, index) => (
-              <TeamCard key={member.name} member={member} index={index} />
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+              >
+                <TeamCard member={member} index={index} />
+              </motion.div>
             ))}
           </div>
         </div>
 
         {/* Our Advisors */}
         <div className="max-w-container mx-auto px-4 pb-8" id="advisors">
-          <div className="text-center mb-16">
+          <motion.div
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+          >
             <h2 className="text-4xl font-semibold tracking-tight font-[family-name:var(--font-source-serif)] text-white">
               Our Advisors
             </h2>
-          </div>
+          </motion.div>
 
           <div className="w-full flex flex-wrap justify-center gap-x-8 gap-y-12">
-            {advisors.map((advisor, index) => (
-              <div
-                key={advisor.name}
-                className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] flex"
-              >
-                <AdvisorCard advisor={advisor} index={index} />
-              </div>
-            ))}
+            {(showAllAdvisors ? advisors : advisors.slice(0, 4)).map(
+              (advisor, index) => (
+                <motion.div
+                  key={advisor.name}
+                  className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] flex"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                >
+                  <AdvisorCard advisor={advisor} index={index} />
+                </motion.div>
+              )
+            )}
           </div>
+
+          {/* View More Link */}
+          {advisors.length > 4 && (
+            <div className="flex justify-center mt-12">
+              <button
+                onClick={() => setShowAllAdvisors(!showAllAdvisors)}
+                className="flex items-center gap-2 text-[#5788d8] hover:text-[#7ea9e0] transition-colors duration-200 font-medium text-lg cursor-pointer"
+              >
+                {showAllAdvisors ? "View Less" : "View More"}
+                {showAllAdvisors ? (
+                  <ChevronUp className="w-5 h-5" />
+                ) : (
+                  <ChevronDown className="w-5 h-5" />
+                )}
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Experience From */}
         <div className="py-8 md:py-12 relative" id="sponsors">
           <div className="max-w-container mx-auto px-4">
-            <div className="text-center mb-8 relative z-10">
+            <motion.div
+              className="text-center mb-8 relative z-10"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.5 }}
+            >
               <h2 className="text-4xl font-bold font-[family-name:var(--font-source-serif)] text-white mb-14">
                 Experience From
               </h2>
-            </div>
+            </motion.div>
 
             <div className="relative z-10 overflow-hidden">
               <style jsx>{`

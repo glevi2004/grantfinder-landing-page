@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Search, PenLine, Clock, CircleCheckBig } from "lucide-react";
 import { Section } from "@/components/ui/section";
 import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
 import {
   Accordion,
   AccordionItem,
@@ -99,19 +100,31 @@ export function PinnedFeaturesSection({
     >
       <div className="max-w-container mx-auto">
         {/* Section Header */}
-        <div className="max-w-4xl mx-auto text-center mb-12">
+        <motion.div
+          className="max-w-4xl mx-auto text-center mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+        >
           <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight font-[family-name:var(--font-source-serif)]">
             {title}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             {subtitle}
           </p>
-        </div>
+        </motion.div>
 
         {/* Features Grid - Image on Left, Accordion on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column - Feature Image */}
-          <div className="lg:sticky lg:top-24 w-full h-[300px] lg:h-[450px] rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted">
+          <motion.div
+            className="lg:sticky lg:top-24 w-full h-[300px] lg:h-[450px] rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+          >
             {features.map((feature) => (
               <Image
                 key={feature.id}
@@ -128,10 +141,16 @@ export function PinnedFeaturesSection({
                 priority={feature.id === "search"}
               />
             ))}
-          </div>
+          </motion.div>
 
           {/* Right Column - Accordion */}
-          <div className="relative z-10">
+          <motion.div
+            className="relative z-10"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
             <Accordion
               type="single"
               collapsible
@@ -172,7 +191,7 @@ export function PinnedFeaturesSection({
                 </AccordionItem>
               ))}
             </Accordion>
-          </div>
+          </motion.div>
         </div>
       </div>
     </Section>
