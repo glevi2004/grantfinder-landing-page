@@ -127,7 +127,7 @@ export function FAQSection({
 }: FAQSectionProps) {
   return (
     <Section className={cn("", className)}>
-      <div className="max-w-container mx-auto">
+      <div className="max-w-container mx-auto px-4">
         <div className="flex flex-col gap-12 items-center max-w-[720px] mx-auto">
           {/* Title */}
           {subtitle && (
