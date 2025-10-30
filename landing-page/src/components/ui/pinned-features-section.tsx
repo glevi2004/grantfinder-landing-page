@@ -140,7 +140,7 @@ export function PinnedFeaturesSection({
                   value={feature.id}
                   id={feature.id}
                 >
-                  <AccordionTrigger className="text-xl sm:text-2xl font-bold font-[family-name:var(--font-source-serif)] hover:no-underline">
+                  <AccordionTrigger className="text-xl sm:text-2xl font-bold font-[family-name:var(--font-source-serif)] hover:underline decoration-1">
                     {feature.title}
                   </AccordionTrigger>
                   <AccordionContent>
