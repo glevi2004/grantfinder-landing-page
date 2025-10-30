@@ -148,7 +148,7 @@ export default function AboutSection() {
     <>
       {/* About Section with Gradient Background */}
       <Section
-        className="relative isolate bg-gradient-to-b from-[0] via-[#5788d8] via-40% to-[#0]"
+        className="relative isolate !bg-gradient-to-b from-[0] via-[#5788d8] via-40% to-[#0]"
         id="team"
       >
         {/* Meet Our Team */}
@@ -169,12 +169,14 @@ export default function AboutSection() {
             className="animate-appear-zoom opacity-0 delay-500"
           />
 
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+          <div className="w-full flex flex-wrap justify-center gap-x-8 gap-y-12">
             {teamMembers.map((member, index) => (
               <motion.div
                 key={member.name}
+                className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)] flex"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ y: -8 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
@@ -206,6 +208,7 @@ export default function AboutSection() {
                   className="w-full sm:w-[calc(50%-1rem)] lg:w-[calc(25%-1.5rem)] flex"
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={{ y: -8 }}
                   viewport={{ once: true, margin: "-50px" }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
@@ -322,7 +325,7 @@ export default function AboutSection() {
 // TeamCard component
 function TeamCard({ member, index }: { member: TeamMember; index: number }) {
   return (
-    <div className="flex flex-col items-center text-center bg-background dark:bg-muted/20 py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-all duration-500">
+    <div className="flex flex-col items-center text-center bg-white hover:bg-white py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-shadow transition-border duration-500 w-full h-full">
       <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5">
         <Image
           src={member.image || "/images/placeholder.jpg"}
@@ -359,7 +362,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 // AdvisorCard component
 function AdvisorCard({ advisor, index }: { advisor: Advisor; index: number }) {
   return (
-    <div className="flex flex-col items-center text-center bg-background dark:bg-muted/20 py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-all duration-500 w-full h-full">
+    <div className="flex flex-col items-center text-center bg-white hover:bg-white py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-shadow transition-border duration-500 w-full h-full">
       <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5">
         <Image
           src={advisor.image || "/images/placeholder.jpg"}

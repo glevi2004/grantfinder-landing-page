@@ -33,7 +33,7 @@ export function PinnedFeaturesSection({
   title = (
     <>
       Everything you need to{" "}
-      <span className="text-primary">win more Grants</span>
+      <span className="text-[#4169e1]">win more Grants</span>
     </>
   ),
   subtitle = "From discovery to submission, GrantWare AI streamlines every step of your grant management process with intelligent automation and collaborative tools.",
@@ -41,12 +41,12 @@ export function PinnedFeaturesSection({
     {
       id: "search",
       icon: Search,
-      title: "Search for Grants Faster",
+      title: "Unified Grant Discovery",
       description:
-        "We match grants to your district's needs and demographics, delivering the best fits in minutes not hours. Or just ask our AI for a specific grant and we'll locate it for you.",
+        "We match grants to your organization's goals, priorities, and data, delivering the best fits in minutes not hours. Or just ask our AI for a specific grant and we'll locate it for you.",
       benefits: [
         "One search across federal, state, and foundations",
-        "Best-fit matches based on your district profile",
+        "Best-fit matches based on your organization profile",
         "Plain-English reasons why each grant fits",
         "Start a project with tasks and deadlines in one click",
       ],
@@ -55,12 +55,12 @@ export function PinnedFeaturesSection({
     {
       id: "writing",
       icon: PenLine,
-      title: "Writing",
+      title: "Guided Grant Writing",
       description:
         "Turn a high-fit match into a complete proposal. We generate a first draft from the funder's RFP—you stay in control to edit, add context, and finalize.",
       benefits: [
-        "Full draft built from the RFP, tailored to your district profile",
-        "Use AI to edit, rewrite, or insert in district content",
+        "Full draft built from the RFP, tailored to your organization profile",
+        "Use AI to edit, rewrite, or insert in organization content",
         "Integrates with Google Workspace and Microsoft 365",
         "Reuse past winning applications.",
       ],
@@ -69,14 +69,14 @@ export function PinnedFeaturesSection({
     {
       id: "management",
       icon: Clock,
-      title: "Management",
+      title: "Intelligent Grant Management",
       description:
         "An agentic platform that keeps everything moving—opportunities, tasks, deadlines, and files—in one place. You won't need another tool.",
       benefits: [
-        "New opportunity alerts tailored to your district",
+        "New opportunity alerts tailored to your organization",
         "Smart timelines, milestones, and tasks",
         "Roles & permissions for your team",
-        "Share files and comments without leaving the app.",
+        "Share files and comments without leaving the app",
       ],
       imageUrl: "/features/management.png",
     },
@@ -107,7 +107,7 @@ export function PinnedFeaturesSection({
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight font-[family-name:var(--font-source-serif)]">
+          <h2 className="text-3xl md:text-4xl font-semibold mb-6 leading-tight font-[family-name:var(--font-source-serif)]">
             {title}
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground leading-relaxed max-w-3xl mx-auto">
@@ -117,9 +117,9 @@ export function PinnedFeaturesSection({
 
         {/* Features Grid - Image on Left, Accordion on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left Column - Feature Image */}
+          {/* Left Column - Feature Image (Desktop Only) */}
           <motion.div
-            className="lg:sticky lg:top-24 w-full h-[300px] lg:h-[450px] rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted"
+            className="hidden lg:sticky lg:top-24 w-full lg:h-[450px] rounded-2xl overflow-hidden border border-border shadow-2xl bg-muted lg:block"
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
@@ -132,12 +132,12 @@ export function PinnedFeaturesSection({
                 alt={`${feature.title} interface preview`}
                 fill
                 className={cn(
-                  "object-cover transition-opacity duration-300 absolute inset-0 pointer-events-none",
+                  "object-contain sm:object-cover transition-opacity duration-300 absolute inset-0 pointer-events-none",
                   activeFeature === feature.id
                     ? "opacity-100 z-10"
                     : "opacity-0 z-0"
                 )}
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 90vw, 50vw"
                 priority={feature.id === "search"}
               />
             ))}
@@ -170,6 +170,17 @@ export function PinnedFeaturesSection({
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="space-y-6 pt-4">
+                      {/* Mobile Image */}
+                      <div className="lg:hidden w-full h-[250px] sm:h-[300px] rounded-2xl overflow-hidden border border-border shadow-lg bg-muted mb-6 relative">
+                        <Image
+                          src={feature.imageUrl}
+                          alt={`${feature.title} interface preview`}
+                          fill
+                          className="object-contain sm:object-cover"
+                          sizes="100vw"
+                        />
+                      </div>
+
                       {/* Description */}
                       <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                         {feature.description}
