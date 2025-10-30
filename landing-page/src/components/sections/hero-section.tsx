@@ -8,7 +8,12 @@ import { Button, type ButtonProps } from "@/components/ui/button";
 import Glow from "@/components/ui/glow";
 import { Mockup, MockupFrame } from "@/components/ui/mockup";
 import { Section } from "@/components/ui/section";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { GrantConnectionsBeam } from "@/components/ui/grant-connections-beam";
 import TypingText from "@/components/ui/shadcn-io/typing-text/index";
 import { ShimmerButton } from "@/components/ui/shimmer-button";
@@ -89,14 +94,14 @@ export default function HeroSection({
   return (
     <Section
       className={cn(
-        "px-8 sm:px-12 md:px-16 lg:px-28 overflow-hidden pb-0 sm:pt-0 sm:pb-0 md:pt-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
+        "px-8 sm:px-12 md:px-16 lg:px-28 overflow-hidden pb-0 pt-0 sm:pb-0 md:pb-0 relative isolate fade-bottom bg-gradient-to-b from-[#5788d8] from-0% via-[#7ea9e0] via-15% to-[#b5d5f0] to-40%",
         className
       )}
     >
       {/* Base blue gradient - matching Cluely's hero with faster transition to lighter tones */}
       {/* Navbar */}
-      <nav className="w-full">
-        <div className="container mx-auto py-4">
+      <nav className="w-full pb-10 md:pb-0">
+        <div className="container mx-auto py-3 md:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
             <button
@@ -144,6 +149,7 @@ export default function HeroSection({
                   </Button>
                 </SheetTrigger>
                 <SheetContent side="right">
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                   <nav className="grid gap-6 text-lg font-medium">
                     <button
                       onClick={scrollToTop}
@@ -157,25 +163,19 @@ export default function HeroSection({
                       onClick={() => scrollToSection("#features")}
                       className="text-muted-foreground hover:text-foreground text-left"
                     >
-                      Pricing
+                      Features
                     </button>
                     <button
                       onClick={() => scrollToSection("#faq")}
                       className="text-muted-foreground hover:text-foreground text-left"
                     >
-                      Enterprise
+                      FAQs
                     </button>
                     <button
                       onClick={() => scrollToSection("#about")}
                       className="text-muted-foreground hover:text-foreground text-left"
                     >
                       About Us
-                    </button>
-                    <button
-                      onClick={() => scrollToSection("#faq")}
-                      className="text-muted-foreground hover:text-foreground text-left"
-                    >
-                      Blog
                     </button>
                     <ShimmerButton size="lg" asChild className="mt-4">
                       <a

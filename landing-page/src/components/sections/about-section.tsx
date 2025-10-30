@@ -262,7 +262,12 @@ export default function AboutSection() {
                   }
                 }
                 .animate-scroll {
-                  animation: scroll 30s linear infinite;
+                  animation: scroll 15s linear infinite;
+                }
+                @media (min-width: 768px) {
+                  .animate-scroll {
+                    animation: scroll 30s linear infinite;
+                  }
                 }
                 .animate-scroll:hover {
                   animation-play-state: paused;
