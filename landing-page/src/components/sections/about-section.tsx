@@ -100,7 +100,8 @@ export default function AboutSection() {
       description:
         "Dr. Rebecca Aviles is a dedicated educator and servant leader with over 20+ years of experience who has utilized her unique experiences serving diverse communities to implement rigorous academic programming, support data-driven school cultures, and spearhead the mentorship and growth of administrative teams through her eclectic style of leadership. Currently serving at Peekskill City School District.",
       image: "/Rebecca-Aviles.jpeg",
-      linkedin: "https://www.linkedin.com/in/rebecca-aviles/",
+      linkedin:
+        "https://www.linkedin.com/in/dr-rebecca-aviles-rodriguez-4a75752b1/",
     },
     {
       name: "Robert Rodriguez",
