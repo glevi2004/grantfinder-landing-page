@@ -67,12 +67,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-serif text-4xl md:text-6xl lg:text-7xl font-normal text-center leading-[1.1] mb-6 text-balance"
+          className="font-serif text-4xl md:text-6xl lg:text-7xl font-normal text-center leading-[1.1] mb-6"
         >
-          Win funding for your organization{" "}
-          <span className="inline-block min-w-[3ch]">
-            <span className="text-[#4169e1]">{displayText}</span>
-            <span className="animate-pulse text-[#4169e1]">|</span>
+          <span className="block">Win funding for your</span>
+          <span className="block">
+            organization{" "}
+            <span className="inline-block min-w-[3ch]">
+              <span className="text-[#4169e1]">{displayText}</span>
+              <span className="animate-pulse text-[#4169e1]">|</span>
+            </span>
           </span>
         </motion.h1>
 
