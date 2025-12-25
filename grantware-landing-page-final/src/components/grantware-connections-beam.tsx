@@ -45,9 +45,9 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
       ref={containerRef}
     >
       <div className="flex size-full flex-row items-stretch justify-between gap-16 px-4">
-        {/* Left: Person icon */}
+        {/* Left: Person icon - shifted up slightly to align beam with icon center */}
         <div className="flex flex-col justify-center">
-          <Circle ref={userRef}>
+          <Circle ref={userRef} className="-translate-y-1">
             <Icons.user />
           </Circle>
         </div>
