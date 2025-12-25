@@ -53,7 +53,7 @@ export function ApproachSection({
   steps = defaultSteps,
 }: ApproachSectionProps) {
   return (
-    <section id={id} className="py-24 px-6 bg-background">
+    <section id={id} className="py-24 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-20">
@@ -62,7 +62,7 @@ export function ApproachSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="font-serif text-5xl md:text-6xl mb-6 text-balance"
+            className="font-serif text-5xl md:text-6xl mb-6 text-balance text-white"
           >
             {title}
           </motion.h2>
@@ -71,7 +71,7 @@ export function ApproachSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-muted-foreground max-w-2xl mx-auto"
+            className="text-lg text-white/80 max-w-2xl mx-auto"
           >
             {subtitle}
           </motion.p>
@@ -80,7 +80,7 @@ export function ApproachSection({
         {/* Steps */}
         <div className="relative">
           {/* Connecting Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-border hidden md:block" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/20 hidden md:block" />
 
           <div className="space-y-16">
             {steps.map((step, index) => (
