@@ -126,7 +126,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center lg:justify-end"
+            className="hidden lg:flex justify-center lg:justify-start"
           >
             <GrantwareConnectionsBeam />
           </motion.div>

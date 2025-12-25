@@ -35,7 +35,7 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
   return (
     <div
       className={cn(
-        "relative flex h-[400px] w-full max-w-lg items-center justify-center overflow-hidden",
+        "relative flex h-[450px] w-full max-w-xl items-center justify-center overflow-hidden",
         className
       )}
       ref={containerRef}
@@ -81,38 +81,51 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
         fromRef={googleDriveRef}
         toRef={centerRef}
         duration={3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={slackRef}
         toRef={centerRef}
         duration={3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={searchRef}
         toRef={centerRef}
         duration={3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={writingRef}
         toRef={centerRef}
         duration={3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
       />
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={managementRef}
         toRef={centerRef}
         duration={3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
       />
 
-      {/* Beam from center G → left person */}
+      {/* Beam from center G → left person (reverse direction) */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={centerRef}
         toRef={userRef}
         duration={3}
+        reverse={true}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
       />
     </div>
   )
