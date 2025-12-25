@@ -50,7 +50,7 @@ export function FAQSection() {
   }
 
   return (
-    <section id="faq" className="w-full flex justify-center items-start bg-background">
+    <section id="faq" className="w-full flex justify-center items-start bg-transparent">
       <div className="flex-1 px-4 md:px-12 py-16 md:py-20 flex flex-col lg:flex-row justify-start items-start gap-6 lg:gap-12 max-w-7xl">
         {/* Left Column - Header */}
         <motion.div
@@ -60,13 +60,13 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5"
         >
-          <h2 className="w-full flex flex-col justify-center text-foreground font-semibold leading-tight md:leading-[44px] font-serif text-4xl tracking-tight">
+          <h2 className="w-full flex flex-col justify-center text-white font-semibold leading-tight md:leading-[44px] font-serif text-4xl tracking-tight">
             Frequently Asked Questions
           </h2>
-          <p className="w-full text-muted-foreground text-base font-normal leading-7">
-            Explore your data, build your dashboard,
+          <p className="w-full text-white/80 text-base font-normal leading-7">
+            Find answers to common questions about
             <br className="hidden md:block" />
-            bring your team together.
+            GrantWare AI and how it can help you.
           </p>
         </motion.div>
 
@@ -83,19 +83,19 @@ export function FAQSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="w-full border-b border-border overflow-hidden"
+                  className="w-full border-b border-white/20 overflow-hidden"
                 >
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-secondary/50 transition-colors duration-200"
+                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-white/10 transition-colors duration-200 rounded-lg"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex-1 text-foreground text-base font-medium leading-6">
+                    <div className="flex-1 text-white text-base font-medium leading-6">
                       {item.question}
                     </div>
                     <div className="flex justify-center items-center">
                       <ChevronDown
-                        className={`w-6 h-6 text-muted-foreground transition-transform duration-300 ease-in-out ${
+                        className={`w-6 h-6 text-white/60 transition-transform duration-300 ease-in-out ${
                           isOpen ? "rotate-180" : "rotate-0"
                         }`}
                       />
@@ -107,7 +107,7 @@ export function FAQSection() {
                       isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="px-5 pb-[18px] text-muted-foreground text-sm font-normal leading-6">
+                    <div className="px-5 pb-[18px] text-white/70 text-sm font-normal leading-6">
                       {item.answer}
                     </div>
                   </div>
@@ -120,4 +120,3 @@ export function FAQSection() {
     </section>
   )
 }
-

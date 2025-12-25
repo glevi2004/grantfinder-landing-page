@@ -1,71 +1,138 @@
 "use client"
 
+import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
-import { Handshake } from "lucide-react"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
+import { GrantwareConnectionsBeam } from "@/components/grantware-connections-beam"
 import { motion } from "framer-motion"
 
+const TYPING_WORDS = ["easier", "faster", "smarter"]
+const TYPING_SPEED = 120
+const DELETING_SPEED = 60
+const PAUSE_DURATION = 1800
+
 export function Hero() {
+  const [displayText, setDisplayText] = useState("")
+  const [wordIndex, setWordIndex] = useState(0)
+  const [isDeleting, setIsDeleting] = useState(false)
+
+  const typeEffect = useCallback(() => {
+    const currentWord = TYPING_WORDS[wordIndex]
+
+    if (!isDeleting) {
+      // Typing
+      if (displayText.length < currentWord.length) {
+        return setTimeout(() => {
+          setDisplayText(currentWord.slice(0, displayText.length + 1))
+        }, TYPING_SPEED)
+      } else {
+        // Finished typing, pause then start deleting
+        return setTimeout(() => {
+          setIsDeleting(true)
+        }, PAUSE_DURATION)
+      }
+    } else {
+      // Deleting
+      if (displayText.length > 0) {
+        return setTimeout(() => {
+          setDisplayText(displayText.slice(0, -1))
+        }, DELETING_SPEED)
+      } else {
+        // Finished deleting, move to next word
+        setIsDeleting(false)
+        setWordIndex((prev) => (prev + 1) % TYPING_WORDS.length)
+        return undefined
+      }
+    }
+  }, [displayText, wordIndex, isDeleting])
+
+  useEffect(() => {
+    const timeout = typeEffect()
+    return () => {
+      if (timeout) clearTimeout(timeout)
+    }
+  }, [typeEffect])
+
+  const scrollToFeatures = () => {
+    const element = document.querySelector("#features")
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
-    <section id="hero" className="pt-32 pb-12 px-6">
-      <div className="container mx-auto max-w-5xl">
-        {/* Trust Metrics */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex items-center justify-center gap-4 mb-8 text-sm text-muted-foreground"
-        >
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground" />
-            {"1,000+ Projects"}
-          </span>
-          <span className="flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-muted-foreground" />
-            {"20+ Years Experience"}
-          </span>
-        </motion.div>
+    <section id="hero" className="relative pt-32 pb-16 px-6 min-h-[90vh]">
+      {/* Hero Content - sits above gradient (gradient is in parent wrapper) */}
+      <div className="relative z-10 container mx-auto max-w-7xl">
+        <div className="grid gap-10 lg:grid-cols-[55%_45%] items-center">
+          {/* Left Column: Content */}
+          <div className="flex flex-col">
+            {/* Main Headline */}
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-left leading-[1.1] mb-6 text-white"
+            >
+              <span className="block">Win funding for your</span>
+              <span className="block">
+                organization{" "}
+                <span className="inline-block min-w-[3ch]">
+                  <span className="text-[#7cb3ff]">{displayText}</span>
+                  <span className="animate-pulse text-[#7cb3ff]">|</span>
+                </span>
+              </span>
+            </motion.h1>
 
-        {/* Main Headline */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-4xl md:text-6xl lg:text-7xl font-normal text-center leading-[1.1] mb-6 text-balance"
-        >
-          Trusted Conversion Websites,{" "}
-          <span className="inline-flex items-center gap-3">
-            Built for
-            <span className="inline-flex items-center justify-center w-10 h-10 md:w-14 md:h-14 rounded-full text-[rgba(192,12,12,0.22)] bg-[rgba(10,10,10,0.14673913043478262)]">
-              <Handshake className="w-5 h-5 md:w-7 md:h-7 text-[rgba(255,117,38,1)]" />
-            </span>
-            Agencies
-          </span>{" "}
-          That Scale.
-        </motion.h1>
+            {/* Sub-headline */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-left text-lg md:text-xl text-white/80 max-w-xl mb-8 leading-relaxed"
+            >
+              Discover high-fit opportunities, draft faster with AI, and manage the entire grant lifecycle in one intelligent platform.
+            </motion.p>
 
-        {/* Sub-headline */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed"
-        >
-          Turn every visit into growth—partner with a team that's invested in your continued success.
-        </motion.p>
+            {/* CTA Buttons */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row items-start gap-4"
+            >
+              <ShimmerButton size="lg" className="rounded-full px-8 text-base" asChild>
+                <a
+                  href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Book a 15-min demo
+                </a>
+              </ShimmerButton>
 
-        {/* CTA Button */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-          className="flex justify-center"
-        >
-          <Button size="lg" className="rounded-full px-8 text-base">
-            Book a 15-min Call 📞
-          </Button>
-        </motion.div>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="rounded-full px-8 text-base border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/40 text-white transition-all"
+                onClick={scrollToFeatures}
+              >
+                Learn more
+              </Button>
+            </motion.div>
+          </div>
+
+          {/* Right Column: Animation */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="hidden lg:flex justify-center lg:justify-start -ml-12"
+          >
+            <GrantwareConnectionsBeam />
+          </motion.div>
+        </div>
       </div>
     </section>
   )
 }
-
