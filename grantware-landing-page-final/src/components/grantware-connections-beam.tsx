@@ -4,6 +4,10 @@ import { forwardRef, useRef } from "react"
 import { cn } from "@/lib/utils"
 import { AnimatedBeam } from "@/components/ui/animated-beam"
 
+// Animation timing constants (total cycle = 12 seconds)
+const BEAM_DURATION = 2.5
+const CYCLE_DURATION = 12
+
 const Circle = forwardRef<
   HTMLDivElement,
   { className?: string; children?: React.ReactNode }
@@ -12,7 +16,7 @@ const Circle = forwardRef<
     <div
       ref={ref}
       className={cn(
-        "z-10 flex size-12 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
+        "z-10 flex size-14 items-center justify-center rounded-full border-2 bg-white p-3 shadow-[0_0_20px_-12px_rgba(0,0,0,0.8)]",
         className
       )}
     >
@@ -35,12 +39,12 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
   return (
     <div
       className={cn(
-        "relative flex h-[450px] w-full max-w-xl items-center justify-center overflow-hidden",
+        "relative flex h-[550px] w-full max-w-2xl items-center justify-center overflow-hidden",
         className
       )}
       ref={containerRef}
     >
-      <div className="flex size-full flex-row items-stretch justify-between gap-10">
+      <div className="flex size-full flex-row items-stretch justify-between gap-16 px-4">
         {/* Left: Person icon */}
         <div className="flex flex-col justify-center">
           <Circle ref={userRef}>
@@ -50,13 +54,13 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
 
         {/* Center: GrantWare "G" */}
         <div className="flex flex-col justify-center">
-          <Circle ref={centerRef} className="size-16">
-            <span className="font-serif text-2xl font-semibold text-foreground">G</span>
+          <Circle ref={centerRef} className="size-20">
+            <span className="font-serif text-3xl font-semibold text-foreground">G</span>
           </Circle>
         </div>
 
         {/* Right: Stacked icons */}
-        <div className="flex flex-col justify-center gap-2">
+        <div className="flex flex-col justify-center gap-3">
           <Circle ref={googleDriveRef}>
             <Icons.googleDrive />
           </Circle>
@@ -75,54 +79,123 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
         </div>
       </div>
 
-      {/* Beams from right stack → center G */}
+      {/* PHASE 1: Person → G (starts at 0s) */}
       <AnimatedBeam
         containerRef={containerRef}
-        fromRef={googleDriveRef}
+        fromRef={userRef}
         toRef={centerRef}
-        duration={3}
-        gradientStartColor="#5b8cff"
-        gradientStopColor="#4169e1"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={slackRef}
-        toRef={centerRef}
-        duration={3}
-        gradientStartColor="#5b8cff"
-        gradientStopColor="#4169e1"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={searchRef}
-        toRef={centerRef}
-        duration={3}
-        gradientStartColor="#5b8cff"
-        gradientStopColor="#4169e1"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={writingRef}
-        toRef={centerRef}
-        duration={3}
-        gradientStartColor="#5b8cff"
-        gradientStopColor="#4169e1"
-      />
-      <AnimatedBeam
-        containerRef={containerRef}
-        fromRef={managementRef}
-        toRef={centerRef}
-        duration={3}
+        duration={BEAM_DURATION}
+        delay={0}
         gradientStartColor="#5b8cff"
         gradientStopColor="#4169e1"
       />
 
-      {/* Beam from center G → left person (reverse direction) */}
+      {/* PHASE 2: G → Features (starts at 3s, staggered) */}
       <AnimatedBeam
         containerRef={containerRef}
         fromRef={centerRef}
-        toRef={userRef}
-        duration={3}
+        toRef={googleDriveRef}
+        duration={BEAM_DURATION}
+        delay={3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={slackRef}
+        duration={BEAM_DURATION}
+        delay={3.1}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={searchRef}
+        duration={BEAM_DURATION}
+        delay={3.2}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={writingRef}
+        duration={BEAM_DURATION}
+        delay={3.3}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={managementRef}
+        duration={BEAM_DURATION}
+        delay={3.4}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+
+      {/* PHASE 3: Features → G (starts at 6s, reverse direction) */}
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={googleDriveRef}
+        duration={BEAM_DURATION}
+        delay={6}
+        reverse={true}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={slackRef}
+        duration={BEAM_DURATION}
+        delay={6.1}
+        reverse={true}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={searchRef}
+        duration={BEAM_DURATION}
+        delay={6.2}
+        reverse={true}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={writingRef}
+        duration={BEAM_DURATION}
+        delay={6.3}
+        reverse={true}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={centerRef}
+        toRef={managementRef}
+        duration={BEAM_DURATION}
+        delay={6.4}
+        reverse={true}
+        gradientStartColor="#5b8cff"
+        gradientStopColor="#4169e1"
+      />
+
+      {/* PHASE 4: G → Person (starts at 9s, reverse direction) */}
+      <AnimatedBeam
+        containerRef={containerRef}
+        fromRef={userRef}
+        toRef={centerRef}
+        duration={BEAM_DURATION}
+        delay={9}
         reverse={true}
         gradientStartColor="#5b8cff"
         gradientStopColor="#4169e1"
