@@ -100,7 +100,8 @@ export default function AboutSection() {
       description:
         "Dr. Rebecca Aviles is a dedicated educator and servant leader with over 20+ years of experience who has utilized her unique experiences serving diverse communities to implement rigorous academic programming, support data-driven school cultures, and spearhead the mentorship and growth of administrative teams through her eclectic style of leadership. Currently serving at Peekskill City School District.",
       image: "/Rebecca-Aviles.jpeg",
-      linkedin: "https://www.linkedin.com/in/rebecca-aviles/",
+      linkedin:
+        "https://www.linkedin.com/in/dr-rebecca-aviles-rodriguez-4a75752b1/",
     },
     {
       name: "Robert Rodriguez",
@@ -330,8 +331,8 @@ export default function AboutSection() {
 // TeamCard component
 function TeamCard({ member, index }: { member: TeamMember; index: number }) {
   return (
-    <div className="flex flex-col items-center text-center bg-white hover:bg-white py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-shadow transition-border duration-500 w-full h-full">
-      <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5">
+    <div className="flex flex-col items-center text-center bg-white hover:bg-white py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-all duration-500 w-full h-full pointer-events-auto">
+      <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5 pointer-events-none">
         <Image
           src={member.image || "/images/placeholder.jpg"}
           alt={member.name}
@@ -349,7 +350,7 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
           href={member.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 text-primary hover:text-primary/80 text-sm font-medium transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 text-primary hover:text-primary/80 text-sm font-medium transition-colors pointer-events-auto relative z-10"
         >
           LinkedIn
           <ExternalLink className="w-4 h-4" />
@@ -367,8 +368,8 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
 // AdvisorCard component
 function AdvisorCard({ advisor, index }: { advisor: Advisor; index: number }) {
   return (
-    <div className="flex flex-col items-center text-center bg-white hover:bg-white py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-shadow transition-border duration-500 w-full h-full">
-      <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5">
+    <div className="flex flex-col items-center text-center bg-white hover:bg-white py-8 px-6 rounded-xl border border-border shadow-[0_0_20px_rgba(90,139,242,0.15)] hover:shadow-[0_0_30px_rgba(90,139,242,0.3)] hover:border-primary/50 transition-all duration-500 w-full h-full pointer-events-auto">
+      <div className="shrink-0 h-32 w-32 rounded-full overflow-hidden mb-5 pointer-events-none">
         <Image
           src={advisor.image || "/images/placeholder.jpg"}
           alt={advisor.name}
@@ -385,7 +386,7 @@ function AdvisorCard({ advisor, index }: { advisor: Advisor; index: number }) {
           href={advisor.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-4 py-2 text-primary hover:text-primary/80 text-sm font-medium transition-colors"
+          className="inline-flex items-center gap-2 px-4 py-2 text-primary hover:text-primary/80 text-sm font-medium transition-colors pointer-events-auto relative z-10"
         >
           LinkedIn
           <ExternalLink className="w-4 h-4" />
