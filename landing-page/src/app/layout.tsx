@@ -25,7 +25,7 @@ export default function RootLayout({
       >
         {/* Google Analytics */}
         <Script
-          src="process.env.GOOGLE_ANALYTICS_URL"
+          src={process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_URL!}
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
