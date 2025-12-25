@@ -7,9 +7,6 @@ export function HeaderPill() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto max-w-7xl px-6 py-4">
-        {/* Horizontal line behind the pill */}
-        <div className="absolute left-0 right-0 top-1/2 border-t border-white/20" />
-
         {/* The pill navbar */}
         <div className="relative mx-auto max-w-[700px] w-full">
           <div className="flex items-center justify-between px-4 py-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full shadow-[0px_0px_0px_2px_rgba(255,255,255,0.1)]">
