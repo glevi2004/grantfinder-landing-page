@@ -109,7 +109,7 @@ export function Hero() {
           <Button
             variant="ghost"
             size="lg"
-            className="rounded-full px-8 text-base border border-border bg-transparent hover:bg-foreground/5"
+            className="rounded-full px-8 text-base border border-foreground/20 bg-white hover:bg-foreground/10 hover:border-foreground/30 text-foreground transition-all"
             onClick={scrollToFeatures}
           >
             Learn more
