@@ -1,5 +1,6 @@
-import { Header } from "@/components/header"
+import { HeaderPill } from "@/components/header-pill"
 import { Hero } from "@/components/hero"
+import { HeroShaderGradient } from "@/components/hero-shader-gradient"
 import { ProductFeaturesSection } from "@/components/product-features-section"
 import { ClientLogos } from "@/components/client-logos"
 import { ApproachSection } from "@/components/approach-section"
@@ -10,11 +11,17 @@ import { FooterSection } from "@/components/footer-section"
 export default function Home() {
   return (
     <main className="min-h-screen bg-background">
-      {/* Header / Navigation */}
-      <Header />
+      {/* Top-of-page wrapper: Header + Hero with shared gradient background */}
+      <div className="relative overflow-hidden">
+        {/* ShaderGradient covers header + hero area */}
+        <HeroShaderGradient />
 
-      {/* Section 1: Hero */}
-      <Hero />
+        {/* Header Pill (fixed, sits on top of gradient) */}
+        <HeaderPill />
+
+        {/* Section 1: Hero */}
+        <Hero />
+      </div>
 
       {/* Section 2: Product Features (from Brillance, adapted) */}
       <ProductFeaturesSection />

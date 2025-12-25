@@ -4,7 +4,6 @@ import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { GrantwareConnectionsBeam } from "@/components/grantware-connections-beam"
-import { HeroShaderGradient } from "@/components/hero-shader-gradient"
 import { motion } from "framer-motion"
 
 const TYPING_WORDS = ["easier", "faster", "smarter"]
@@ -62,11 +61,8 @@ export function Hero() {
   }
 
   return (
-    <section id="hero" className="relative overflow-hidden pt-32 pb-16 px-6 min-h-[90vh]">
-      {/* Shader Gradient Background */}
-      <HeroShaderGradient />
-
-      {/* Hero Content - sits above gradient */}
+    <section id="hero" className="relative pt-32 pb-16 px-6 min-h-[90vh]">
+      {/* Hero Content - sits above gradient (gradient is in parent wrapper) */}
       <div className="relative z-10 container mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[55%_45%] items-center">
           {/* Left Column: Content */}
