@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { GrantwareConnectionsBeam } from "@/components/grantware-connections-beam"
+import { HeroShaderGradient } from "@/components/hero-shader-gradient"
 import { motion } from "framer-motion"
 
 const TYPING_WORDS = ["easier", "faster", "smarter"]
@@ -61,8 +62,12 @@ export function Hero() {
   }
 
   return (
-    <section id="hero" className="pt-32 pb-16 px-6">
-      <div className="container mx-auto max-w-7xl">
+    <section id="hero" className="relative overflow-hidden pt-32 pb-16 px-6 min-h-[90vh]">
+      {/* Shader Gradient Background */}
+      <HeroShaderGradient />
+
+      {/* Hero Content - sits above gradient */}
+      <div className="relative z-10 container mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[55%_45%] items-center">
           {/* Left Column: Content */}
           <div className="flex flex-col">
@@ -71,14 +76,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-left leading-[1.1] mb-6"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-left leading-[1.1] mb-6 text-white"
             >
               <span className="block">Win funding for your</span>
               <span className="block">
                 organization{" "}
                 <span className="inline-block min-w-[3ch]">
-                  <span className="text-[#4169e1]">{displayText}</span>
-                  <span className="animate-pulse text-[#4169e1]">|</span>
+                  <span className="text-[#7cb3ff]">{displayText}</span>
+                  <span className="animate-pulse text-[#7cb3ff]">|</span>
                 </span>
               </span>
             </motion.h1>
@@ -88,7 +93,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-left text-lg md:text-xl text-muted-foreground max-w-xl mb-8 leading-relaxed"
+              className="text-left text-lg md:text-xl text-white/80 max-w-xl mb-8 leading-relaxed"
             >
               Discover high-fit opportunities, draft faster with AI, and manage the entire grant lifecycle in one intelligent platform.
             </motion.p>
@@ -113,7 +118,7 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="rounded-full px-8 text-base border border-foreground/20 bg-white hover:bg-foreground/10 hover:border-foreground/30 text-foreground transition-all"
+                className="rounded-full px-8 text-base border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/40 text-white transition-all"
                 onClick={scrollToFeatures}
               >
                 Learn more
