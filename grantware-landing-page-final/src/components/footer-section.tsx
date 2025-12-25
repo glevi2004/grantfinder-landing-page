@@ -1,8 +1,19 @@
+"use client"
+
 import Link from "next/link"
-import { Sparkles } from "lucide-react"
-import { IconBrandTwitter, IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react"
+import { Sparkles, Mail } from "lucide-react"
+import { IconBrandLinkedin } from "@tabler/icons-react"
 
 export function FooterSection() {
+  // Smooth scroll handler for anchor links
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
   return (
     <footer className="w-full pt-10 flex flex-col justify-start items-start bg-white relative z-10 border-t border-gray-200">
       {/* Main Footer Content */}
@@ -19,17 +30,22 @@ export function FooterSection() {
             AI-powered grant discovery
           </div>
 
-          {/* Social Media Icons */}
+          {/* Social Media Icons - LinkedIn and Email only */}
           <div className="flex justify-start items-start gap-4">
-            <Link href="#" className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors">
-              <IconBrandTwitter size={20} />
-            </Link>
-            <Link href="#" className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors">
+            <Link 
+              href="https://www.linkedin.com/company/grantware/posts/?feedView=all" 
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors"
+            >
               <IconBrandLinkedin size={20} />
             </Link>
-            <Link href="#" className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors">
-              <IconBrandGithub size={20} />
-            </Link>
+            <a 
+              href="mailto:ryanrod@bu.edu"
+              className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors"
+            >
+              <Mail size={20} />
+            </a>
           </div>
         </div>
 
@@ -41,21 +57,41 @@ export function FooterSection() {
               Product
             </div>
             <div className="flex flex-col justify-end items-start gap-2">
-              <Link href="#features" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
+              <a 
+                href="#features" 
+                onClick={(e) => handleSmoothScroll(e, "features")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
                 Features
-              </Link>
-              <Link href="#pricing" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
+              </a>
+              <a 
+                href="#approach" 
+                onClick={(e) => handleSmoothScroll(e, "approach")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
+                How it Works
+              </a>
+              <a 
+                href="#approach-2" 
+                onClick={(e) => handleSmoothScroll(e, "approach-2")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
+                Workflow
+              </a>
+              <a 
+                href="#pricing" 
+                onClick={(e) => handleSmoothScroll(e, "pricing")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
                 Pricing
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Integrations
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                AI Matching
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Grant Database
-              </Link>
+              </a>
+              <a 
+                href="#faq" 
+                onClick={(e) => handleSmoothScroll(e, "faq")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
+                FAQ
+              </a>
             </div>
           </div>
 
@@ -63,42 +99,38 @@ export function FooterSection() {
           <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
             <div className="text-gray-500 text-sm font-medium leading-5">Company</div>
             <div className="flex flex-col justify-center items-start gap-2">
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
+              <a 
+                href="#trusted-by" 
+                onClick={(e) => handleSmoothScroll(e, "trusted-by")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
                 About us
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Our team
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Careers
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Brand
-              </Link>
-              <Link href="#" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
+              </a>
+              <a 
+                href="#trusted-by" 
+                onClick={(e) => handleSmoothScroll(e, "trusted-by")}
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
+                Our Team
+              </a>
+              <a 
+                href="mailto:ryanrod@bu.edu"
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
                 Contact
-              </Link>
+              </a>
             </div>
           </div>
 
-          {/* Resources Column */}
+          {/* Legal Column */}
           <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
-            <div className="text-gray-500 text-sm font-medium leading-5">Resources</div>
-            <div className="flex flex-col justify-center items-center gap-2">
-              <Link href="#" className="self-stretch text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Terms of use
+            <div className="text-gray-500 text-sm font-medium leading-5">Legal</div>
+            <div className="flex flex-col justify-center items-start gap-2">
+              <Link href="/terms" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
+                Terms of Service
               </Link>
-              <Link href="#" className="self-stretch text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                API Reference
-              </Link>
-              <Link href="#" className="self-stretch text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Documentation
-              </Link>
-              <Link href="#" className="self-stretch text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Community
-              </Link>
-              <Link href="#" className="self-stretch text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
-                Support
+              <Link href="/privacy" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
+                Privacy Policy
               </Link>
             </div>
           </div>
