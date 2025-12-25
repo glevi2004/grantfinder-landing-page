@@ -1,48 +1,70 @@
 "use client"
 
-import Link from "next/link"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 
 export function HeaderPill() {
+  // Smooth scroll to a section by ID
+  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
+    e.preventDefault()
+    const element = document.getElementById(targetId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" })
+    }
+  }
+
+  // Smooth scroll to top of page
+  const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    window.scrollTo({ top: 0, behavior: "smooth" })
+  }
+
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-transparent">
       <div className="container mx-auto max-w-7xl px-6 py-4">
         {/* The pill navbar */}
         <div className="relative mx-auto max-w-[700px] w-full">
           <div className="flex items-center justify-between px-4 py-2 bg-white/15 backdrop-blur-md border border-white/25 rounded-full shadow-[0px_0px_0px_2px_rgba(255,255,255,0.1)]">
-            {/* Left: Logo */}
-            <Link href="/" className="flex items-center gap-1">
+            {/* Left: Logo - scrolls to top */}
+            <a 
+              href="/" 
+              onClick={handleScrollToTop}
+              className="flex items-center gap-1 cursor-pointer"
+            >
               <span className="font-serif text-lg font-medium text-white">
                 GrantWare <span className="text-white/80">AI</span>
               </span>
-            </Link>
+            </a>
 
             {/* Center: Nav links (desktop only) */}
             <nav className="hidden md:flex items-center gap-4">
-              <Link
+              <a
                 href="#features"
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                onClick={(e) => handleSmoothScroll(e, "features")}
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
               >
                 Features
-              </Link>
-              <Link
+              </a>
+              <a
                 href="#approach"
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                onClick={(e) => handleSmoothScroll(e, "approach")}
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
               >
                 Process
-              </Link>
-              <Link
+              </a>
+              <a
                 href="#pricing"
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                onClick={(e) => handleSmoothScroll(e, "pricing")}
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
               >
                 Pricing
-              </Link>
-              <Link
+              </a>
+              <a
                 href="#faq"
-                className="text-sm font-medium text-white/80 hover:text-white transition-colors"
+                onClick={(e) => handleSmoothScroll(e, "faq")}
+                className="text-sm font-medium text-white/80 hover:text-white transition-colors cursor-pointer"
               >
                 FAQ
-              </Link>
+              </a>
             </nav>
 
             {/* Right: CTA Button */}
@@ -55,4 +77,3 @@ export function HeaderPill() {
     </header>
   )
 }
-
