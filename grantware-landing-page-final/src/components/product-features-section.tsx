@@ -69,10 +69,8 @@ export function ProductFeaturesSection() {
           <h2 className="self-stretch text-center text-white text-3xl md:text-5xl lg:text-[3.25rem] font-semibold leading-tight md:leading-[1.1] font-serif tracking-tight md:whitespace-nowrap">
             Everything you need to win more Grants
           </h2>
-          <p className="self-stretch text-center text-white/80 text-base font-normal leading-7">
-            Manage schedules, analyze data, and collaborate with your team
-            <br />
-            all in one powerful platform.
+          <p className="self-stretch text-center text-white/80 text-base font-normal leading-7 max-w-2xl mx-auto">
+            From discovery to submission, GrantWare AI streamlines every step of your grant management process with intelligent automation and collaborative tools.
           </p>
         </motion.div>
       </div>
