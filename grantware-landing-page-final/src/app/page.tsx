@@ -36,48 +36,48 @@ export default function Home() {
           steps={[
             {
               number: "01",
-              title: "Input your organization info",
+              title: "Create your organization profile",
               description:
-                "Share your funding initiatives, budget, org type, and basic info. Upload key docs like your annual report or strategic plan, and integrate your existing tools.",
+                "Share your funding initiatives, budget, organization type, and basic organization information to help us understand your needs.",
             },
             {
               number: "02",
-              title: "AI matches grants",
+              title: "Upload Organization documents",
               description:
-                "Our AI analyzes thousands of opportunities to find grants that match your eligibility and fit—saving weeks of manual research and eliminating dead ends.",
+                "Upload your organization documents—this can be an annual report, strategic plan, or anything that tells us about your organization's mission and priorities.",
             },
             {
               number: "03",
-              title: "Collaborate & draft faster",
+              title: "Integrate your tools",
               description:
-                "Use AI-powered drafting that learns your voice and reuses your past wins. Collaborate with your team in real-time to submit stronger applications faster.",
+                "We integrate with all the essential tools you already use, so you no longer have to jump between them. Connect Google Drive, Slack, Notion, and more.",
             },
           ]}
         />
 
-        {/* Section 5: Our Approach (Part 2) */}
+        {/* Section 5: Your AI Powered Funding Workflow */}
         <ApproachSection
           id="approach-2"
-          title="Continuous Support"
-          subtitle="We don't stop at discovery—our platform supports you through the entire grant lifecycle"
+          title="Your AI Powered Funding Workflow"
+          subtitle="From discovery to award management—GrantWare AI handles the heavy lifting"
           steps={[
             {
               number: "04",
-              title: "Submission & Tracking",
+              title: "Search & Eligibility",
               description:
-                "Track all your applications in one place, receive status updates, and never miss a deadline with our intelligent notification system.",
+                "Save weeks of manual research. Our AI scans thousands of opportunities to build a high-fit pipeline—fewer dead ends, more wins.",
             },
             {
               number: "05",
-              title: "Award Management",
+              title: "AI Powered Drafting",
               description:
-                "Once funded, manage your grants effectively with our compliance tracking, reporting tools, and budget management features.",
+                "Write proposals that sound like you. Our AI learns your voice and reuses winning content from past applications to draft faster and stronger.",
             },
             {
               number: "06",
-              title: "Growth & Optimization",
+              title: "Management & Collaboration",
               description:
-                "Learn from successful applications, optimize your strategy over time, and scale your funding with data-driven insights.",
+                "One workspace for everything—track deadlines, manage files, collaborate with your team, and never miss a submission window again.",
             },
           ]}
         />
