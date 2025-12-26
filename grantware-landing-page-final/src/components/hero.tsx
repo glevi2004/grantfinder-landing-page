@@ -101,7 +101,7 @@ export function Hero() {
               transition={{ duration: 0.6, delay: 0.6 }}
               className="flex flex-col sm:flex-row items-start gap-4"
             >
-              <ShimmerButton size="lg" className="rounded-full px-8 text-base" asChild>
+              <ShimmerButton size="lg" className="rounded-xl h-12 px-9 text-[17px]" asChild>
                 <a
                   href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
                   target="_blank"
@@ -114,7 +114,7 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="rounded-full px-8 text-base border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/40 text-white transition-all"
+                className="rounded-xl h-12 px-9 text-[17px] border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/40 text-white transition-all"
                 onClick={scrollToFeatures}
               >
                 Learn more
