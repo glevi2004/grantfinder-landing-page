@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { Check } from "lucide-react"
 
 export function PricingSection() {
@@ -149,7 +150,7 @@ export function PricingSection() {
                 </div>
               </div>
 
-              <Button variant="outline" className="w-full rounded-full border-gray-300 text-gray-900 hover:bg-gray-100">
+              <Button variant="outline" className="w-full rounded-xl border-gray-300 text-gray-900 hover:bg-gray-100">
                 Start for free
               </Button>
             </div>
@@ -220,9 +221,9 @@ export function PricingSection() {
                 </div>
               </div>
 
-              <Button className="w-full rounded-full bg-white text-gray-900 hover:bg-white/90">
+              <ShimmerButton size="lg" className="w-full rounded-xl">
                 Get started
-              </Button>
+              </ShimmerButton>
             </div>
 
             <div className="self-stretch flex flex-col justify-start items-start gap-2">
@@ -237,7 +238,7 @@ export function PricingSection() {
                 "Custom integrations",
               ].map((feature, index) => (
                 <div key={index} className="self-stretch flex justify-start items-center gap-3">
-                  <Check className="w-4 h-4 text-[#5b8cff]" />
+                  <Check className="w-4 h-4 text-white/70" />
                   <div className="flex-1 text-white text-[12.5px] font-normal leading-5">{feature}</div>
                 </div>
               ))}
@@ -292,7 +293,7 @@ export function PricingSection() {
                 </div>
               </div>
 
-              <Button className="w-full rounded-full bg-[#5b8cff] text-white hover:bg-[#4a7be9]">
+              <Button variant="outline" className="w-full rounded-xl border-gray-300 text-gray-900 hover:bg-gray-100">
                 Contact sales
               </Button>
             </div>

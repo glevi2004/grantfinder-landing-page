@@ -10,87 +10,87 @@ import { FooterSection } from "@/components/footer-section"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background">
-      {/* Top-of-page wrapper: Header + Hero with shared gradient background */}
-      <div className="relative overflow-hidden">
-        {/* ShaderGradient covers header + hero area */}
-        <HeroShaderGradient />
+    <main className="min-h-screen relative">
+      {/* Full-page ShaderGradient background (fixed) */}
+      <HeroShaderGradient />
 
-        {/* Header Pill (fixed, sits on top of gradient) */}
+      {/* All content sits above the gradient */}
+      <div className="relative z-10">
+        {/* Header Pill (fixed navbar) */}
         <HeaderPill />
 
         {/* Section 1: Hero */}
         <Hero />
+
+        {/* Section 2: Product Features (from Brillance, adapted) */}
+        <ProductFeaturesSection />
+
+        {/* Section 3: Trusted By / Client Logos */}
+        <ClientLogos />
+
+        {/* Section 4: How it Works */}
+        <ApproachSection
+          id="approach"
+          title="How it Works"
+          subtitle="Get started in minutes and let AI do the heavy lifting"
+          steps={[
+            {
+              number: "01",
+              title: "Create your organization profile",
+              description:
+                "Share your funding initiatives, budget, organization type, and basic organization information to help us understand your needs.",
+            },
+            {
+              number: "02",
+              title: "Upload Organization documents",
+              description:
+                "Upload your organization documents—this can be an annual report, strategic plan, or anything that tells us about your organization's mission and priorities.",
+            },
+            {
+              number: "03",
+              title: "Integrate your tools",
+              description:
+                "We integrate with all the essential tools you already use, so you no longer have to jump between them. Connect Google Drive, Slack, Notion, and more.",
+            },
+          ]}
+        />
+
+        {/* Section 5: Your AI Powered Funding Workflow */}
+        <ApproachSection
+          id="approach-2"
+          title="Your AI Powered Funding Workflow"
+          subtitle="From discovery to award management—GrantWare AI handles the heavy lifting"
+          steps={[
+            {
+              number: "04",
+              title: "Search & Eligibility",
+              description:
+                "Save weeks of manual research. Our AI scans thousands of opportunities to build a high-fit pipeline—fewer dead ends, more wins.",
+            },
+            {
+              number: "05",
+              title: "AI Powered Drafting",
+              description:
+                "Write proposals that sound like you. Our AI learns your voice and reuses winning content from past applications to draft faster and stronger.",
+            },
+            {
+              number: "06",
+              title: "Management & Collaboration",
+              description:
+                "One workspace for everything—track deadlines, manage files, collaborate with your team, and never miss a submission window again.",
+            },
+          ]}
+        />
+
+        {/* Section 6: Pricing */}
+        <PricingSection />
+
+        {/* Section 7: FAQ */}
+        <FAQSection />
+
+        {/* Section 8: Footer */}
+        <FooterSection />
       </div>
-
-      {/* Section 2: Product Features (from Brillance, adapted) */}
-      <ProductFeaturesSection />
-
-      {/* Section 3: Trusted By / Client Logos */}
-      <ClientLogos />
-
-      {/* Section 4: Our Approach (Part 1) */}
-      <ApproachSection
-        id="approach"
-        title="Our Approach"
-        subtitle="A proven process that transforms your vision into high-converting digital experiences"
-        steps={[
-          {
-            number: "01",
-            title: "Discovery & Strategy",
-            description:
-              "We dive deep into your organization's goals, funding needs, and competitive landscape to craft a grant acquisition strategy that aligns with your mission.",
-          },
-          {
-            number: "02",
-            title: "AI-Powered Matching",
-            description:
-              "Our AI analyzes thousands of grant opportunities to find the perfect matches for your organization, saving you countless hours of manual research.",
-          },
-          {
-            number: "03",
-            title: "Application Support",
-            description:
-              "We provide intelligent writing assistance, deadline tracking, and document management to streamline your application process.",
-          },
-        ]}
-      />
-
-      {/* Section 5: Our Approach (Part 2) */}
-      <ApproachSection
-        id="approach-2"
-        title="Continuous Support"
-        subtitle="We don't stop at discovery—our platform supports you through the entire grant lifecycle"
-        steps={[
-          {
-            number: "04",
-            title: "Submission & Tracking",
-            description:
-              "Track all your applications in one place, receive status updates, and never miss a deadline with our intelligent notification system.",
-          },
-          {
-            number: "05",
-            title: "Award Management",
-            description:
-              "Once funded, manage your grants effectively with our compliance tracking, reporting tools, and budget management features.",
-          },
-          {
-            number: "06",
-            title: "Growth & Optimization",
-            description:
-              "Learn from successful applications, optimize your strategy over time, and scale your funding with data-driven insights.",
-          },
-        ]}
-      />
-
-      {/* Section 6: Pricing */}
-      <PricingSection />
-
-      {/* Section 7: FAQ */}
-      <FAQSection />
-
-      {/* Section 8: Footer */}
-      <FooterSection />
     </main>
   )
 }

@@ -1,17 +1,15 @@
 "use client"
 
 import Link from "next/link"
-import { Sparkles, Mail } from "lucide-react"
+import { Mail } from "lucide-react"
 import { IconBrandLinkedin } from "@tabler/icons-react"
+import { scrollToSection } from "@/components/smooth-scroll"
 
 export function FooterSection() {
-  // Smooth scroll handler for anchor links
+  // Smooth scroll handler for anchor links using Lenis
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
+    scrollToSection(targetId)
   }
 
   return (
@@ -20,14 +18,11 @@ export function FooterSection() {
       <div className="self-stretch h-auto flex flex-col md:flex-row justify-between items-stretch pr-0 pb-8 pt-0 max-w-7xl mx-auto w-full">
         <div className="h-auto p-4 md:p-8 flex flex-col justify-start items-start gap-8">
           {/* Brand Section */}
-          <Link href="/" className="flex items-center gap-2 text-xl font-semibold">
-            <div className="w-8 h-8 bg-[#5b8cff] rounded-lg flex items-center justify-center">
-              <Sparkles className="w-5 h-5 text-white" />
-            </div>
-            <span className="font-serif text-gray-900">GrantWare</span>
+          <Link href="/" className="text-xl font-semibold">
+            <span className="font-serif text-gray-900">GrantWare <span className="text-gray-500">AI</span></span>
           </Link>
           <div className="text-gray-500 text-sm font-medium leading-[18px]">
-            AI-powered grant discovery
+            Win the funding your organization deserves.
           </div>
 
           {/* Social Media Icons - LinkedIn and Email only */}
