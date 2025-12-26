@@ -1,21 +1,19 @@
 "use client"
 
 import { ShimmerButton } from "@/components/ui/shimmer-button"
+import { scrollToSection, scrollToTop } from "@/components/smooth-scroll"
 
 export function HeaderPill() {
-  // Smooth scroll to a section by ID
+  // Smooth scroll to a section by ID using Lenis
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
+    scrollToSection(targetId)
   }
 
-  // Smooth scroll to top of page
+  // Smooth scroll to top of page using Lenis
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    window.scrollTo({ top: 0, behavior: "smooth" })
+    scrollToTop()
   }
 
   return (

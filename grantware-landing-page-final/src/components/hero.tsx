@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from "react"
 import { Button } from "@/components/ui/button"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { GrantwareConnectionsBeam } from "@/components/grantware-connections-beam"
+import { scrollToSection } from "@/components/smooth-scroll"
 import { motion } from "framer-motion"
 
 const TYPING_WORDS = ["easier", "faster", "smarter"]
@@ -54,10 +55,7 @@ export function Hero() {
   }, [typeEffect])
 
   const scrollToFeatures = () => {
-    const element = document.querySelector("#features")
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
+    scrollToSection("features")
   }
 
   return (

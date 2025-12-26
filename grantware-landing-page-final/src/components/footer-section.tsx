@@ -3,15 +3,13 @@
 import Link from "next/link"
 import { Sparkles, Mail } from "lucide-react"
 import { IconBrandLinkedin } from "@tabler/icons-react"
+import { scrollToSection } from "@/components/smooth-scroll"
 
 export function FooterSection() {
-  // Smooth scroll handler for anchor links
+  // Smooth scroll handler for anchor links using Lenis
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
-    const element = document.getElementById(targetId)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" })
-    }
+    scrollToSection(targetId)
   }
 
   return (
