@@ -45,9 +45,9 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
       ref={containerRef}
     >
       <div className="flex size-full flex-row items-stretch justify-between gap-16 px-4">
-        {/* Left: Person icon - shifted up slightly to align beam with icon center */}
+        {/* Left: Person icon */}
         <div className="flex flex-col justify-center">
-          <Circle ref={userRef} className="-translate-y-1">
+          <Circle ref={userRef}>
             <Icons.user />
           </Circle>
         </div>
@@ -86,6 +86,7 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
         toRef={centerRef}
         duration={BEAM_DURATION}
         delay={0}
+        startYOffset={-4}
         gradientStartColor="#5b8cff"
         gradientStopColor="#4169e1"
       />
@@ -197,6 +198,7 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
         duration={BEAM_DURATION}
         delay={9}
         reverse={true}
+        startYOffset={-4}
         gradientStartColor="#5b8cff"
         gradientStopColor="#4169e1"
       />
