@@ -22,7 +22,7 @@ export function ClientLogos() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-serif text-3xl md:text-4xl text-center mb-12 text-white"
+          className="font-sans text-2xl md:text-3xl text-center mb-12 text-white font-medium"
         >
           Experience From
         </motion.h2>
