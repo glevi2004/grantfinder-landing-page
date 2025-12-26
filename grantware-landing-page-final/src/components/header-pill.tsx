@@ -68,7 +68,7 @@ export function HeaderPill() {
             </nav>
 
             {/* Right: CTA Button */}
-            <ShimmerButton size="sm" className="rounded-full px-5 text-sm">
+            <ShimmerButton size="sm" className="rounded-xl px-5 text-sm">
               Get Started
             </ShimmerButton>
           </div>
