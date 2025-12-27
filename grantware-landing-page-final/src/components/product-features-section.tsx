@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react"
 import type React from "react"
 import { motion } from "framer-motion"
+// import { useTheme } from "@/components/theme-context"
 
-// Badge component styled for gradient background
+// Badge component styled for light background
 function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
   return (
-    <div className="px-3.5 py-1.5 bg-white/15 backdrop-blur-md shadow-[0px_0px_0px_4px_rgba(255,255,255,0.05)] overflow-hidden rounded-full flex justify-start items-center gap-2 border border-white/25">
+    <div className="px-3.5 py-1.5 backdrop-blur-md shadow-[0px_0px_0px_4px_rgba(255,255,255,0.05)] overflow-hidden rounded-full flex justify-start items-center gap-2 border bg-gray-100 border-gray-200">
       <div className="w-3.5 h-3.5 relative overflow-hidden flex items-center justify-center">{icon}</div>
-      <div className="text-center flex justify-center flex-col text-white/90 text-xs font-medium leading-3">
+      <div className="text-center flex justify-center flex-col text-xs font-medium leading-3 text-gray-700">
         {text}
       </div>
     </div>
@@ -17,6 +18,7 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
 }
 
 export function ProductFeaturesSection() {
+  // const { isGradient } = useTheme()
   const [activeCard, setActiveCard] = useState(0)
   const [animationKey, setAnimationKey] = useState(0)
 
@@ -62,14 +64,14 @@ export function ProductFeaturesSection() {
         >
           <Badge
             icon={
-              <div className="w-2.5 h-2.5 outline outline-[1.17px] outline-white/80 outline-offset-[-0.58px] rounded-full"></div>
+              <div className="w-2.5 h-2.5 outline outline-[1.17px] outline-offset-[-0.58px] rounded-full outline-gray-400"></div>
             }
             text="Platform Features"
           />
-          <h2 className="self-stretch text-center text-white text-3xl md:text-5xl lg:text-[3.25rem] font-semibold leading-tight md:leading-[1.1] font-serif tracking-tight md:whitespace-nowrap">
+          <h2 className="self-stretch text-center text-3xl md:text-5xl lg:text-[3.25rem] font-semibold leading-tight md:leading-[1.1] font-serif tracking-tight md:whitespace-nowrap text-gray-900">
             Everything you need to win more Grants
           </h2>
-          <p className="self-stretch text-center text-white/80 text-base font-normal leading-7 max-w-2xl mx-auto">
+          <p className="self-stretch text-center text-base font-normal leading-7 max-w-2xl mx-auto text-gray-600">
             From discovery to submission, GrantWare AI streamlines every step of your grant management process with intelligent automation and collaborative tools.
           </p>
         </motion.div>
@@ -93,13 +95,13 @@ export function ProductFeaturesSection() {
                   onClick={() => handleCardClick(index)}
                   className={`w-full overflow-hidden flex flex-col justify-start items-start transition-all duration-300 cursor-pointer rounded-xl ${
                     isActive
-                      ? "bg-white shadow-lg border border-white/30"
-                      : "bg-white/10 backdrop-blur-md border border-white/20 hover:bg-white/15 hover:border-white/30"
+                      ? "bg-white shadow-lg border border-gray-200"
+                      : "bg-gray-50 border border-gray-200 hover:bg-gray-100 hover:border-gray-300"
                   }`}
                 >
                   {/* Progress bar */}
                   <div
-                    className={`w-full h-1 bg-white/20 overflow-hidden ${isActive ? "opacity-100" : "opacity-0"}`}
+                    className={`w-full h-1 overflow-hidden bg-gray-200 ${isActive ? "opacity-100" : "opacity-0"}`}
                   >
                     <div
                       key={animationKey}
@@ -111,12 +113,12 @@ export function ProductFeaturesSection() {
                   </div>
                   <div className="px-6 py-5 w-full flex flex-col gap-2">
                     <div className={`self-stretch flex justify-center flex-col text-sm font-semibold leading-6 ${
-                      isActive ? "text-gray-900" : "text-white/90"
+                      isActive ? "text-gray-900" : "text-gray-700"
                     }`}>
                       {card.title}
                     </div>
                     <div className={`self-stretch text-[13px] font-normal leading-[22px] whitespace-pre-line ${
-                      isActive ? "text-gray-600" : "text-white/60"
+                      isActive ? "text-gray-600" : "text-gray-500"
                     }`}>
                       {card.description}
                     </div>

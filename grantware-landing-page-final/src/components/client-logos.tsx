@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+// import { useTheme } from "@/components/theme-context"
 
 // Logo files from the Experience From section
 const LOGOS = [
@@ -14,6 +15,8 @@ const LOGOS = [
 ]
 
 export function ClientLogos() {
+  // const { isGradient } = useTheme()
+
   return (
     <section id="trusted-by" className="py-12 md:py-16 bg-transparent">
       <div className="max-w-7xl mx-auto px-6">
@@ -22,7 +25,7 @@ export function ClientLogos() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="font-sans text-2xl md:text-3xl text-center mb-12 text-white font-medium"
+          className="font-sans text-2xl md:text-3xl text-center mb-12 font-medium text-gray-900"
         >
           Experience From
         </motion.h2>
@@ -70,7 +73,7 @@ export function ClientLogos() {
                     alt={logoLabel}
                     width={150}
                     height={60}
-                    className="w-auto h-10 md:h-12 opacity-80 brightness-[1.5] hover:opacity-100 hover:brightness-[2] transition-all drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                    className="w-auto h-10 md:h-12 transition-all opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
                   />
                 )
               })}
@@ -91,7 +94,7 @@ export function ClientLogos() {
                     alt={logoLabel}
                     width={150}
                     height={60}
-                    className="w-auto h-10 md:h-12 opacity-80 brightness-[1.5] hover:opacity-100 hover:brightness-[2] transition-all drop-shadow-[0_0_8px_rgba(255,255,255,0.3)]"
+                    className="w-auto h-10 md:h-12 transition-all opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
                   />
                 )
               })}

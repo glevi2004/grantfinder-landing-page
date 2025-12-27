@@ -5,8 +5,10 @@ import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { Check } from "lucide-react"
+// import { useTheme } from "@/components/theme-context"
 
 export function PricingSection() {
+  // const { isGradient } = useTheme()
   const [billingPeriod, setBillingPeriod] = useState<"monthly" | "annually">("annually")
 
   const pricing = {
@@ -35,8 +37,8 @@ export function PricingSection() {
           transition={{ duration: 0.6 }}
           className="w-full max-w-3xl px-6 py-5 overflow-hidden rounded-lg flex flex-col justify-start items-center gap-4"
         >
-          {/* Pricing Badge - translucent for gradient */}
-          <div className="px-3.5 py-1.5 bg-white/15 backdrop-blur-md shadow-[0px_0px_0px_4px_rgba(255,255,255,0.05)] overflow-hidden rounded-full flex justify-start items-center gap-2 border border-white/25">
+          {/* Pricing Badge */}
+          <div className="px-3.5 py-1.5 backdrop-blur-md shadow-[0px_0px_0px_4px_rgba(255,255,255,0.05)] overflow-hidden rounded-full flex justify-start items-center gap-2 border bg-gray-100 border-gray-200">
             <div className="w-3.5 h-3.5 relative overflow-hidden flex items-center justify-center">
               <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -45,22 +47,22 @@ export function PricingSection() {
                   strokeWidth="1"
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  className="text-white/90"
+                  className="text-gray-700"
                 />
               </svg>
             </div>
-            <div className="text-center flex justify-center flex-col text-white/90 text-xs font-medium leading-3">
+            <div className="text-center flex justify-center flex-col text-xs font-medium leading-3 text-gray-700">
               Plans & Pricing
             </div>
           </div>
 
-          {/* Title - Updated copy and white color */}
-          <h2 className="self-stretch text-center text-white text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-serif tracking-tight">
+          {/* Title */}
+          <h2 className="self-stretch text-center text-3xl md:text-5xl font-semibold leading-tight md:leading-[60px] font-serif tracking-tight text-gray-900">
             Less than a missed funding opportunity
           </h2>
 
-          {/* Description - white/80 for gradient visibility */}
-          <p className="self-stretch text-center text-white/80 text-base font-normal leading-7">
+          {/* Description */}
+          <p className="self-stretch text-center text-base font-normal leading-7 text-gray-600">
             Scale your operations with flexible pricing that grows with your team.
             <br />
             Start free, upgrade when you're ready.
@@ -74,14 +76,14 @@ export function PricingSection() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.4 }}
-        className="rounded-full bg-white/15 backdrop-blur-md p-1 flex items-center"
+        className="rounded-full backdrop-blur-md p-1 flex items-center bg-gray-100"
       >
         <button
           onClick={() => setBillingPeriod("annually")}
           className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
             billingPeriod === "annually"
               ? "bg-white text-gray-900 shadow-sm"
-              : "text-white/70 hover:text-white"
+              : "text-gray-500 hover:text-gray-700"
           }`}
         >
           Annually
@@ -91,7 +93,7 @@ export function PricingSection() {
           className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
             billingPeriod === "monthly"
               ? "bg-white text-gray-900 shadow-sm"
-              : "text-white/70 hover:text-white"
+              : "text-gray-500 hover:text-gray-700"
           }`}
         >
           Monthly
