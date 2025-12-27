@@ -1,23 +1,38 @@
 "use client"
 
+import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { scrollToSection, scrollToTop } from "@/components/smooth-scroll"
 // import { useTheme } from "@/components/theme-context"
 
 export function HeaderPill() {
+  const pathname = usePathname()
+  const router = useRouter()
+  const isHomePage = pathname === "/"
+  
   // To re-enable gradient toggle, uncomment:
   // const { isGradient, toggleTheme } = useTheme()
 
-  // Smooth scroll to a section by ID using Lenis
+  // Smooth scroll to a section by ID using Lenis (only on home page)
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
-    scrollToSection(targetId)
+    if (isHomePage) {
+      scrollToSection(targetId)
+    } else {
+      // Navigate to home page with hash
+      router.push(`/#${targetId}`)
+    }
   }
 
   // Smooth scroll to top of page using Lenis
   const handleScrollToTop = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault()
-    scrollToTop()
+    if (isHomePage) {
+      scrollToTop()
+    } else {
+      router.push("/")
+    }
   }
 
   return (
@@ -68,6 +83,12 @@ export function HeaderPill() {
               >
                 FAQ
               </a>
+              <Link
+                href="/about"
+                className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+              >
+                About
+              </Link>
             </nav>
 
             {/* Right: CTA Button */}

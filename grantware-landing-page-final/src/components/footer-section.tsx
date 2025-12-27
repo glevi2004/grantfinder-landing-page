@@ -1,15 +1,25 @@
 "use client"
 
 import Link from "next/link"
+import { usePathname, useRouter } from "next/navigation"
 import { Mail } from "lucide-react"
 import { IconBrandLinkedin } from "@tabler/icons-react"
 import { scrollToSection } from "@/components/smooth-scroll"
 
 export function FooterSection() {
-  // Smooth scroll handler for anchor links using Lenis
+  const pathname = usePathname()
+  const router = useRouter()
+  const isHomePage = pathname === "/"
+
+  // Smooth scroll handler for anchor links using Lenis (only on home page)
   const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
     e.preventDefault()
-    scrollToSection(targetId)
+    if (isHomePage) {
+      scrollToSection(targetId)
+    } else {
+      // Navigate to home page with hash
+      router.push(`/#${targetId}`)
+    }
   }
 
   return (
@@ -94,20 +104,18 @@ export function FooterSection() {
           <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
             <div className="text-gray-500 text-sm font-medium leading-5">Company</div>
             <div className="flex flex-col justify-center items-start gap-2">
-              <a 
-                href="#trusted-by" 
-                onClick={(e) => handleSmoothScroll(e, "trusted-by")}
+              <Link 
+                href="/about"
                 className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
               >
                 About us
-              </a>
-              <a 
-                href="#trusted-by" 
-                onClick={(e) => handleSmoothScroll(e, "trusted-by")}
+              </Link>
+              <Link 
+                href="/about#team"
                 className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
               >
                 Our Team
-              </a>
+              </Link>
               <a 
                 href="mailto:ryanrod@bu.edu"
                 className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
