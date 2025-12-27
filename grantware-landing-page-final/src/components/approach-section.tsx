@@ -85,8 +85,8 @@ export function ApproachSection({
 
         {/* Steps */}
         <div className="relative">
-          {/* Connecting Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px hidden md:block bg-gray-200" />
+          {/* Connecting Line - visible on all breakpoints, centered */}
+          <div className="absolute left-1/2 -translate-x-1/2 top-8 bottom-8 w-px bg-gray-200" />
 
           <div className="space-y-16">
             {steps.map((step, index) => (
@@ -96,18 +96,18 @@ export function ApproachSection({
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-start md:items-center gap-8 ${
+                className={`relative flex flex-col md:flex-row items-center gap-8 ${
                   index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Step Number Circle */}
-                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-serif text-xl font-bold relative z-10 md:absolute md:left-1/2 md:-translate-x-1/2">
+                {/* Step Number Circle - centered on mobile, absolute-centered on desktop */}
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-serif text-xl font-bold relative z-10 mx-auto md:mx-0 md:absolute md:left-1/2 md:-translate-x-1/2">
                   {step.number}
                 </div>
 
                 {/* Content Card */}
                 <div
-                  className={`flex-1 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"} md:w-1/2`}
+                  className={`w-full flex-1 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"} md:w-1/2`}
                 >
                   <div className="p-8 rounded-2xl border bg-gray-50 border-gray-200 hover:border-gray-300">
                     {step.visual ? (

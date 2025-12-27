@@ -70,12 +70,12 @@ export function FAQSection() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5"
+          className="w-full lg:flex-1 flex flex-col justify-center items-center lg:items-start gap-4 lg:py-5"
         >
-          <h2 className="w-full flex flex-col justify-center font-semibold leading-tight md:leading-[44px] font-serif text-4xl tracking-tight text-gray-900">
+          <h2 className="w-full flex flex-col justify-center font-semibold leading-tight md:leading-[44px] font-serif text-4xl tracking-tight text-center lg:text-left text-gray-900">
             Frequently Asked Questions
           </h2>
-          <p className="w-full text-base font-normal leading-7 text-gray-600">
+          <p className="w-full text-base font-normal leading-7 text-center lg:text-left text-gray-600">
             Everything you need to know about
             <br className="hidden md:block" />
             streamlining your grant process with AI.

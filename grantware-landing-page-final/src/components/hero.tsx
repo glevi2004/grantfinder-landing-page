@@ -66,13 +66,13 @@ export function Hero() {
       <div className="relative z-10 container mx-auto max-w-7xl">
         <div className="grid gap-10 lg:grid-cols-[55%_45%] items-center">
           {/* Left Column: Content */}
-          <div className="flex flex-col">
+          <div className="flex flex-col items-center lg:items-start">
             {/* Main Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-left leading-[1.1] mb-6 text-gray-900"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-center lg:text-left leading-[1.1] mb-6 text-gray-900"
             >
               <span className="block">Win funding for your</span>
               <span className="block">
@@ -89,7 +89,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-left text-lg md:text-xl max-w-xl mb-8 leading-relaxed text-gray-600"
+              className="text-center lg:text-left text-lg md:text-xl max-w-xl mx-auto lg:mx-0 mb-8 leading-relaxed text-gray-600"
             >
               Discover high-fit opportunities, draft faster with AI, and manage the entire grant lifecycle in one intelligent platform.
             </motion.p>
@@ -99,9 +99,9 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="flex flex-col sm:flex-row items-start gap-4"
+              className="flex flex-col sm:flex-row items-center lg:items-start gap-4 w-full sm:w-auto"
             >
-              <ShimmerButton size="lg" className="rounded-xl h-12 px-9 text-[17px]" asChild>
+              <ShimmerButton size="lg" className="rounded-xl h-12 px-9 text-[17px] w-full sm:w-auto" asChild>
                 <a
                   href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
                   target="_blank"
@@ -114,7 +114,7 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="rounded-xl h-12 px-9 text-[17px] border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 text-gray-900"
+                className="rounded-xl h-12 px-9 text-[17px] border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 text-gray-900 w-full sm:w-auto"
                 onClick={scrollToFeatures}
               >
                 Learn more
@@ -127,7 +127,7 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="hidden lg:flex justify-center lg:justify-start -ml-12"
+            className="hidden lg:flex justify-center lg:justify-start lg:ml-0 xl:-ml-12 lg:pr-4 xl:pr-8"
           >
             <GrantwareConnectionsBeam />
           </motion.div>
