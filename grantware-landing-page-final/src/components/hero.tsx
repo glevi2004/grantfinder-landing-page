@@ -6,6 +6,7 @@ import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { GrantwareConnectionsBeam } from "@/components/grantware-connections-beam"
 import { scrollToSection } from "@/components/smooth-scroll"
 import { motion } from "framer-motion"
+// import { useTheme } from "@/components/theme-context"
 
 const TYPING_WORDS = ["easier", "faster", "smarter"]
 const TYPING_SPEED = 120
@@ -13,6 +14,7 @@ const DELETING_SPEED = 60
 const PAUSE_DURATION = 1800
 
 export function Hero() {
+  // const { isGradient } = useTheme()
   const [displayText, setDisplayText] = useState("")
   const [wordIndex, setWordIndex] = useState(0)
   const [isDeleting, setIsDeleting] = useState(false)
@@ -70,14 +72,14 @@ export function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-left leading-[1.1] mb-6 text-white"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl font-normal text-left leading-[1.1] mb-6 text-gray-900"
             >
               <span className="block">Win funding for your</span>
               <span className="block">
                 organization{" "}
                 <span className="inline-block min-w-[3ch]">
-                  <span className="text-[#7cb3ff]">{displayText}</span>
-                  <span className="animate-pulse text-[#7cb3ff]">|</span>
+                  <span className="text-blue-600">{displayText}</span>
+                  <span className="animate-pulse text-blue-600">|</span>
                 </span>
               </span>
             </motion.h1>
@@ -87,7 +89,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-left text-lg md:text-xl text-white/80 max-w-xl mb-8 leading-relaxed"
+              className="text-left text-lg md:text-xl max-w-xl mb-8 leading-relaxed text-gray-600"
             >
               Discover high-fit opportunities, draft faster with AI, and manage the entire grant lifecycle in one intelligent platform.
             </motion.p>
@@ -112,7 +114,7 @@ export function Hero() {
               <Button
                 variant="ghost"
                 size="lg"
-                className="rounded-xl h-12 px-9 text-[17px] border border-white/30 bg-white/10 hover:bg-white/20 hover:border-white/40 text-white transition-all"
+                className="rounded-xl h-12 px-9 text-[17px] border border-gray-300 bg-gray-100 hover:bg-gray-200 hover:border-gray-400 text-gray-900"
                 onClick={scrollToFeatures}
               >
                 Learn more

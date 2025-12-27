@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ChevronDown } from "lucide-react"
+// import { useTheme } from "@/components/theme-context"
 
 interface FAQItem {
   question: string
@@ -53,6 +54,7 @@ const faqData: FAQItem[] = [
 ]
 
 export function FAQSection() {
+  // const { isGradient } = useTheme()
   const [openItems, setOpenItems] = useState<number[]>([])
 
   const toggleItem = (index: number) => {
@@ -70,10 +72,10 @@ export function FAQSection() {
           transition={{ duration: 0.6 }}
           className="w-full lg:flex-1 flex flex-col justify-center items-start gap-4 lg:py-5"
         >
-          <h2 className="w-full flex flex-col justify-center text-white font-semibold leading-tight md:leading-[44px] font-serif text-4xl tracking-tight">
+          <h2 className="w-full flex flex-col justify-center font-semibold leading-tight md:leading-[44px] font-serif text-4xl tracking-tight text-gray-900">
             Frequently Asked Questions
           </h2>
-          <p className="w-full text-white/80 text-base font-normal leading-7">
+          <p className="w-full text-base font-normal leading-7 text-gray-600">
             Everything you need to know about
             <br className="hidden md:block" />
             streamlining your grant process with AI.
@@ -93,19 +95,19 @@ export function FAQSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.05 }}
-                  className="w-full border-b border-white/20 overflow-hidden"
+                  className="w-full border-b overflow-hidden border-gray-200"
                 >
                   <button
                     onClick={() => toggleItem(index)}
-                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-white/10 transition-colors duration-200 rounded-lg"
+                    className="w-full px-5 py-[18px] flex justify-between items-center gap-5 text-left hover:bg-gray-50 rounded-lg"
                     aria-expanded={isOpen}
                   >
-                    <div className="flex-1 text-white text-base font-medium leading-6">
+                    <div className="flex-1 text-base font-medium leading-6 text-gray-900">
                       {item.question}
                     </div>
                     <div className="flex justify-center items-center">
                       <ChevronDown
-                        className={`w-6 h-6 text-white/60 transition-transform duration-300 ease-in-out ${
+                        className={`w-6 h-6 transition-transform duration-300 ease-in-out text-gray-400 ${
                           isOpen ? "rotate-180" : "rotate-0"
                         }`}
                       />
@@ -117,7 +119,7 @@ export function FAQSection() {
                       isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
                     }`}
                   >
-                    <div className="px-5 pb-[18px] text-white/70 text-sm font-normal leading-6">
+                    <div className="px-5 pb-[18px] text-sm font-normal leading-6 text-gray-600">
                       {item.answer}
                     </div>
                   </div>

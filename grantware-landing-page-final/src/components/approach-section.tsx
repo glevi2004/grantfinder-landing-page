@@ -1,6 +1,8 @@
 "use client"
 
 import { motion } from "framer-motion"
+import type React from "react"
+// import { useTheme } from "@/components/theme-context"
 
 interface ApproachSectionProps {
   id?: string
@@ -10,6 +12,8 @@ interface ApproachSectionProps {
     number: string
     title: string
     description: string
+    visual?: React.ReactNode
+    visualOutside?: React.ReactNode // Visual placed outside the card, in the opposite space
   }[]
 }
 
@@ -52,6 +56,8 @@ export function ApproachSection({
   subtitle = "A proven process that transforms your vision into high-converting digital experiences",
   steps = defaultSteps,
 }: ApproachSectionProps) {
+  // const { isGradient } = useTheme()
+
   return (
     <section id={id} className="py-24 px-6 bg-transparent">
       <div className="max-w-7xl mx-auto">
@@ -62,7 +68,7 @@ export function ApproachSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="font-serif text-5xl md:text-6xl mb-6 text-balance text-white"
+            className="font-serif text-5xl md:text-6xl mb-6 text-balance text-gray-900"
           >
             {title}
           </motion.h2>
@@ -71,7 +77,7 @@ export function ApproachSection({
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-lg text-white/80 max-w-2xl mx-auto"
+            className="text-lg max-w-2xl mx-auto text-gray-600"
           >
             {subtitle}
           </motion.p>
@@ -80,7 +86,7 @@ export function ApproachSection({
         {/* Steps */}
         <div className="relative">
           {/* Connecting Line */}
-          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px bg-white/20 hidden md:block" />
+          <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-px hidden md:block bg-gray-200" />
 
           <div className="space-y-16">
             {steps.map((step, index) => (
@@ -103,14 +109,34 @@ export function ApproachSection({
                 <div
                   className={`flex-1 ${index % 2 === 0 ? "md:pr-16 md:text-right" : "md:pl-16 md:text-left"} md:w-1/2`}
                 >
-                  <div className="bg-secondary p-8 rounded-2xl border border-border hover:border-primary/50 transition-colors">
-                    <h3 className="font-serif text-2xl md:text-3xl mb-4">{step.title}</h3>
-                    <p className="text-muted-foreground leading-relaxed">{step.description}</p>
+                  <div className="p-8 rounded-2xl border bg-gray-50 border-gray-200 hover:border-gray-300">
+                    {step.visual ? (
+                      <div className={`flex flex-col lg:flex-row lg:items-center gap-6 ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"}`}>
+                        <div className={`flex-1 ${index % 2 === 0 ? "lg:text-right" : "lg:text-left"}`}>
+                          <h3 className="font-serif text-2xl md:text-3xl mb-4 text-gray-900">{step.title}</h3>
+                          <p className="leading-relaxed text-gray-600">{step.description}</p>
+                        </div>
+                        <div className="flex-shrink-0 lg:w-[280px]">
+                          {step.visual}
+                        </div>
+                      </div>
+                    ) : (
+                      <>
+                        <h3 className="font-serif text-2xl md:text-3xl mb-4 text-gray-900">{step.title}</h3>
+                        <p className="leading-relaxed text-gray-600">{step.description}</p>
+                      </>
+                    )}
                   </div>
                 </div>
 
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
+                {/* Spacer for alternating layout - or visualOutside if provided */}
+                <div className={`hidden md:flex md:w-1/2 items-center ${index % 2 === 0 ? "md:pl-20 justify-start" : "md:pr-20 justify-end"}`}>
+                  {step.visualOutside && (
+                    <div className="flex items-center justify-center">
+                      {step.visualOutside}
+                    </div>
+                  )}
+                </div>
               </motion.div>
             ))}
           </div>
@@ -119,4 +145,3 @@ export function ApproachSection({
     </section>
   )
 }
-
