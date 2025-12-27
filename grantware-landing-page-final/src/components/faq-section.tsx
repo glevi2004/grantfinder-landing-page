@@ -11,34 +11,44 @@ interface FAQItem {
 
 const faqData: FAQItem[] = [
   {
-    question: "What is GrantWare AI and who is it for?",
+    question: "How does GrantWare AI determine grant eligibility for my organization?",
     answer:
-      "GrantWare AI is a comprehensive grant discovery and management platform designed for organizations seeking funding. It's perfect for nonprofits, research institutions, startups, and enterprises looking to streamline their grant application processes.",
+      "GrantWare AI analyzes your organization profile—including demographics, mission, budget, service area, performance metrics, and program priorities—against grant requirements. It then provides a 0–100 match score with a detailed rationale explaining exactly why a grant is or isn't a good fit for your organization.",
   },
   {
-    question: "How does the AI-powered grant matching work?",
+    question: "Can I upload my organization's existing grant data?",
     answer:
-      "Our platform uses advanced AI to analyze your organization's profile, past successful applications, and funding goals. It then matches you with relevant grant opportunities, calculates compatibility scores, and prioritizes the best fits for your needs.",
+      "Yes. You can upload your past proposals, reports, and funding history to train your AI profile and improve drafting accuracy over time.",
   },
   {
-    question: "Can I integrate GrantWare with my existing tools?",
+    question: "What types of grants does the platform cover?",
     answer:
-      "Yes! GrantWare integrates seamlessly with popular CRM systems, document management software, and collaboration tools. We support APIs and webhooks for custom integrations with your existing workflow.",
+      "We bring together federal, state, foundation, and corporate grants. We can also integrate any specific grant sources your organization needs—wherever your grants are, we'll bring them to you.",
   },
   {
-    question: "What kind of support do you provide?",
+    question: "How much time can we realistically save with GrantWare AI?",
     answer:
-      "We offer 24/7 customer support, dedicated account managers for enterprise clients, comprehensive documentation, and onboarding assistance to help you get started quickly.",
+      "Teams typically see a 50–70% time reduction across search, writing, and management. What once took weeks of hunting across sites now takes minutes with unified discovery. Our AI eligibility analysis eliminates the need to manually parse dense RFPs just to discover you're not eligible. For writing, guided drafting produces a ready-to-edit proposal mapped to the RFP. For management, auto-generated timelines, tasks, and reminders keep work on track without bouncing between tools.",
   },
   {
-    question: "Is my data secure with GrantWare?",
+    question: "Is my data secure and compliant?",
     answer:
-      "Absolutely. We use enterprise-grade security measures including end-to-end encryption, SOC 2 compliance, and regular security audits. Your data is stored in secure, redundant data centers.",
+      "Yes. We use enterprise-grade security with encryption, role-based access controls, and audit logging. Our platform is designed for organizational email/SSO integration and follows industry-standard data privacy guidelines.",
   },
   {
-    question: "How do I get started with GrantWare?",
+    question: "Can multiple team members collaborate on grant proposals?",
     answer:
-      "Getting started is simple! Sign up for our free trial, connect your existing systems, and our onboarding team will help you set up your first grant tracking workflow within 24 hours.",
+      "Absolutely. Our platform offers all the collaboration features you'd expect from Word or Google Docs—real-time editing, comments, track changes, and version control—but with AI that helps draft, edit, and organize your proposals automatically. Team members can work together seamlessly while maintaining permissions, review workflows, and approval processes.",
+  },
+  {
+    question: "What size organizations is GrantWare AI designed for?",
+    answer:
+      "GrantWare AI is built for organizations of all sizes, from small offices with a single grant coordinator to larger teams managing multiple funding streams simultaneously.",
+  },
+  {
+    question: "Do you provide training and onboarding support?",
+    answer:
+      "Yes. We provide comprehensive onboarding including organization profile setup, team training sessions, office hours, and ongoing support. Our goal is to get your team productive within the first week, with minimal disruption to your existing workflows.",
   },
 ]
 
@@ -64,9 +74,9 @@ export function FAQSection() {
             Frequently Asked Questions
           </h2>
           <p className="w-full text-white/80 text-base font-normal leading-7">
-            Find answers to common questions about
+            Everything you need to know about
             <br className="hidden md:block" />
-            GrantWare AI and how it can help you.
+            streamlining your grant process with AI.
           </p>
         </motion.div>
 
