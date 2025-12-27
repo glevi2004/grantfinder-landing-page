@@ -12,10 +12,37 @@ const LOGOS = [
   "fidelity.svg",
   "redhat.svg",
   "ringlet.png",
+  "spark.png",
 ]
+
+function LogoItem({ logo, index }: { logo: string; index: number }) {
+  const logoName = logo.replace(/\.(png|svg)$/, "")
+  const logoLabel = logoName
+    .split(/[-_]/)
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ")
+
+  // Ringlet logo is white on transparent, so we need to invert it for visibility
+  const isRinglet = logo.includes("ringlet")
+
+  return (
+    <div className="flex-shrink-0 px-6 md:px-10">
+      <Image
+        src={`/logos/${logo}`}
+        alt={logoLabel}
+        width={150}
+        height={60}
+        className={`w-auto h-10 md:h-12 transition-all opacity-70 grayscale hover:opacity-100 hover:grayscale-0 ${isRinglet ? "invert" : ""}`}
+      />
+    </div>
+  )
+}
 
 export function ClientLogos() {
   // const { isGradient } = useTheme()
+
+  // Create a doubled array for seamless loop
+  const doubledLogos = [...LOGOS, ...LOGOS]
 
   return (
     <section id="trusted-by" className="py-12 md:py-16 bg-transparent">
@@ -31,77 +58,36 @@ export function ClientLogos() {
         </motion.h2>
 
         {/* Marquee Container */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden group">
           {/* CSS Keyframes for the marquee animation */}
           <style jsx>{`
-            @keyframes scroll {
-              0% {
+            @keyframes scroll-left {
+              from {
                 transform: translateX(0);
               }
-              100% {
+              to {
                 transform: translateX(-50%);
               }
             }
-            .animate-scroll {
-              animation: scroll 15s linear infinite;
+            .scroll-animation {
+              display: flex;
+              width: max-content;
+              animation: scroll-left 45s linear infinite;
             }
-            @media (min-width: 768px) {
-              .animate-scroll {
-                animation: scroll 30s linear infinite;
-              }
-            }
-            .animate-scroll:hover {
+            .group:hover .scroll-animation {
               animation-play-state: paused;
             }
           `}</style>
 
-          {/* Scrolling logos row - duplicated for seamless loop */}
-          <div className="flex animate-scroll">
-            {/* First set of logos */}
-            <div className="flex items-center gap-16 px-8 shrink-0">
-              {LOGOS.map((logo, index) => {
-                const logoName = logo.replace(/\.(png|svg)$/, "")
-                const logoLabel = logoName
-                  .split(/[-_]/)
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" ")
-
-                return (
-                  <Image
-                    key={`logo-1-${index}`}
-                    src={`/logos/${logo}`}
-                    alt={logoLabel}
-                    width={150}
-                    height={60}
-                    className="w-auto h-10 md:h-12 transition-all opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
-                  />
-                )
-              })}
-            </div>
-            {/* Second set of logos (duplicate for seamless loop) */}
-            <div className="flex items-center gap-16 px-8 shrink-0">
-              {LOGOS.map((logo, index) => {
-                const logoName = logo.replace(/\.(png|svg)$/, "")
-                const logoLabel = logoName
-                  .split(/[-_]/)
-                  .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-                  .join(" ")
-
-                return (
-                  <Image
-                    key={`logo-2-${index}`}
-                    src={`/logos/${logo}`}
-                    alt={logoLabel}
-                    width={150}
-                    height={60}
-                    className="w-auto h-10 md:h-12 transition-all opacity-70 grayscale hover:opacity-100 hover:grayscale-0"
-                  />
-                )
-              })}
-            </div>
+          {/* Single container with doubled logos */}
+          <div className="scroll-animation">
+            {doubledLogos.map((logo, index) => (
+              <LogoItem key={`logo-${index}`} logo={logo} index={index} />
+            ))}
           </div>
         </div>
       </div>
     </section>
   )
 }
+
