@@ -86,7 +86,6 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
         toRef={centerRef}
         duration={BEAM_DURATION}
         delay={0}
-        startYOffset={-4}
         gradientStartColor="#5b8cff"
         gradientStopColor="#4169e1"
       />
@@ -198,7 +197,6 @@ export function GrantwareConnectionsBeam({ className }: { className?: string }) 
         duration={BEAM_DURATION}
         delay={9}
         reverse={true}
-        startYOffset={-4}
         gradientStartColor="#5b8cff"
         gradientStopColor="#4169e1"
       />
