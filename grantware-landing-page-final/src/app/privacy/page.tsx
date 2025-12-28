@@ -876,6 +876,206 @@ export default function PrivacyPage() {
                 While we work hard to protect the Platform, no method of transmission over the internet or method of electronic storage is 100% secure. Accordingly, we cannot guarantee absolute security of any information transmitted to or stored in the Services. If you believe that your account or interaction with us is no longer secure (for example, if you suspect that your password or account has been compromised), please contact us immediately using the information in Section 14 (Contact Us).
               </p>
             </section>
+
+            {/* Section 10 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                10. Student Data, K–12, and Public-Sector Customers
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.1 GrantWare AI&apos;s Role with Education Customers</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Many of our organizational customers are K–12 school districts, higher education institutions, and other public- and mission-driven entities that may handle regulated personal data as part of their funding activities. When those customers use the Services, they may be subject to federal and state education privacy laws, including the Family Educational Rights and Privacy Act (FERPA), state student data privacy laws, and state procurement requirements.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                When we process personal data on behalf of these customers, we do so under the direction of the customer organization (typically as a &quot;school official&quot; under FERPA or as a service provider/processor under contract), consistent with any data processing or student data privacy agreement we have entered into with that customer.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.2 What Is Student Data?</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                In this context, &quot;Student Data&quot; generally refers to personal information from education records that is provided by or on behalf of a K–12 school district, higher education institution, or other educational agency, and that is regulated under FERPA or similar state laws. Depending on the state, this may include student names, demographic information, academic records, and other data elements defined by state student data privacy statutes.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We do not require customers to provide Student Data to use the Platform, and we do not design the Services to be a primary system of record for such data. However, customers may choose to include limited aggregate or de-identified student-related information (for example, demographic summaries or program outcome statistics) in grant applications or related materials, and we process such content as Customer Content under the terms of our agreements.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.3 Student Data Privacy Agreements and State Compliance</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If your organization is a K–12 school district, educational agency, or state education entity that requires a separate student data privacy agreement, state-specific data protection addendum, or compliance attestation (for example, an agreement under the California Student Privacy Pledge, Colorado CDE data privacy requirements, or other state-specific frameworks), please contact us at the address in Section 14 (Contact Us).
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We are committed to working with education customers to execute the agreements and complete the vendor review processes required by your jurisdiction.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.4 Limitations on Use of Student Data</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                To the extent we process Student Data (as defined above) on behalf of a customer under a separate student data privacy agreement:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>We will process such Student Data only in accordance with the written instructions of the customer and the terms of that agreement, consistent with our obligations under FERPA and applicable state law;</li>
+                <li>We will not use Student Data for targeted advertising, profiling, or to build profiles for non-educational purposes;</li>
+                <li>We will not sell, rent, or disclose Student Data to third parties except as permitted by the agreement, required by law, or directed by the customer; and</li>
+                <li>We will provide customer with reasonable access to Student Data and support for requests to correct, delete, or export that data, as described in the agreement and our ToS.</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                These commitments apply specifically to information regulated as &quot;education records&quot; under FERPA or as &quot;student data&quot; under state student privacy laws and subject to a governing student data privacy agreement between GrantWare AI and the customer.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.5 Public-Sector and Procurement Customers</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                In addition to schools and school districts, we work with other public-sector customers (such as municipal governments, state agencies, and nonprofit organizations) that may be subject to procurement rules, public records laws, and specific data protection requirements. We are happy to work with such customers to address applicable legal and contractual requirements, including executing vendor registration, security questionnaires, and supplemental contract terms where reasonable and necessary.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.6 Parental Rights and Access</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Under FERPA, eligible students and parents have certain rights to inspect, correct, and request deletion of education records maintained by schools and their service providers. Because GrantWare AI processes Student Data on behalf of customer organizations (such as school districts), not on our own behalf:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>We direct parents and students to contact the relevant school or district, rather than GrantWare AI, to exercise their rights under FERPA or state law.</li>
+                <li>If we receive a request directly from a parent, student, or other individual, we will, where practicable and legally appropriate, direct the requestor to the relevant school or district and provide reasonable cooperation to the customer in responding to such requests, in accordance with our agreements with the customer.</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                This Privacy Policy is not intended to modify or limit any rights that parents and students have under FERPA or applicable state student privacy laws. Those rights are exercised through the school or district that maintains the student&apos;s education records.
+              </p>
+            </section>
+
+            {/* Section 11 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                11. Your Privacy Rights and Choices
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.1 Organizational Control</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Because GrantWare AI is a B2B platform, most personal data processed in the Services belongs to or is controlled by your organization. If you have questions about how your personal data is processed in a particular Workspace, or if you want to exercise privacy rights with respect to Customer Content (such as access, correction, or deletion), you should first contact your organization&apos;s administrator (for example, your employer, school, or district).
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If you are an individual whose data is included in Customer Content and you are not an Authorized User of your own organization&apos;s Workspace, please contact your organization directly. GrantWare AI will cooperate with customer organizations to support reasonable requests from data subjects and data owners, but we are not in a position to respond to such requests without authorization from, or on behalf of, the relevant customer.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.2 Rights Available Under Applicable Law</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Depending on your location and the applicable data protection law, you may have certain rights with respect to personal information that we collect about you as an individual visitor, contact, or user (as distinct from data about end-users or students that we process solely on behalf of your organization). These rights may include:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>Access: The right to request information about what personal data we hold about you and to receive a copy of that data;</li>
+                <li>Correction / Rectification: The right to request correction of inaccurate or incomplete personal data;</li>
+                <li>Deletion / Erasure: The right to request deletion of personal data in certain circumstances (for example, where the data is no longer necessary for the original purpose);</li>
+                <li>Data Portability: The right, in some cases, to receive your personal data in a structured, commonly used format;</li>
+                <li>Restriction / Objection: The right to object to or restrict certain processing (for example, direct marketing or processing based on legitimate interests); and</li>
+                <li>Withdrawal of Consent: Where we rely on consent to process your data, the right to withdraw consent at any time (without affecting the lawfulness of processing before withdrawal).</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Not all of these rights apply in all circumstances, and some rights may be limited by other legal requirements or exceptions.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.3 How to Exercise Your Rights</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If you wish to exercise any of these rights with respect to personal data we control (as opposed to Customer Content we process on behalf of your organization), you may:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>Contact us using the information provided in Section 14 (Contact Us); or</li>
+                <li>Use account settings or self-service features, where available, to access or update your information.</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We may ask you to verify your identity before we respond to your request, and we will respond within the timeframe required by applicable law. In some cases, we may not be able to comply fully with your request (for example, if it is unreasonable or if the data is subject to legal holds or retention requirements), but we will explain any limitations or exceptions that apply.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.4 Marketing Communications and Cookies</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                You can opt out of receiving promotional emails from us by following the &quot;unsubscribe&quot; instructions in those emails or by contacting us using the information in Section 14. Please note that even if you opt out of promotional emails, we may still send you non-promotional, transactional, or service-related communications (for example, account notices, security alerts, or billing information).
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                You may also be able to manage cookie and tracking preferences through your browser settings. For more information, see Section 3.5 (Cookies and Similar Technologies).
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.5 Do Not Track Signals</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Unless otherwise required by applicable law, we do not currently respond to browser-based &quot;Do Not Track&quot; (DNT) signals or similar mechanisms. This is because there is no universally accepted standard for how online services should respond to such signals.
+              </p>
+            </section>
+
+            {/* Section 12 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                12. Third-Party Sites, Services, and Links
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.1 Links to Third-Party Websites</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The Platform may contain links to third-party websites, services, or applications that are not owned or operated by GrantWare AI (such as grant databases, public government portals, or funding aggregators). These links are provided for convenience only and do not signify our endorsement of those sites or services. This Privacy Policy does not apply to third-party websites, and we are not responsible for their content, privacy practices, or terms of use.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We encourage you to review the privacy policies and terms of any third-party sites you visit or connect to through the Platform.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.2 Third-Party Integrations and SSO</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If your organization chooses to connect the Services with third-party applications or services (for example, via SSO integration with your identity provider), some personal data may be shared between those services and the Platform. Your organization is responsible for determining whether to enable such integrations and for reviewing the privacy practices of those third parties.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI does not control the data practices of third-party applications or services integrated with the Platform, and their use of your personal data is governed by their own privacy policies and terms.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.3 Social Media and Other Platforms</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The Sites may include social media icons or features (such as links to our LinkedIn page). Your interactions with these features may be subject to the privacy policies of the social media platforms involved, and are not covered by this Privacy Policy.
+              </p>
+            </section>
+
+            {/* Section 13 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                13. Changes to This Privacy Policy
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.1 When We May Update This Policy</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We may update this Privacy Policy from time to time in response to changing legal, technical, or business developments. When we update this Privacy Policy, we will revise the &quot;Last Updated&quot; date at the top of this document.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.2 How We Notify You of Changes</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If we make changes to this Privacy Policy that materially affect how we handle personal information (for example, if we change the purposes for which we process personal data or begin sharing data with new categories of third parties):
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>We will provide notice by posting the updated Privacy Policy on our Sites and updating the &quot;Last Updated&quot; date;</li>
+                <li>We may also notify you by email, in-product notice, or other means; and</li>
+                <li>If required by applicable law, we will obtain your consent before processing your personal data in a materially different way.</li>
+              </ul>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.3 Your Continued Use</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Your continued use of the Platform after the effective date of any revised Privacy Policy means that you accept the changes (to the extent consent is not otherwise required by applicable law). If you do not agree to the changes, you should stop using the Platform. If you are an Authorized User of your organization&apos;s Workspace, you should also notify your organization&apos;s administrator.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.4 Archived Versions</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We may retain archived versions of prior Privacy Policies for your reference. If you would like to see a prior version of this Privacy Policy, please contact us using the information in Section 14 (Contact Us).
+              </p>
+            </section>
+
+            {/* Section 14 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                14. Contact Us
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If you have questions, concerns, or requests regarding this Privacy Policy, our data practices, or your personal data, please contact us at:
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                <strong>GrantWare AI, Inc.</strong>
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Email: privacy@grantware.ai
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                For school districts, higher education institutions, and public-sector customers who need to execute student data privacy agreements, data processing agreements, or vendor compliance documents, please contact: privacy@grantware.ai.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                We will respond to your inquiry within a reasonable time and in accordance with applicable law.
+              </p>
+            </section>
           </div>
 
           {/* Back link */}

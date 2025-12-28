@@ -647,6 +647,252 @@ export default function TermsPage() {
                 If there is any conflict between (a) the terms of a third-party provider applicable to Third-Party Services and (b) these Terms, the third-party terms will govern solely with respect to that Third-Party Service and solely to the extent of the conflict, and these Terms will continue to govern the relationship between Customer and GrantWare AI.
               </p>
             </section>
+
+            {/* Section 10 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                10. Security, Privacy, and Data Protection
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.1 Security Measures.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI implements commercially reasonable technical and organizational measures designed to protect the security, confidentiality, and integrity of the Services and Customer Content, including measures such as (a) encryption of data in transit over public networks using industry-standard protocols, (b) access controls limiting access to production systems to authorized personnel with a business need, (c) use of role-based access and authentication controls within the Services, and (d) monitoring and logging of access to systems where Customer Content is stored, in each case as further described in the Documentation or on GrantWare AI&apos;s website. Customer acknowledges that GrantWare AI&apos;s security measures may evolve over time to address new threats and technologies, provided that such changes do not materially reduce the overall level of protection for Customer Content.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.2 Customer&apos;s Security Responsibilities.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Customer is responsible for (a) configuring the Services in a manner appropriate for its risk tolerance and compliance requirements; (b) managing and protecting login credentials, SSO configurations, and devices used to access the Services; (c) promptly disabling access for individuals who should no longer be Authorized Users; and (d) implementing appropriate technical and organizational measures within its own systems and processes to protect Customer Content exported from or otherwise used in connection with the Services. GrantWare AI is not responsible for security issues arising from Customer&apos;s networks, devices, or failure to follow security practices described in the Documentation.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.3 Privacy Policy.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI&apos;s collection, use, and disclosure of personal data in connection with the Services are described in its Privacy Policy, which is incorporated into these Terms by reference. Customer is responsible for ensuring that it has provided all notices and obtained all consents required under applicable data protection and privacy laws before submitting personal data to the Services or otherwise permitting GrantWare AI to process personal data on Customer&apos;s behalf.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.4 Data Processing as a Service Provider / Processor.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                To the extent GrantWare AI processes personal data on behalf of Customer in connection with providing the Services, the parties acknowledge that, for purposes of applicable data protection laws, Customer is the controller (or equivalent term) and GrantWare AI is the processor or service provider (or equivalent term). GrantWare AI will process such personal data solely (a) to provide, maintain, and support the Services in accordance with these Terms and Customer&apos;s documented instructions, and (b) as required by applicable law. If applicable data protection laws require the parties to enter into a separate data processing agreement, student data privacy agreement, or similar instrument, the parties will negotiate in good faith any such additional terms, which, once executed, will be deemed incorporated into these Terms.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.5 Data Location and Cross-Border Transfers.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Customer acknowledges that GrantWare AI and its Subprocessors may process Customer Content and personal data in jurisdictions other than the one where Customer is located, including in the United States. GrantWare AI will ensure that any such cross-border transfers of personal data occur in compliance with applicable data protection laws and, where required, will use appropriate safeguards or transfer mechanisms (such as standard contractual clauses or their equivalent) with its relevant Subprocessors.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.6 Security Incidents.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                In the event GrantWare AI becomes aware of a confirmed unauthorized access to or disclosure of Customer Content in its possession or control that results in a compromise of the security, confidentiality, or integrity of such Customer Content (a &quot;Security Incident&quot;), GrantWare AI will (a) notify Customer without undue delay after confirming the Security Incident, (b) provide Customer with information reasonably available to GrantWare AI about the nature and scope of the Security Incident, and (c) take commercially reasonable steps to contain, mitigate, and remediate the Security Incident. Customer is responsible for determining whether to notify regulators, affected individuals, or other third parties of the Security Incident and for fulfilling any such notification obligations, except to the extent otherwise agreed in a separate data processing agreement.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.7 Data Subject Requests and Governmental Demands.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If GrantWare AI receives a request from an individual seeking to exercise rights with respect to personal data that GrantWare AI processes on Customer&apos;s behalf (such as access, correction, or deletion), GrantWare AI will, where reasonably practicable and legally permitted, direct the individual to submit the request to Customer and will reasonably cooperate with Customer to help Customer respond to such request, at Customer&apos;s cost if such cooperation requires material effort. If GrantWare AI receives a subpoena, court order, or other governmental or legal demand seeking disclosure of Customer Content, GrantWare AI will, to the extent legally permitted and reasonably practicable, notify Customer before producing any such information so that Customer may seek to limit or challenge the demand; provided that GrantWare AI may disclose Customer Content to the extent it reasonably believes such disclosure is required by law.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.8 Data Retention and Deletion.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI will retain Customer Content for the duration of the Subscription Term and for any additional period described in Section [Data Export, Retention, and Deletion] or in an applicable Order Form. Following expiration or termination of the Subscription Term, GrantWare AI will retain, delete, or anonymize Customer Content in accordance with Section [Data Export, Retention, and Deletion], subject to any longer retention required by law or necessary for GrantWare AI to establish, exercise, or defend legal claims. Customer acknowledges that Customer Content may continue to exist in routine backups for a limited period after deletion from active systems, after which it will be overwritten in the ordinary course of business.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.9 Do Not Track and Similar Signals.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Unless otherwise described in the Privacy Policy or required by applicable law, the Services do not respond to &quot;Do Not Track&quot; signals or similar mechanisms from browsers or devices. Customer and Authorized Users may manage certain cookie and tracking preferences through browser settings or in-product controls where available, as further described in the Privacy Policy.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">10.10 Additional Data Protection Terms.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                In the event of any conflict between this Section 10 and the terms of a separately executed data processing agreement, student data privacy agreement, or similar instrument between the parties, such additional agreement will control solely with respect to the subject matter of that agreement, and these Terms will continue to govern in all other respects.
+              </p>
+            </section>
+
+            {/* Section 11 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                11. Data Export, Retention, and Deletion
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.1 Data Export During Subscription Term.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                During the Subscription Term, Customer may export certain Customer Content from the Services using the export or download capabilities made available by GrantWare AI from time to time (which may include, for example, exports of applications, narratives, or other records in common formats such as CSV, JSON, or text). GrantWare AI does not guarantee that all types of Customer Content will be exportable in all cases, but will use commercially reasonable efforts to provide Customer with a means to obtain a usable copy of key records if requested in writing.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.2 Export Rights Upon Termination or Non-Renewal.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Following expiration or termination of the Subscription Term for any reason, GrantWare AI will, upon Customer&apos;s written request received within thirty (30) days after the effective date of expiration or termination (the &quot;Export Period&quot;), make available to Customer a commercially reasonable means to export or download a copy of Customer&apos;s then-available Customer Content from the Services. After the Export Period, GrantWare AI will have no obligation to maintain or provide access to Customer Content, except as required by law or as expressly set forth in this Section 11.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.3 Deletion or Anonymization After Export Period.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                After the Export Period, GrantWare AI will, subject to Section 11.4, delete or anonymize Customer Content from active systems in a commercially reasonable manner and within a commercially reasonable timeframe, such that Customer Content is no longer reasonably identifiable in the ordinary course of business. Customer acknowledges that certain copies of Customer Content may be retained in GrantWare AI&apos;s backup or archival systems for a limited period after deletion from active systems, after which such data will be overwritten in the normal course of operations.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.4 Retention for Legal and Operational Purposes.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Notwithstanding anything to the contrary in these Terms, GrantWare AI may retain Customer Content (a) as required by applicable law, regulation, or legal process; (b) as reasonably necessary to comply with its legal, tax, or audit obligations; or (c) as reasonably necessary to establish, exercise, or defend legal claims. GrantWare AI may also retain and continue to use Usage Data and aggregated or de-identified information derived from Customer Content in accordance with Section 7.3, even after deletion of Customer Content from active systems, provided that such information does not reasonably identify Customer or any individual.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.5 Customer&apos;s Copies and Record-Keeping.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Customer is responsible for maintaining its own copies of Customer Content, records, and submissions as required by its internal policies and by applicable laws, grantor rules, or record-retention requirements. GrantWare AI has no obligation to store or retain Customer Content beyond the periods expressly set forth in these Terms or in an applicable Order Form, and the Services are not intended to serve as Customer&apos;s sole system of record for regulatory or archival purposes.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.6 Effect of Termination on Access.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Upon expiration or termination of the Subscription Term, Customer&apos;s and all Authorized Users&apos; access to the Services will cease, except as necessary during the Export Period solely to export Customer Content as described in this Section 11. Customer will not have access to the Services for active use, new data entry, or AI Features after the effective date of expiration or termination, unless the parties agree in writing to reinstate or extend the subscription.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">11.7 Deletion Requests from Customer.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                During the Subscription Term, Customer may request deletion of specific Customer Content or categories of Customer Content via the mechanisms provided in the Services or through written request to GrantWare AI&apos;s support contact. GrantWare AI will implement such requests in a commercially reasonable timeframe, subject to (a) Customer&apos;s responsibility for ensuring that such deletion is consistent with Customer&apos;s own legal and record-keeping obligations, and (b) GrantWare AI&apos;s right to retain copies as described in Sections 7.3, 7.8, 10.8, and 11.4.
+              </p>
+            </section>
+
+            {/* Section 12 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                12. Beta Services, Pilots, and Trials
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.1 Beta Services.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                From time to time, GrantWare AI may make certain features, functionality, or services available to Customer as Beta Services, which may be identified as &quot;beta,&quot; &quot;pilot,&quot; &quot;early access,&quot; &quot;experimental,&quot; &quot;labs,&quot; or similar. Beta Services may be provided as part of a paid subscription or as part of a Pilot or trial. Customer acknowledges that Beta Services are made available for testing and evaluation purposes only, may be subject to additional terms presented at the time of enrollment, and may not be fully tested or documented.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.2 Pilots and Design-Partner Programs.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI may make the Services, or specific configurations of the Services, available to Customer under a Pilot or design-partner program, which may be free, discounted, or otherwise subject to non-standard commercial terms. The duration, scope, and any special conditions of a Pilot or design-partner program will be described in the applicable Order Form, pilot agreement, or enrollment documentation. Unless otherwise expressly stated, Pilots are for evaluation, feedback, and co-design purposes and are not intended to be relied upon as a fully production-ready deployment.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.3 Trials and Free Access.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI may offer limited free or trial access to certain Services or features (including Beta Services or Pilots) for a defined period or usage limit (&quot;Trial&quot;). The specific terms of any Trial (including duration, scope, and any limitations) will be described at the time Customer signs up for the Trial or in the applicable Order Form or enrollment flow. GrantWare AI may modify or terminate any Trial at any time without notice, unless otherwise expressly agreed in writing.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.4 Feedback and Collaboration.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                In connection with any Beta Services, Pilot, or Trial, Customer may provide Feedback and may participate in meetings, interviews, or workshops with GrantWare AI&apos;s team to share observations, workflows, and suggestions. Customer agrees that GrantWare AI may use such Feedback in accordance with Section 7.7, including to improve and refine the Services, and that GrantWare AI has no obligation to implement any particular features or changes suggested by Customer.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.5 No Performance or Availability Commitments.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Beta Services, Pilots, and Trials may not be subject to the same performance, availability, security, support, documentation, or testing standards as generally available (GA) Services. Accordingly, GrantWare AI does not make any uptime, support, or feature-availability commitments with respect to Beta Services, Pilots, or Trials, and they are excluded from any service-level commitments or credits that may apply to GA Services, unless expressly stated otherwise in an Order Form.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.6 &quot;AS IS&quot; Disclaimer for Beta Services, Pilots, and Trials.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                NOTWITHSTANDING ANYTHING TO THE CONTRARY IN THESE TERMS, BETA SERVICES, PILOTS, AND TRIALS ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot;, WITH ALL FAULTS AND WITHOUT ANY WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, NON-INFRINGEMENT, OR THAT THEY WILL BE ERROR-FREE OR MEET CUSTOMER&apos;S REQUIREMENTS. Sections [Warranties and Disclaimers] and [Limitation of Liability] apply in full to Customer&apos;s use of Beta Services, Pilots, and Trials.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.7 Early Termination of Beta Services, Pilots, and Trials.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI may suspend, limit, or terminate Customer&apos;s access to any Beta Service, Pilot, or Trial (in whole or in part) at any time and for any reason, including without limitation if GrantWare AI determines that (a) continued operation of the Beta Service, Pilot, or Trial is not commercially viable; (b) there is a security, privacy, or legal risk; or (c) Customer has violated these Terms. Unless otherwise specified in an Order Form, GrantWare AI will have no obligation to continue, replace, or provide a GA equivalent of any Beta Service, Pilot, or Trial after such termination.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">12.8 Transition to Generally Available Services.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                GrantWare AI may choose, in its discretion, to make certain Beta Services or Pilot features generally available as part of the Services. Any such GA release may be subject to separate Fees, additional or different terms, or changes in functionality compared to the Beta or Pilot version. Unless otherwise agreed in writing, continued use of a feature after it becomes GA is subject to the then-current version of these Terms and any applicable Order Form, including any updated Fees.
+              </p>
+            </section>
+
+            {/* Section 13 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                13. Warranties and Disclaimers
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.1 Limited Service Warranty (Paid Subscriptions Only).</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                For paid, generally available (GA) subscriptions to the Services (and excluding any Beta Services, Pilots, or Trials, which are covered separately in Section 12), GrantWare AI warrants to Customer that, during the applicable Subscription Term, the core GA Services will operate in material conformity with the Documentation, when used by Customer in accordance with these Terms and the Documentation.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.2 Exclusive Remedy for Breach of Limited Warranty.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                If the Services fail to conform to the warranty in Section 13.1 in a material respect and Customer notifies GrantWare AI in writing within thirty (30) days after discovering the non-conformity, then, as Customer&apos;s sole and exclusive remedy and GrantWare AI&apos;s entire liability for such breach, GrantWare AI will, at its option and expense: (a) use commercially reasonable efforts to correct the non-conformity; or (b) if GrantWare AI determines that it is unable to correct the non-conformity in a commercially reasonable timeframe, allow Customer to terminate the affected portion of the Services and receive a pro-rated refund of any pre-paid, unused Fees for the remainder of the applicable Subscription Term for that portion of the Services.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.3 Exclusions from Limited Warranty.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The limited warranty in Section 13.1 does not apply to any issues or failures resulting from: (a) use of the Services not in accordance with these Terms or the Documentation; (b) modifications to the Services made by anyone other than GrantWare AI; (c) use of the Services in combination with non-GrantWare AI products, services, hardware, or data not specified in the Documentation as supported; (d) any Beta Services, Pilots, or Trials (which are provided &quot;AS IS&quot; under Section 12.6); (e) failures or downtime of Third-Party Services, the public internet, or Customer&apos;s own systems or networks; or (f) Customer&apos;s misuse of the Services, including violations of Section 6.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.4 No Warranty on AI Outputs, Funding Outcomes, or Third-Party Content.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                WITHOUT LIMITING ANY OTHER DISCLAIMER IN THESE TERMS, GRANTWARE AI MAKES NO WARRANTY OR REPRESENTATION OF ANY KIND THAT:
+              </p>
+              <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-4">
+                <li>(a) ANY AI OUTPUTS OR OTHER CONTENT GENERATED OR PROVIDED BY THE SERVICES WILL BE ACCURATE, COMPLETE, CURRENT, ERROR-FREE, OR FREE FROM BIAS OR OFFENSIVE MATERIAL;</li>
+                <li>(b) CUSTOMER WILL OBTAIN ANY PARTICULAR GRANT, AWARD, CONTRACT, FUNDING, SCORE, OR OTHER OUTCOME AS A RESULT OF USING THE SERVICES; OR</li>
+                <li>(c) ANY THIRD-PARTY CONTENT, PUBLIC INFORMATION, OR GRANT NOTICES ACCESSED OR SUMMARIZED THROUGH THE SERVICES ARE COMPLETE, ACCURATE, CURRENT, OR FREE OF ERRORS.</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                CUSTOMER IS SOLELY RESPONSIBLE FOR REVIEWING, VERIFYING, AND APPROVING ALL AI OUTPUTS AND OTHER CONTENT BEFORE USING OR SUBMITTING THEM.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.5 No Legal, Financial, Tax, or Compliance Advice.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                CUSTOMER ACKNOWLEDGES THAT GRANTWARE AI DOES NOT PROVIDE LEGAL, FINANCIAL, TAX, PROCUREMENT, OR COMPLIANCE ADVICE, AND THAT NO COMMUNICATION OR INFORMATION OBTAINED FROM THE SERVICES, AI OUTPUTS, DOCUMENTATION, OR GRANTWARE AI PERSONNEL SHOULD BE CONSTRUED AS SUCH ADVICE. CUSTOMER IS SOLELY RESPONSIBLE FOR OBTAINING ADVICE FROM ITS OWN LEGAL COUNSEL, FINANCIAL ADVISORS, COMPLIANCE OFFICERS, OR OTHER QUALIFIED PROFESSIONALS REGARDING ANY LEGAL, FINANCIAL, TAX, PROCUREMENT, OR REGULATORY MATTERS.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.6 General Disclaimers.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                EXCEPT FOR THE LIMITED WARRANTY EXPRESSLY SET FORTH IN SECTION 13.1, AND TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE SERVICES (INCLUDING ALL AI FEATURES, AI OUTPUTS, BETA SERVICES, PILOTS, TRIALS, DOCUMENTATION, AND ANY OTHER INFORMATION OR MATERIALS PROVIDED BY GRANTWARE AI) ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE,&quot; WITH ALL FAULTS, AND GRANTWARE AI AND ITS LICENSORS AND SUBPROCESSORS EXPRESSLY DISCLAIM ALL OTHER WARRANTIES, REPRESENTATIONS, AND CONDITIONS OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE, INCLUDING ANY IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, NON-INFRINGEMENT, AND ANY WARRANTIES ARISING OUT OF COURSE OF DEALING, USAGE, OR TRADE PRACTICE.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.7 No Warranties Regarding Uptime or Error-Free Operation.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                EXCEPT TO THE EXTENT EXPRESSLY PROVIDED IN AN ORDER FORM OR SERVICE-LEVEL AGREEMENT SIGNED BY BOTH PARTIES, GRANTWARE AI DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE, OR THAT ANY DEFECTS WILL BE CORRECTED. CUSTOMER ACKNOWLEDGES THAT THE SERVICES MAY BE SUBJECT TO LIMITATIONS, DELAYS, AND OTHER PROBLEMS INHERENT IN THE USE OF THE INTERNET, AI MODELS, AND ELECTRONIC COMMUNICATIONS, AND THAT GRANTWARE AI IS NOT RESPONSIBLE FOR ANY DELAYS, DELIVERY FAILURES, OR OTHER DAMAGES RESULTING FROM SUCH PROBLEMS.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.8 Jurisdiction-Specific Rights.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Some jurisdictions do not allow the exclusion of certain warranties or conditions, or the limitation of liability for certain types of damages. To the extent that applicable law does not permit the exclusion of certain warranties or conditions, some of the exclusions in this Section 13 may not apply to Customer. In such cases, the warranties will be limited to the minimum extent required by applicable law.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">13.9 Risk Allocation.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The parties agree that the disclaimers and limitations set forth in this Section 13 and in Section 14 are an essential basis of the bargain between the parties and have been taken into account in setting the Fees and allocating risk under these Terms. Without these disclaimers and limitations, GrantWare AI would not be able to provide the Services on the agreed pricing and terms.
+              </p>
+            </section>
+
+            {/* Section 14 */}
+            <section className="mb-10">
+              <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+                14. Limitation of Liability
+              </h2>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">14.1 Exclusion of Certain Damages.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL GRANTWARE AI OR ITS AFFILIATES, LICENSORS, OR SUBPROCESSORS BE LIABLE TO CUSTOMER OR ANY THIRD PARTY FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, GOODWILL, DATA, OR BUSINESS OPPORTUNITY, ARISING OUT OF OR RELATING TO THESE TERMS OR THE USE OF OR INABILITY TO USE THE SERVICES, WHETHER BASED ON CONTRACT, TORT (INCLUDING NEGLIGENCE), STRICT LIABILITY, OR ANY OTHER LEGAL THEORY, EVEN IF GRANTWARE AI HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES OR SUCH DAMAGES WERE OTHERWISE FORESEEABLE.
+              </p>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Without limiting the foregoing, GrantWare AI will have no liability for any missed deadlines, unsuccessful grant or funding applications, adverse funding decisions, or other lost opportunities, even if allegedly caused in whole or in part by the Services, AI Features, or AI Outputs.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">14.2 Aggregate Liability Cap.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, AND SUBJECT TO SECTION 14.4, THE AGGREGATE LIABILITY OF GRANTWARE AI AND ITS AFFILIATES, LICENSORS, AND SUBPROCESSORS ARISING OUT OF OR RELATING TO THESE TERMS, ANY ORDER FORM, OR THE SERVICES, WILL NOT EXCEED, IN THE AGGREGATE, AN AMOUNT EQUAL TO THE TOTAL FEES PAID BY CUSTOMER TO GRANTWARE AI UNDER THE APPLICABLE ORDER FORM FOR THE SERVICES GIVING RISE TO THE CLAIM DURING THE TWELVE (12) MONTH PERIOD IMMEDIATELY PRECEDING THE EVENT GIVING RISE TO SUCH LIABILITY. If the Services are provided without charge (for example, during a Pilot or Trial), GrantWare AI&apos;s aggregate liability for such Services will not exceed one thousand U.S. dollars (US $1,000).
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">14.3 Application of Exclusions and Cap.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The exclusions and limitations in this Section 14 apply (a) to all causes of action and theories of liability, regardless of the form or nature of the claim (whether in contract, tort, strict liability, or otherwise); (b) whether or not GrantWare AI has been advised of the possibility of such damages or such damages were otherwise foreseeable; and (c) even if any remedy provided in these Terms fails of its essential purpose. Multiple claims will not expand the limitations set forth in this Section 14.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">14.4 Exceptions to Limitations.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The limitations in this Section 14 will not apply to: (a) Customer&apos;s payment obligations under these Terms; or (b) Customer&apos;s liability for breach of Section 4.4 (Restrictions on Use) or Section 6 (Customer Responsibilities and Acceptable Use). To the extent applicable law prohibits the limitation of liability for gross negligence, willful misconduct, or certain other categories of damages, the limitations in this Section 14 will apply to the maximum extent permitted, but will not limit liability to the extent such limitation is prohibited by applicable law.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">14.5 Jurisdiction-Specific Limitations.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Some jurisdictions do not allow the exclusion of certain types of damages or the limitation of liability for certain claims. To the extent that applicable law does not permit the exclusion of certain damages or the limitation of liability as set forth in this Section 14, the exclusions and limitations will apply only to the extent permitted by applicable law, and will not limit liability that cannot be limited under such law.
+              </p>
+
+              <h3 className="text-xl font-medium text-gray-900 mb-3">14.6 Risk Allocation.</h3>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                The parties acknowledge that the Fees reflect the allocation of risk set forth in these Terms, and that GrantWare AI would not enter into these Terms without the limitations of liability and disclaimers set forth in Sections 13 and 14. These limitations will apply notwithstanding any failure of essential purpose of any limited remedy provided herein.
+              </p>
+            </section>
           </div>
 
           {/* Back link */}
