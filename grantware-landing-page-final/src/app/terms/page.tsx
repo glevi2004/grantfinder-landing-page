@@ -3,6 +3,7 @@ import Link from "next/link"
 import { HeaderPill } from "@/components/header-pill"
 import { FooterSection } from "@/components/footer-section"
 import { LegalOutlineRail } from "@/components/legal-outline-rail"
+import { LegalOutlineSheet } from "@/components/legal-outline-sheet"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -23,6 +24,7 @@ export default function TermsPage() {
     <main className="min-h-screen bg-white">
       <HeaderPill />
       <LegalOutlineRail />
+      <LegalOutlineSheet />
 
       <article className="pt-32 pb-16 px-6" data-legal-doc="terms">
         <div className="max-w-3xl mx-auto">

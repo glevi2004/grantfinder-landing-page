@@ -1,75 +1,12 @@
 "use client"
 
-import { useEffect, useState, useRef, useCallback } from "react"
-import { scrollToSection } from "@/components/smooth-scroll"
-
-interface OutlineItem {
-  id: string
-  label: string
-}
+import { useState, useRef } from "react"
+import { useLegalOutline } from "@/components/use-legal-outline"
 
 export function LegalOutlineRail() {
-  const [items, setItems] = useState<OutlineItem[]>([])
-  const [activeId, setActiveId] = useState<string | null>(null)
+  const { items, activeId, scrollTo } = useLegalOutline()
   const [isExpanded, setIsExpanded] = useState(false)
-  const observerRef = useRef<IntersectionObserver | null>(null)
   const navRef = useRef<HTMLElement>(null)
-
-  // Discover headings on mount
-  useEffect(() => {
-    const article = document.querySelector("article[data-legal-doc]")
-    if (!article) return
-
-    const sections = article.querySelectorAll('section[id^="section-"]')
-    const headings: OutlineItem[] = []
-
-    sections.forEach((section) => {
-      const h2 = section.querySelector("h2")
-      if (h2) {
-        headings.push({
-          id: section.id,
-          label: h2.textContent?.trim() || section.id,
-        })
-      }
-    })
-
-    setItems(headings)
-
-    // Set up IntersectionObserver for active section tracking
-    // rootMargin: top offset for header, bottom margin to detect "entering" viewport
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        // Find the entry that is most "in view"
-        const visibleEntries = entries.filter((e) => e.isIntersecting)
-        if (visibleEntries.length > 0) {
-          // Pick the one closest to top
-          const topmost = visibleEntries.reduce((prev, curr) =>
-            prev.boundingClientRect.top < curr.boundingClientRect.top
-              ? prev
-              : curr
-          )
-          setActiveId(topmost.target.id)
-        }
-      },
-      {
-        rootMargin: "-100px 0px -70% 0px",
-        threshold: 0,
-      }
-    )
-
-    sections.forEach((section) => {
-      observerRef.current?.observe(section)
-    })
-
-    return () => {
-      observerRef.current?.disconnect()
-    }
-  }, [])
-
-  const handleClick = useCallback((id: string) => {
-    scrollToSection(id)
-    setActiveId(id)
-  }, [])
 
   // Don't render if no items discovered
   if (items.length === 0) {
@@ -115,7 +52,7 @@ export function LegalOutlineRail() {
           return (
             <button
               key={item.id}
-              onClick={() => handleClick(item.id)}
+              onClick={() => scrollTo(item.id)}
               className={`
                 group flex items-center gap-3
                 transition-all duration-200 ease-out
@@ -167,4 +104,3 @@ export function LegalOutlineRail() {
     </nav>
   )
 }
-
