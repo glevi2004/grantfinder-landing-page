@@ -63,9 +63,7 @@ export function PricingSection() {
 
           {/* Description */}
           <p className="self-stretch text-center text-base font-normal leading-7 text-gray-600">
-            Scale your operations with flexible pricing that grows with your team.
-            <br />
-            Start free, upgrade when you're ready.
+            Launching end of January 2025. Beta pricing is available through March 2025—join early to lock in these rates and help shape the platform.
           </p>
         </motion.div>
       </div>
