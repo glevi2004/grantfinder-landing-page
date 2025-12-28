@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { HeaderPill } from "@/components/header-pill"
 import { FooterSection } from "@/components/footer-section"
+import { LegalOutlineRail } from "@/components/legal-outline-rail"
 
 export const metadata: Metadata = {
   title: "Terms of Service",
@@ -21,8 +22,9 @@ export default function TermsPage() {
   return (
     <main className="min-h-screen bg-white">
       <HeaderPill />
+      <LegalOutlineRail />
 
-      <article className="pt-32 pb-16 px-6">
+      <article className="pt-32 pb-16 px-6" data-legal-doc="terms">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <header className="mb-12">
@@ -38,7 +40,7 @@ export default function TermsPage() {
           {/* Content */}
           <div className="prose prose-gray max-w-none">
             {/* Section 1 */}
-            <section className="mb-10">
+            <section id="section-1" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 1. Introduction; Agreement to Terms
               </h2>
@@ -94,7 +96,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 2 */}
-            <section className="mb-10">
+            <section id="section-2" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 2. Definitions
               </h2>
@@ -219,7 +221,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 3 */}
-            <section className="mb-10">
+            <section id="section-3" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 3. Eligibility; Accounts; Roles and Responsibilities
               </h2>
@@ -283,7 +285,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 4 */}
-            <section className="mb-10">
+            <section id="section-4" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 4. Services; License Grant
               </h2>
@@ -338,7 +340,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 5 */}
-            <section className="mb-10">
+            <section id="section-5" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 5. Subscriptions, Pilots, and Fees
               </h2>
@@ -400,7 +402,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 6 */}
-            <section className="mb-10">
+            <section id="section-6" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 6. Customer Responsibilities and Acceptable Use
               </h2>
@@ -484,7 +486,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 7 */}
-            <section className="mb-10">
+            <section id="section-7" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 7. Customer Content and Data Ownership
               </h2>
@@ -539,7 +541,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 8 */}
-            <section className="mb-10">
+            <section id="section-8" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 8. AI Features, AI Outputs, and No Advice / No Funding Guarantees
               </h2>
@@ -602,7 +604,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 9 */}
-            <section className="mb-10">
+            <section id="section-9" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 9. Third-Party Services and Subprocessors
               </h2>
@@ -649,7 +651,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 10 */}
-            <section className="mb-10">
+            <section id="section-10" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 10. Security, Privacy, and Data Protection
               </h2>
@@ -706,7 +708,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 11 */}
-            <section className="mb-10">
+            <section id="section-11" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 11. Data Export, Retention, and Deletion
               </h2>
@@ -748,7 +750,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 12 */}
-            <section className="mb-10">
+            <section id="section-12" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 12. Beta Services, Pilots, and Trials
               </h2>
@@ -795,7 +797,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 13 */}
-            <section className="mb-10">
+            <section id="section-13" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 13. Warranties and Disclaimers
               </h2>
@@ -855,7 +857,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 14 */}
-            <section className="mb-10">
+            <section id="section-14" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 14. Limitation of Liability
               </h2>
@@ -895,7 +897,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 15 */}
-            <section className="mb-10">
+            <section id="section-15" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 15. Indemnification
               </h2>
@@ -997,7 +999,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 16 */}
-            <section className="mb-10">
+            <section id="section-16" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 16. Term; Suspension and Termination; Effect of Termination
               </h2>
@@ -1068,7 +1070,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 17 */}
-            <section className="mb-10">
+            <section id="section-17" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 17. Confidentiality
               </h2>
@@ -1132,7 +1134,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 18 */}
-            <section className="mb-10">
+            <section id="section-18" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 18. Governing Law, Venue, and Dispute Resolution
               </h2>
@@ -1174,7 +1176,7 @@ export default function TermsPage() {
             </section>
 
             {/* Section 19 */}
-            <section className="mb-10">
+            <section id="section-19" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 19. General Provisions
               </h2>

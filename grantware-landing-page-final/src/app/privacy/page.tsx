@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { HeaderPill } from "@/components/header-pill"
 import { FooterSection } from "@/components/footer-section"
+import { LegalOutlineRail } from "@/components/legal-outline-rail"
 
 export const metadata: Metadata = {
   title: "Privacy Policy",
@@ -21,8 +22,9 @@ export default function PrivacyPage() {
   return (
     <main className="min-h-screen bg-white">
       <HeaderPill />
+      <LegalOutlineRail />
 
-      <article className="pt-32 pb-16 px-6">
+      <article className="pt-32 pb-16 px-6" data-legal-doc="privacy">
         <div className="max-w-3xl mx-auto">
           {/* Header */}
           <header className="mb-12">
@@ -38,7 +40,7 @@ export default function PrivacyPage() {
           {/* Content */}
           <div className="prose prose-gray max-w-none">
             {/* Section 1 */}
-            <section className="mb-10">
+            <section id="section-1" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 1. Introduction and Scope
               </h2>
@@ -111,7 +113,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 2 */}
-            <section className="mb-10">
+            <section id="section-2" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 2. Information We Collect
               </h2>
@@ -273,7 +275,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 3 */}
-            <section className="mb-10">
+            <section id="section-3" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 3. How We Use Personal Information
               </h2>
@@ -390,7 +392,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 4 */}
-            <section className="mb-10">
+            <section id="section-4" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 4. Cookies and Similar Technologies
               </h2>
@@ -463,7 +465,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 5 */}
-            <section className="mb-10">
+            <section id="section-5" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 5. How We Share Personal Information
               </h2>
@@ -584,7 +586,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 6 */}
-            <section className="mb-10">
+            <section id="section-6" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 6. Data Retention
               </h2>
@@ -675,7 +677,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 7 */}
-            <section className="mb-10">
+            <section id="section-7" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 7. AI Features, Model Providers, and Data Use for Training
               </h2>
@@ -773,7 +775,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 8 */}
-            <section className="mb-10">
+            <section id="section-8" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 8. International Data Transfers
               </h2>
@@ -820,7 +822,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 9 */}
-            <section className="mb-10">
+            <section id="section-9" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 9. Security
               </h2>
@@ -878,7 +880,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 10 */}
-            <section className="mb-10">
+            <section id="section-10" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 10. Student Data, K–12, and Public-Sector Customers
               </h2>
@@ -940,7 +942,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 11 */}
-            <section className="mb-10">
+            <section id="section-11" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 11. Your Privacy Rights and Choices
               </h2>
@@ -996,7 +998,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 12 */}
-            <section className="mb-10">
+            <section id="section-12" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 12. Third-Party Sites, Services, and Links
               </h2>
@@ -1024,7 +1026,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 13 */}
-            <section className="mb-10">
+            <section id="section-13" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 13. Changes to This Privacy Policy
               </h2>
@@ -1056,7 +1058,7 @@ export default function PrivacyPage() {
             </section>
 
             {/* Section 14 */}
-            <section className="mb-10">
+            <section id="section-14" className="mb-10 scroll-mt-28">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">
                 14. Contact Us
               </h2>
