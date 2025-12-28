@@ -1,0 +1,17 @@
+{
+  "name": "GrantWare AI",
+  "short_name": "GrantWare",
+  "description": "Intelligent Grant Discovery & Management",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5b8cff",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+

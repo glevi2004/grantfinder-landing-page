@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { GrantwareConnectionsBeam } from "@/components/grantware-connections-beam"
 import { scrollToSection } from "@/components/smooth-scroll"
+import { trackEvent } from "@/components/google-analytics"
 import { motion } from "framer-motion"
 // import { useTheme } from "@/components/theme-context"
 
@@ -106,6 +107,7 @@ export function Hero() {
                   href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackEvent("book_demo_click", { location: "hero", label: "Book a 15-min demo" })}
                 >
                   Book a 15-min demo
                 </a>

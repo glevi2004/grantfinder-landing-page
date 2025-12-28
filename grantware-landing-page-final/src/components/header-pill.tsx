@@ -4,6 +4,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { scrollToSection, scrollToTop } from "@/components/smooth-scroll"
+import { trackEvent } from "@/components/google-analytics"
 // import { useTheme } from "@/components/theme-context"
 
 export function HeaderPill() {
@@ -102,7 +103,11 @@ export function HeaderPill() {
                 {isGradient ? "☀️ Light" : "🌈 Gradient"}
               </button> */}
 
-              <ShimmerButton size="sm" className="rounded-xl px-5 text-sm">
+              <ShimmerButton 
+                size="sm" 
+                className="rounded-xl px-5 text-sm"
+                onClick={() => trackEvent("get_started_click", { location: "navbar", label: "Get Started" })}
+              >
                 Get Started
               </ShimmerButton>
             </div>
