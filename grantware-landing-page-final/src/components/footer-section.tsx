@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation"
 import { Mail } from "lucide-react"
 import { IconBrandLinkedin } from "@tabler/icons-react"
 import { scrollToSection } from "@/components/smooth-scroll"
+import { trackEvent } from "@/components/google-analytics"
 
 export function FooterSection() {
   const pathname = usePathname()
@@ -42,12 +43,14 @@ export function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors"
+              onClick={() => trackEvent("linkedin_click", { location: "footer", label: "LinkedIn" })}
             >
               <IconBrandLinkedin size={20} />
             </Link>
             <a 
               href="mailto:ryanrod@bu.edu"
               className="w-6 h-6 flex items-center justify-center text-gray-700 hover:text-[#5b8cff] transition-colors"
+              onClick={() => trackEvent("mailto_click", { location: "footer", label: "Contact Email" })}
             >
               <Mail size={20} />
             </a>
@@ -119,6 +122,7 @@ export function FooterSection() {
               <a 
                 href="mailto:ryanrod@bu.edu"
                 className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+                onClick={() => trackEvent("mailto_click", { location: "footer_nav", label: "Contact" })}
               >
                 Contact
               </a>

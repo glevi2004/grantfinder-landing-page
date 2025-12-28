@@ -1,0 +1,699 @@
+﻿Privacy Policy
+GrantWare AI
+1. Introduction and Scope
+1.1 Who We Are.
+ This Privacy Policy explains how GrantWare AI, Inc. (“GrantWare AI”, “we”, “us”, or “our”) collects, uses, shares, and protects information in connection with our websites, products, and services. GrantWare AI provides an AI-powered, B2B software platform that helps organizations (including K–12 school districts, higher education institutions, nonprofits, and other public- and mission-driven entities) manage and automate parts of their funding workflows, such as finding opportunities, evaluating fit, and drafting grant and RFP responses.
+1.2 What This Privacy Policy Covers.
+ This Privacy Policy applies to personal data we process when:
+* You or your organization visit, access, or use our websites, web applications, or other online properties that link to this Privacy Policy (collectively, the “Sites”);
+
+* You or your organization sign up for, configure, or use our hosted software-as-a-service platform, including associated AI features, APIs, and integrations (collectively, the “Services”); and
+
+* You communicate or interact with us in other ways, such as by email, support requests, surveys, events, or sales and onboarding calls.
+Together, we refer to the Sites and Services as the “Platform.”
+This Privacy Policy does not apply to:
+   * Third-party websites, services, or applications that are linked from the Platform but that we do not operate or control; or
+
+   * Our processing of personal data in our capacity as an employer (e.g., information about job applicants, employees, or contractors).
+Those activities are governed by separate notices or policies provided by those third parties or by us as applicable.
+1.3 Relationship to Our Terms of Service and Other Agreements.
+ Your use of the Services is also governed by our Terms of Service (the “ToS”) or another written agreement between GrantWare AI and your organization (for example, a master services agreement, data processing agreement, or student data privacy agreement with a school district). If there is a conflict between this Privacy Policy and those agreements, the terms of the applicable agreement will control to the extent of the conflict for the relevant Services or data set.
+1.4 Who This Privacy Policy Is For.
+ This Privacy Policy is primarily intended for:
+      * Organizational customers and their Authorized Users (e.g., district administrators, grant managers, development staff, or other employees using the Services on behalf of an organization);
+
+      * Visitors to our Sites and individuals who interact with us for sales, support, or marketing purposes; and
+
+      * Other individuals whose personal data we process in connection with operating our business (for example, contacts at prospective customer organizations).
+We design and provide the Services for use by organizations and their staff, not for direct, unsupervised use by students or children in a personal/consumer capacity. Where we process student or other regulated educational data on behalf of a school or district, we do so under the direction of that institution and, where required, under a separate agreement that incorporates applicable student data privacy requirements (for example, FERPA-aligned “school official” arrangements and state K–12 privacy statutes).
+1.5 Children’s Privacy.
+ We do not knowingly collect personal data directly from children under the age of 13 (or another age as defined by applicable law) through the Sites or for our own independent purposes. Our Services may be used by schools and other institutions that themselves handle student data; in those cases, we rely on the institution to ensure any such use complies with applicable laws (such as FERPA and COPPA) and with any agreements in place between us and the institution. If you believe we have collected personal data from a child in a way that is inconsistent with this paragraph, please contact us using the information in Section 14 (Contact Us), and we will take appropriate steps to investigate and, if necessary, delete the information.
+1.6 Summary of This Privacy Policy.
+ To help you understand this Privacy Policy at a glance:
+         * We collect personal data from you, your organization, your use of the Platform, and certain third parties.
+
+         * We use this data to provide and improve the Services, secure the Platform, support your organization, and operate our business.
+
+         * We may share data with trusted service providers and subprocessors (such as hosting, AI model, analytics, and payment providers), and with your organization and its administrators, but we do not sell personal data in the sense of a data broker.
+
+         * For AI features, we use prompts and related content to generate outputs and improve the Platform, and we configure third-party AI providers not to use your data to train their general models where technically and contractually feasible.
+
+         * You and your organization have choices and, in some jurisdictions, legal rights regarding how we use your personal data.
+The rest of this Privacy Policy provides more detail on each of these points.
+2. Information We Collect
+2.1 Overview
+We collect a limited set of information in order to provide, secure, and improve the Services. This includes:
+            * Information that Customers and Authorized Users provide directly to us;
+
+            * Information we automatically collect about how the Services are accessed and used; and
+
+            * Information we receive from third parties, such as service providers and integration partners.
+For purposes of this Privacy Policy, “personal information” (or “personal data”) means information that identifies or relates to an identified or identifiable individual. The specific categories we collect depend on how you use the Services (for example, whether you are an Authorized User, a billing contact, or a website visitor).
+2.2 Information You Provide to Us
+We collect personal information that Customers and Authorized Users provide directly to us when they:
+               * Create and manage an account or Organization Workspace.
+ This may include:
+
+                  * Name and contact details (e.g., email address, job title, organization name);
+
+                  * Authentication details (e.g., password or SSO identifier, if applicable);
+
+                  * Role and profile information within the Workspace (e.g., Owner, Admin, Member).
+                     * Use the Services.
+ This may include:
+                        * Content entered into the Services, such as prompts, notes, comments, and task assignments;
+
+                        * Uploaded files and source documents (e.g., grant applications, narratives, budgets, NOFOs/RFPs, strategic plans, spreadsheets);
+
+                        * Project and workflow information related to funding opportunities and applications.
+                           * Communicate with us.
+ When you contact us by email, in-product chat, support tickets, or participate in user research, we may collect:
+
+                              * Contact details and any information you choose to provide;
+
+                              * Feedback, survey responses, and information about your experience with the Services.
+                                 * Billing and procurement.
+ For Customers that purchase paid subscriptions, we may collect:
+
+                                    * Billing contact information (name, email, organization, department);
+
+                                    * Purchase order or procurement details;
+
+                                    * Limited payment-related information (for example, last four digits of a payment card) as needed for invoicing and records.
+Full payment card details are processed by our third-party payment processor and are not stored by GrantWare AI.
+2.3 Information We Collect Automatically
+When you access or use the Services, we automatically collect certain information about your device and usage (“Usage Data”), which may include personal information. This typically includes:
+                                       * Device and technical information.
+ Such as:
+                                          * IP address and approximate geolocation (at the city or region level);
+
+                                          * Browser type and version, operating system, device identifiers;
+
+                                          * Language and time zone settings.
+                                             * Usage and activity information.
+ Such as:
+                                                * Log data about how you access and use the Services (e.g., pages viewed, features used, buttons clicked, date and time of access);
+
+                                                * Workspace and account identifiers associated with your actions;
+
+                                                * Performance and error information (e.g., crashes, loading times, error messages).
+                                                   * Cookies and similar technologies.
+ We and our service providers may use cookies, web beacons, local storage, and similar technologies to:
+                                                      * Keep you signed in and maintain session security;
+
+                                                      * Remember your preferences and settings;
+
+                                                      * Understand how the Services are used and improve performance and design;
+
+                                                      * Measure the effectiveness of communications and outreach.
+                                                         * Where required by applicable law, we will obtain any necessary consent for the use of non-essential cookies and provide options to manage your cookie preferences.
+We generally use Usage Data in de-identified or aggregated form for analytics, security, and service improvement purposes. When Usage Data is linked to an identifiable individual, we treat it as personal information.
+2.4 Information We Receive from Third Parties
+We may receive personal information about Customers and Authorized Users from:
+                                                         * Single sign-on (SSO) and identity providers.
+ If your organization enables SSO (e.g., Google Workspace, Microsoft Entra ID), we may receive:
+
+                                                            * Your name, email address, unique identifier, and any attributes configured by your organization’s identity administrator.
+                                                            * Integration partners and Third-Party Services.
+ If you enable an integration or connect a Third-Party Service (for example, a data source or productivity tool) to the Services, we may receive the categories of data that you or your organization authorize that service to share with us. The scope and type of information depend on the integration and your organization’s configuration.
+                                                            * Service providers and analytics partners.
+ We may receive limited information from vendors that provide us with:
+
+                                                               * Fraud prevention, security, and abuse-detection services;
+
+                                                               * Analytics and measurement about how users interact with our website or product;
+
+                                                               * Customer support or communications tools (e.g., email service providers).
+                                                                  * Referrals and outreach.
+ We may receive contact information and related details if someone at your organization or a partner refers you to us, or if your information is publicly available in the context of your role at an organization (for example, district grants office contact information on a public website).
+In all such cases, the information we receive is governed by this Privacy Policy once it is in our possession. The third parties’ own privacy policies govern their separate use of information.
+2.5 Customer Content and AI Outputs
+As described in the Terms of Service:
+                                                                     * Customer Content includes the data, documents, files, and other materials that Customers and Authorized Users upload or input into the Services (for example, grant narratives, budgets, NOFOs/RFPs, internal plans, and prompts). Customer Content may contain personal information about employees, partners, or other individuals, depending on what the Customer chooses to submit.
+                                                                     * AI Outputs are the draft content, summaries, recommendations, and other materials generated by the AI features in response to Customer prompts and interactions. AI Outputs may incorporate or reflect elements of Customer Content and may also contain personal information depending on how the Services are used.
+
+GrantWare AI processes Customer Content and AI Outputs solely in accordance with the Customer’s instructions and our Terms of Service, this Privacy Policy, and any applicable data protection agreement. Customers are responsible for ensuring that Customer Content and AI Outputs they submit or generate through the Services comply with applicable laws and internal policies.
+2.6 Aggregated and De-Identified Information
+We may create aggregated, anonymized, or de-identified datasets derived from Customer Content, AI Outputs, and Usage Data. When we do so, we take reasonable steps to remove or modify personal identifiers so that individuals are not reasonably identifiable. We may use and share such aggregated or de-identified information for purposes such as:
+                                                                        * Improving and developing the Services and AI features;
+
+                                                                        * Benchmarking and analytics about funding workflows and platform usage;
+
+                                                                        * Publishing insights about trends in funding opportunities and workflow efficiency (for example, typical timelines or common bottlenecks), without identifying specific Customers or individuals.
+We do not attempt to re-identify individuals from aggregated or de-identified information, and we contractually restrict our service providers from doing so.
+2.7 Special Considerations for Student and Other Regulated Data
+The Services are not designed by default to store or process highly sensitive or regulated personal data such as:
+                                                                           * K–12 student education records governed by FERPA or similar state laws;
+
+                                                                           * Protected health information under HIPAA;
+
+                                                                           * Payment card data regulated under PCI-DSS; or
+
+                                                                           * Government-issued identifiers and other highly sensitive personal identifiers, except as strictly necessary for billing or account security.
+If a Customer enters into a separate student data privacy agreement, data processing agreement, or similar contract with us that expressly permits the processing of specific categories of regulated data, that agreement will govern how we handle such data, including any additional security, retention, and deletion commitments. Customers are responsible for avoiding the upload of regulated data to the Services unless such an agreement is in place and for complying with applicable legal requirements for that data.
+3. How We Use Personal Information
+We use the personal information we collect for the purposes described below. In many cases, we use the information because it is necessary to provide the Services to your organization; in others, because it supports our legitimate business interests (such as improving and securing the Platform) or because we are required to do so by law.
+3.1 To Provide and Operate the Services
+We use personal information to:
+                                                                              * Create and manage accounts, Organization Workspaces, roles, and permissions;
+
+                                                                              * Authenticate users, maintain sessions, and enable single sign-on where configured;
+
+                                                                              * Process and store Customer Content and AI Outputs so that your organization can manage funding workflows, collaborate, and keep records; and
+
+                                                                              * Provide core product functionality, including search, opportunity tracking, workflows, and AI-assisted drafting and analysis.
+
+Without this processing, we would not be able to deliver the Services you or your organization request.
+3.2 To Provide Support and Communicate With You
+We use contact, account, and usage information to:
+                                                                                 * Respond to support tickets, technical issues, and other requests;
+
+                                                                                 * Communicate about changes to the Services, planned maintenance, and security or incident notices; and
+
+                                                                                 * Collect feedback, run surveys, and conduct user research to understand how we can improve the Platform.
+
+These communications are typically transactional or service-related and are not promotional in nature.
+3.3 To Secure the Platform and Prevent Abuse
+We use personal information and Usage Data to:
+                                                                                    * Monitor for, detect, and prevent fraud, abuse, or security incidents;
+
+                                                                                    * Protect the integrity and availability of the Services and our infrastructure;
+
+                                                                                    * Enforce our Terms of Service, Acceptable Use rules, and other policies; and
+
+                                                                                    * Investigate and respond to suspicious activity or alleged violations.
+
+This includes analyzing logs, IP addresses, and usage patterns to help identify potential misuse or threats.
+3.4 To Improve and Develop the Services and AI Features
+We use personal information, Customer Content, AI Outputs, and Usage Data—often in aggregated or de-identified form—to:
+                                                                                       * Understand how features are used and where users struggle, so we can improve usability and performance;
+
+                                                                                       * Develop new features, workflows, and integrations that better support funding teams;
+
+                                                                                       * Train, evaluate, and refine AI models and heuristics used within the Platform, where permitted by law and by our agreements with Customers; and
+
+                                                                                       * Generate non-identifying analytics and benchmarks about funding workflows (for example, typical application timelines or common bottlenecks), without naming specific organizations or individuals.
+
+Where we rely on third-party AI providers, we configure those providers, where contractually and technically feasible, not to use Customer data submitted through our Services to train their general-purpose models, and instead to use it only to provide the requested outputs and maintain their services.
+3.5 For Business Operations, Billing, and Administration
+We use personal and organizational information to:
+                                                                                          * Manage subscriptions, invoicing, purchase orders, and collections;
+
+                                                                                          * Maintain business and financial records, including for audits and tax purposes;
+
+                                                                                          * Plan and forecast capacity, including infrastructure usage and support staffing; and
+
+                                                                                          * Manage our relationships with customers, prospects, partners, and vendors.
+
+This processing is necessary to operate GrantWare AI as a business and to honor our contractual commitments.
+3.6 For Marketing, Outreach, and Engagement (Not K–12 Student-Level)
+We may use contact and usage information about adult users (e.g., district staff, university staff, nonprofit staff) to:
+                                                                                             * Send product updates, feature announcements, and invitations to demos, webinars, or events;
+
+                                                                                             * Share resources and case studies relevant to grant and funding teams; and
+
+                                                                                             * Tailor outreach based on role, organization type, or high-level usage patterns (for example, whether an organization is actively using certain modules).
+
+You can opt out of non-essential marketing emails by using the unsubscribe link in those emails or by contacting us as described in this Privacy Policy. We do not use K–12 student-level personal data, where processed on behalf of a school or district, for our own independent marketing or advertising purposes.
+3.7 To Comply With Law and Enforce Our Rights
+We may use personal information as we reasonably believe necessary to:
+                                                                                                * Comply with applicable laws, regulations, and legal processes (such as responding to subpoenas, court orders, or lawful requests from authorities);
+
+                                                                                                * Address compliance obligations specific to public-sector or education customers (for example, record-keeping or audit requirements);
+
+                                                                                                * Protect our rights, property, and safety, and those of our users, customers, or the public; and
+
+                                                                                                * Establish, exercise, or defend legal claims.
+
+3.8 Legal Bases for Processing (Where Applicable)
+Where required by certain laws (such as GDPR-like frameworks), we rely on different legal bases to process personal information, including:
+                                                                                                   * Contract performance – when processing is necessary to provide the Services under our agreement with your organization;
+
+                                                                                                   * Legitimate interests – such as operating, improving, and securing the Platform, communicating with adult users about relevant updates, and defending our legal rights, provided those interests are not overridden by your rights and interests;
+
+                                                                                                   * Consent – where we ask for it explicitly (for example, certain cookies or optional communications, where required by law); and
+
+                                                                                                   * Legal obligations – when we must retain or disclose information to comply with applicable law.
+
+When your organization serves as the controller of your personal information (for example, a school district or university using GrantWare AI), we act as a processor/service provider and rely on that organization to determine and communicate the applicable legal bases and notices to its end users.
+4. Cookies and Similar Technologies
+4.1 What Are Cookies and Similar Technologies?
+ We and our service providers use cookies and similar technologies to operate and improve the Sites and Services. “Cookies” are small text files placed on your device that store information about your visit. We may also use pixel tags, local storage, and similar technologies that help us recognize your browser or device and understand how you interact with the Platform.
+4.2 Types of Cookies We Use
+We generally use the following categories of cookies and similar technologies:
+                                                                                                      * Strictly necessary cookies.
+ These are essential for the Platform to function properly and cannot be switched off in our systems. They are typically set in response to actions you take, such as logging in, setting preferences, or filling in forms. Without these cookies, some parts of the Services may not work correctly.
+
+                                                                                                      * Functional cookies.
+ These help us remember your preferences and settings (such as language, organization, or last used workspace) so that the Services are more tailored and convenient when you return.
+
+                                                                                                      * Analytics and performance cookies.
+ These collect information about how the Platform is used—for example, which pages or features are accessed most often, how long users spend in certain views, and how they navigate the product. We use this information in aggregated form to understand usage patterns, diagnose issues, and improve the design and performance of the Services.
+
+                                                                                                      * Optional / marketing cookies (limited).
+ On our marketing Sites (not in the core app), we may use cookies or similar technologies to understand which content is most useful and to measure the effectiveness of outreach and campaigns (for example, whether someone visited our site after clicking a link in an email). We do not use cookies to serve targeted ads to K–12 students or to build advertising profiles around student-level data.
+
+The specific cookies and providers we use may change over time as we improve and update the Platform.
+4.3 How We Use Information from Cookies
+Information collected through cookies and similar technologies may include:
+                                                                                                         * Device and browser information (such as IP address, operating system, browser type);
+
+                                                                                                         * Usage data (such as pages viewed, links clicked, time spent, and feature usage);
+
+                                                                                                         * Session identifiers and authentication tokens (to keep you signed in and secure your account).
+
+We use this information to:
+                                                                                                            * Operate and secure the Sites and Services;
+
+                                                                                                            * Maintain your login session and keep your Workspace functioning as expected;
+
+                                                                                                            * Understand usage trends and improve functionality, performance, and user experience; and
+
+                                                                                                            * Measure and improve the effectiveness of our communications and outreach.
+
+When we use analytics tools, we typically configure them to focus on aggregated usage patterns rather than tracking individual behavior across unrelated sites.
+4.4 Your Choices and Controls
+You have several options for managing cookies and similar technologies:
+                                                                                                               * Browser settings.
+ Most web browsers allow you to control cookies through their settings (for example, to block or delete cookies). If you choose to block all cookies, some features of the Services may not function properly.
+
+                                                                                                               * In-product or site controls (where available).
+ Where required by law, we may present a cookie banner or preferences tool on our Sites that allows you to accept or reject certain categories of cookies (such as analytics cookies) while allowing strictly necessary cookies.
+
+                                                                                                               * Email tracking.
+ We may use standard industry techniques to know if an email was opened or a link was clicked. You can opt out of marketing emails by using the unsubscribe link in those emails or contacting us as described in this Privacy Policy.
+
+4.5 Do Not Track and Global Privacy Controls
+Some browsers offer “Do Not Track” (“DNT”) or similar signals or settings that are intended to indicate a user’s preference regarding tracking. Our Sites do not currently respond to DNT signals. Where required by law, we will treat browser- or device-level signals that constitute valid opt-out preferences (such as certain Global Privacy Control signals) in accordance with applicable regulations.
+
+
+5. How We Share Personal Information
+We do not sell personal information in the sense of a data broker, and we do not share personal information with third parties for their own independent advertising or commercial purposes, as those terms are defined under laws like the CCPA/CPRA.
+We share personal information only in the limited circumstances described below.
+5.1 Service Providers and Subprocessors
+We share personal information with trusted third parties that perform services on our behalf (“Service Providers” or “Subprocessors”), such as:
+                                                                                                                  * Cloud hosting and infrastructure providers;
+
+                                                                                                                  * Database, authentication, and backup providers (e.g., managed Postgres / Supabase-style services);
+
+                                                                                                                  * AI model providers that process prompts and related content to generate AI Outputs;
+
+                                                                                                                  * Email, notification, and in-product messaging tools;
+
+                                                                                                                  * Logging, monitoring, and analytics vendors;
+
+                                                                                                                  * Payment processors and billing tools;
+
+                                                                                                                  * Customer support and CRM tools.
+
+These Service Providers are permitted to access personal information only as needed to provide their services to us, must protect it appropriately, and are contractually restricted from using it for their own independent purposes (beyond limited, lawful exceptions such as fraud prevention or legal compliance).
+5.2 Sharing Within Your Organization
+Because GrantWare AI is a B2B platform, information is shared within each customer’s own Organization Workspace:
+                                                                                                                     * Authorized Users in your Workspace (e.g., district grants staff, central office, development team members) may see Customer Content, AI Outputs, and related metadata consistent with the roles and permissions configured by your organization (Owner/Admin/Member).
+
+                                                                                                                     * Workspace owners and admins may have additional visibility and control, such as access to configuration, usage data, logs, and user management.
+
+Your organization controls who is invited to a Workspace and how access and roles are assigned.
+5.3 AI Model and Infrastructure Providers
+When you use AI features, we send prompts and relevant context (which may include limited portions of Customer Content) to AI model and infrastructure providers to generate AI Outputs. These providers act as Service Providers / processors for us and are contractually required to:
+                                                                                                                        * Use the data only to provide the requested outputs and maintain or secure their services; and
+
+                                                                                                                        * Protect the data with appropriate technical and organizational measures.
+
+Where contractually and technically feasible, we configure third-party AI APIs so that Customer data sent through our Services is not used to train or improve their general-purpose models, and instead is processed only to deliver outputs and maintain their services.
+5.4 Business Transfers
+We may share or transfer personal information in connection with:
+                                                                                                                           * A merger, acquisition, consolidation, reorganization, sale of assets, financing, or similar transaction involving GrantWare AI; or
+
+                                                                                                                           * Steps in contemplation of such transactions (e.g., due diligence).
+
+If a transaction occurs, the successor entity will be bound by obligations that are materially consistent with this Privacy Policy with respect to previously collected personal information, or we will notify you and your organization of any material changes and choices you may have.
+5.5 Legal, Safety, and Compliance
+We may disclose personal information to third parties (including public authorities) if we reasonably believe that such disclosure is:
+                                                                                                                              * Required by law, regulation, or legal process (such as a subpoena, court order, or government request);
+
+                                                                                                                              * Necessary to protect the rights, property, or safety of GrantWare AI, our users, customers, or the public;
+
+                                                                                                                              * Necessary to detect, prevent, or investigate fraud, abuse, security incidents, or other harmful activity; or
+
+                                                                                                                              * Appropriate to enforce our agreements and policies, including our Terms of Service.
+
+Where legally permitted and reasonably practicable, we will provide notice to the affected customer before disclosing Customer Content or other organizational data in response to a legal request so that they may seek to limit or challenge the request.
+5.6 Student Data and Public-Sector Customers
+When we work with K–12 school districts or other education institutions and receive student-level or other regulated education records, we do so only under the direction of the institution and, where required, under a separate contract that treats us as a “school official” / service provider with a legitimate educational interest under FERPA or similar state laws.
+In those cases:
+                                                                                                                                 * We do not use student education records for our own independent marketing or advertising;
+
+                                                                                                                                 * We do not sell or “share” student education records with third parties for their own purposes; and
+
+                                                                                                                                 * We do not re-disclose student education records except as permitted by the applicable agreement or law (for example, to approved subprocessors bound by FERPA-aligned confidentiality obligations).
+
+If there is any conflict between this Privacy Policy and a signed student data privacy agreement or data processing agreement with an institution, the terms of that agreement will control for student and other covered data.
+5.7 Aggregated and De-Identified Information
+We may share aggregated, anonymized, or de-identified information (for example, statistics about overall usage patterns, typical grant timelines, or commonly used workflow steps) with third parties such as:
+                                                                                                                                    * Customers and prospective customers;
+
+                                                                                                                                    * Research or policy organizations;
+
+                                                                                                                                    * Partners and service providers.
+
+When we do so, the information is designed not to identify any specific individual or organization, and we prohibit third parties from attempting to re-identify individuals from such datasets.
+5.8 With Your Direction or Consent
+We may share personal information with other third parties when:
+                                                                                                                                       * You or your organization explicitly ask us to do so (for example, enabling a particular integration or sending data to a specified vendor); or
+
+                                                                                                                                       * You otherwise provide consent in the context of a specific feature or workflow.
+Any such sharing will be limited to what is reasonably necessary to fulfill the requested action.
+6. Data Retention
+6.1 How Long We Keep Personal Information
+We retain personal information for as long as reasonably necessary to:
+                                                                                                                                          * Provide the Services to your organization and maintain your Organization Workspace;
+
+                                                                                                                                          * Comply with our legal, regulatory, and audit obligations;
+
+                                                                                                                                          * Resolve disputes, enforce our agreements, and protect our rights; and
+
+                                                                                                                                          * Support the legitimate business purposes described in this Privacy Policy.
+
+The specific retention period can vary depending on the type of data and the context in which it was collected (for example, whether it is account-level information, Customer Content in an active Workspace, or log/analytics data).
+6.2 Customer Accounts and Workspace Data
+For data associated with an active customer account (such as account profiles, Workspace configuration, and Customer Content):
+                                                                                                                                             * We generally retain this data for the duration of the subscription or pilot term, so that your organization and Authorized Users can continue using the Services.
+
+                                                                                                                                             * When a subscription or pilot ends, we provide an export window (as described in our Terms of Service) during which your organization may export or download eligible Customer Content. After that window, we have no obligation to continue storing or providing access to Customer Content, and we may delete or anonymize it from active systems within a commercially reasonable timeframe, subject to Sections 6.3 and 6.4 below.
+
+Your organization is responsible for maintaining its own copies of records it needs to retain under applicable laws, grantor rules, or internal policies.
+6.3 Logs, Analytics, and Usage Data
+We retain log files, analytics data, and similar Usage Data for a period that is appropriate for:
+                                                                                                                                                * Operating and improving the Services;
+
+                                                                                                                                                * Monitoring performance and diagnosing technical issues;
+
+                                                                                                                                                * Detecting and investigating security incidents and abuse; and
+
+                                                                                                                                                * Producing aggregated, de-identified metrics about platform usage and funding workflows.
+
+Where possible, we de-identify or aggregate this information so that individuals are no longer reasonably identifiable, and we may retain and use such de-identified or aggregated data for longer periods for analytics, benchmarking, and product improvement.
+6.4 Backups and Business Continuity
+Customer Content and other personal information may continue to exist for a limited time in backup and archival systems after it has been deleted or anonymized from our active systems. These backups are maintained for business continuity and disaster recovery purposes and are automatically overwritten on a rolling basis. During the backup retention period, we protect this data with the same security controls described in this Privacy Policy and do not use it for active product features or analytics.
+6.5 Retention for Legal, Regulatory, and Contractual Obligations
+We may retain certain records for longer periods where necessary to:
+                                                                                                                                                   * Comply with applicable laws and regulations (for example, tax, accounting, or public-sector record-keeping requirements);
+
+                                                                                                                                                   * Respond to subpoenas, court orders, or other legal processes;
+
+                                                                                                                                                   * Cooperate with audits or investigations; or
+
+                                                                                                                                                   * Establish, exercise, or defend legal claims.
+
+When we retain data for these purposes, we limit access to those who have a need to know and use the data only for the purposes for which it was retained.
+6.6 Retention of Student and Other Regulated Data
+Where we process student education records or other regulated data on behalf of a school district or other institution under a separate data processing agreement or student data privacy agreement, our retention and deletion of that data will follow the terms of that agreement. Typically, this means we retain such data:
+                                                                                                                                                      * Only for as long as necessary to provide the Services as instructed by the institution; and
+
+                                                                                                                                                      * For any additional retention period specified in the applicable agreement or required by law.
+
+When the agreement ends or the institution requests deletion, we will delete or anonymize covered student or regulated data from our active systems in accordance with that agreement, subject to any retention required for legal or audit reasons and the backup considerations described above.
+6.7 Deletion Requests
+Your organization (as the customer) may request deletion of certain data via the in-product controls or by contacting us using the information in this Privacy Policy. We will respond to such requests within a reasonable time and in accordance with our legal and contractual obligations. In some cases, we may be unable to fully delete specific records because:
+                                                                                                                                                         * The data is required to maintain the functionality or integrity of the Services for other users in your Workspace;
+
+                                                                                                                                                         * We are required by law or regulation to retain it; or
+
+                                                                                                                                                         * It resides in backup or archival systems that will be overwritten in the ordinary course of business.
+
+Where we cannot fully delete data, we will limit its use to the purposes that justify its continued retention (for example, legal compliance or security).
+7. AI Features, Model Providers, and Data Use for Training
+7.1 How AI Features Work
+The Services include AI-powered features (“AI Features”) that generate, transform, summarize, and analyze content to assist your organization with funding workflows (for example, drafting grant narratives, summarizing RFPs, or suggesting checklists). When you or your Authorized Users use AI Features:
+                                                                                                                                                            * We process the prompts and instructions you provide;
+
+                                                                                                                                                            * We may include relevant portions of Customer Content (such as grant documents, notes, or uploaded files) as context; and
+
+                                                                                                                                                            * We send that information to AI models to generate AI Outputs, which are then returned to your Workspace.
+
+The specific inputs and outputs depend on how you configure and use the Services.
+7.2 Information Sent to AI Model Providers
+To provide AI Features, we may send the following types of information to AI model and infrastructure providers, acting as our service providers / subprocessors:
+                                                                                                                                                               * Prompts, questions, and other text that you or your Authorized Users enter into AI Features;
+
+                                                                                                                                                               * Selected portions of Customer Content that are reasonably necessary to provide relevant context (for example, sections of an RFP or a prior grant narrative);
+
+                                                                                                                                                               * Limited technical and usage metadata (such as timestamps, request IDs, or model parameters) needed to operate and secure the AI Features.
+
+We do not intentionally send entire Workspaces or unnecessary data to AI model providers. We design our integrations to send the minimum amount of information needed to generate useful outputs.
+7.3 Third-Party AI Providers as Service Providers
+We rely on third-party AI model providers and related infrastructure vendors to run AI Features. These providers act as service providers / processors on our behalf. We require them, via contract, to:
+                                                                                                                                                                  * Use the data we send only to provide the requested outputs, maintain or secure their services, and comply with applicable law;
+
+                                                                                                                                                                  * Implement appropriate technical and organizational measures to protect the data; and
+
+                                                                                                                                                                  * Not use the data for their own independent advertising or marketing.
+
+Where contractually and technically feasible, we configure third-party AI APIs so that Customer data sent through our Services is not used to train or improve their general-purpose models that are offered to other customers.
+7.4 How We Use Data to Improve AI Features
+We use information generated through the AI Features to improve the Platform and our models, in ways that respect organizational control and privacy:
+                                                                                                                                                                     * We may analyze prompts, AI Outputs, error patterns, and usage metrics to debug issues, reduce hallucinations, and improve quality and reliability.
+
+                                                                                                                                                                     * We primarily do this using aggregated or de-identified data so that individual users and organizations are not reasonably identifiable.
+
+                                                                                                                                                                     * We may use internal models or heuristics (for example, ranking or routing logic) that are trained or tuned using such aggregated or de-identified information.
+
+We do not use K–12 student education records, where processed under a separate student data privacy agreement, to train general-purpose models for our own benefit beyond what is permitted by that agreement and applicable law.
+7.5 Organization Controls and Configuration
+Depending on your subscription and product configuration, your organization may have controls related to AI Features, such as:
+                                                                                                                                                                        * Enabling or disabling certain AI Features for specific Workspaces or roles;
+
+                                                                                                                                                                        * Selecting among supported AI model providers, where multiple options are available;
+
+                                                                                                                                                                        * Setting internal policies about which types of information may be used with AI Features (for example, restricting certain sensitive documents from being used as prompts).
+
+Your organization is responsible for configuring these options in line with its own legal, procurement, and data governance requirements, and for training Authorized Users on appropriate use of AI Features.
+7.6 AI Limitations and User Responsibilities
+AI Features may sometimes generate outputs that are inaccurate, incomplete, or biased, or that reflect limitations of training data or model behavior. As described in our Terms of Service:
+                                                                                                                                                                           * AI Outputs are intended as drafting aids and decision-support tools, not final or authoritative content;
+
+                                                                                                                                                                           * Your organization and its Authorized Users are responsible for reviewing, verifying, and approving AI Outputs before using them in grant applications, reports, or other communications; and
+
+                                                                                                                                                                           * You should avoid entering highly sensitive or regulated personal data into AI prompts unless your organization has determined that doing so is appropriate and consistent with its legal and contractual obligations.
+
+For additional information about AI limitations and risk allocation, please see the “AI Features, AI Outputs, and No Advice / No Funding Guarantees” and “Limitation of Liability” sections of our Terms of Service.
+7.7 Relation to Customer Content and Ownership
+As described in the Terms of Service:
+                                                                                                                                                                              * Your organization retains ownership of Customer Content and may choose to use, modify, or incorporate AI Outputs into its own work product.
+
+                                                                                                                                                                              * We retain ownership of the underlying models, algorithms, and AI Features used to generate AI Outputs.
+
+                                                                                                                                                                              * We may continue to use aggregated or de-identified information derived from Customer Content, AI Outputs, and usage patterns to improve the Services, even after an account is closed, provided that this information does not reasonably identify your organization or individual users.
+
+If you have questions about how AI Features interact with your organization’s data, or if you need district- or institution-specific commitments around AI data use, please contact us using the information in Section 14 (Contact Us).
+8. International Data Transfers
+8.1 Primary Processing Locations
+GrantWare AI is based in the United States, and the personal information we collect is generally processed and stored in the United States and in other countries where our Service Providers and Subprocessors operate. These locations may have privacy and data protection laws that differ from those in your jurisdiction.
+8.2 Transfers by Organizational Customers
+Because GrantWare AI is a B2B platform, our primary relationship is with your organization (for example, a school district, university, or nonprofit). When your organization chooses to use the Services, it is directing us to process personal information in the United States and in other countries where our infrastructure and vendors are located. Your organization is responsible for ensuring that its use of the Services and any related data transfers comply with applicable laws in its jurisdiction.
+8.3 Safeguards for International Transfers
+Where we transfer personal information from one country to another, we take steps designed to protect the information in accordance with this Privacy Policy and applicable law, which may include:
+                                                                                                                                                                                 * Using contracts with our Service Providers and Subprocessors that require appropriate protections for personal information;
+
+                                                                                                                                                                                 * Implementing standard contractual clauses or similar approved transfer mechanisms for transfers from certain jurisdictions (such as the EU/EEA, the UK, or Switzerland), where applicable; and
+
+                                                                                                                                                                                 * Evaluating the privacy and security practices of key vendors before onboarding them as Subprocessors.
+
+If you would like more information about the specific safeguards we use for a particular transfer, your organization may contact us using the information in Section 14 (Contact Us).
+8.4 Regional-Specific Provisions (EU/UK/Other Jurisdictions)
+If we offer the Services to organizations established in the European Economic Area (EEA), the United Kingdom (UK), or Switzerland, and we act as a processor/service provider on their behalf, we will enter into appropriate data processing and transfer agreements with those organizations and their relevant affiliates, which may include:
+                                                                                                                                                                                    * Standard contractual clauses or their UK/Swiss equivalents; and
+
+                                                                                                                                                                                    * Additional technical, contractual, or organizational measures, as appropriate.
+
+Those agreements will govern our processing and transfer of personal data on behalf of those organizations to the extent they conflict with this Section.
+8.5 Cross-Border Transfers Within Your Organization
+In some cases, your own organization may access or export data from the Services across borders (for example, if staff in different countries share access to the same Workspace). In those cases, your organization is responsible for ensuring such cross-border access and transfers comply with its own policies and applicable law, including any notice and consent requirements that apply to the individuals whose personal information is involved.
+9. Security
+9.1 Our Approach to Security
+ We use a combination of technical, organizational, and administrative measures designed to protect personal information and Customer Content against unauthorized access, loss, misuse, alteration, or destruction. These measures are tailored to the nature of the information we process and the risks associated with our Platform.
+9.2 Technical and Organizational Measures
+ While our specific measures may evolve over time, they generally include:
+                                                                                                                                                                                       * Encryption in transit over public networks using industry-standard protocols (such as HTTPS/TLS);
+
+                                                                                                                                                                                       * Access controls and authentication, including role-based access to production systems and the Services, and limiting access to personnel with a business need to know;
+
+                                                                                                                                                                                       * Segregation of environments (for example, separating production from testing and development);
+
+                                                                                                                                                                                       * Logging and monitoring of access to systems and services that store or process personal information and Customer Content; and
+
+                                                                                                                                                                                       * Internal policies and training for staff regarding security, privacy, and acceptable use of customer data.
+
+We periodically review our security practices and may update or enhance them as technology and threats evolve, provided that such changes do not materially reduce the overall level of protection for personal information and Customer Content.
+9.3 Your Responsibilities
+ Security is a shared responsibility. Your organization and Authorized Users are responsible for:
+                                                                                                                                                                                          * Keeping account credentials, SSO configurations, and API keys secure and not sharing them with unauthorized individuals;
+
+                                                                                                                                                                                          * Configuring roles, permissions, and Workspace settings appropriately for your team;
+
+                                                                                                                                                                                          * Promptly disabling or adjusting access for users who change roles or leave your organization; and
+
+                                                                                                                                                                                          * Maintaining appropriate security controls on your own systems, networks, and devices that access the Services.
+
+We are not responsible for security issues arising from your failure to implement reasonable safeguards on your side or to follow best practices described in our documentation.
+9.4 Security Incidents
+ If we become aware of a confirmed Security Incident involving personal information or Customer Content in our possession or control, we will:
+                                                                                                                                                                                             * Investigate the incident and take reasonable steps to contain, mitigate, and remediate its effects; and
+
+                                                                                                                                                                                             * Notify the affected customer organization without undue delay, consistent with applicable law and any contractual commitments (for example, in a data processing or student data privacy agreement).
+
+Our notification will include information we are reasonably able to share at the time (such as the nature of the incident and steps taken), and we may provide additional updates as our investigation continues. Your organization is responsible for determining whether to notify individuals, regulators, or other third parties about the incident and for meeting any such obligations, except to the extent otherwise agreed in writing.
+9.5 No Guarantee of Perfect Security
+ While we work hard to protect the Platform, no method of transmission over the internet or method of electronic storage is 100% secure. Accordingly, we cannot guarantee absolute security of any information transmitted to or stored in the Services. If you believe that your account or interaction with us is no longer secure (for example, if you suspect that your password or account has been compromised), please contact us immediately using the information in Section 14 (Contact Us).
+10. Student Data, K–12, and Public-Sector Customers
+10.1 Designed for Organizational Use, Not Direct Student Sign-Up
+ GrantWare AI is designed for use by organizations and their staff—for example, school districts, departments of education, universities, and nonprofits—not for direct, unsupervised use by students or children in a personal capacity. When we process student-related or other regulated education data, we do so on behalf of and under the direction of the institution, not for our own independent purposes.
+10.2 Role as “School Official” / Service Provider (FERPA-Style)
+ When a K–12 school district or other education institution uses the Services and shares student education records with us, we typically act as a “school official” / service provider with a legitimate educational interest, as that concept is defined under FERPA or similar state laws, where applicable. This means:
+                                                                                                                                                                                                * We process student education records only to provide the Services and related support as instructed by the institution;
+
+                                                                                                                                                                                                * We are subject to the institution’s direct control with respect to the use and maintenance of student education records; and
+
+                                                                                                                                                                                                * We do not further use or disclose student education records except as permitted by the institution, this Privacy Policy, our Terms of Service, and applicable law.
+
+10.3 Student Education Records and Limits on Use
+Where we process student education records or other regulated educational data on behalf of an institution:
+                                                                                                                                                                                                   * We do not use student education records for our own independent marketing, targeted advertising, or profiling;
+
+                                                                                                                                                                                                   * We do not sell or “share” student education records with third parties for their own commercial purposes;
+
+                                                                                                                                                                                                   * We only disclose student education records to our Subprocessors and Service Providers as reasonably necessary to provide the Services (for example, cloud hosting or AI model providers), and those providers are contractually bound by confidentiality and data-protection obligations; and
+
+                                                                                                                                                                                                   * We do not attempt to re-identify any student from aggregated or de-identified data that we create from student records.
+
+Our handling of student education records may also be subject to the terms of a student data privacy agreement, data processing agreement, or similar contract with the institution. If there is any conflict between that agreement and this Privacy Policy, the agreement will control for that student data.
+10.4 Children’s Privacy and Direct Collection from Minors
+We do not knowingly collect personal information directly from children under the age of 13 (or other age defined by applicable law) through our marketing Sites or through accounts created directly with us. Any student-level data we process is provided to us by, or on behalf of, an institution that has the authority to do so and is responsible for obtaining any necessary consents or providing required notices.
+If you believe that we have collected personal information directly from a child in a way that is inconsistent with this Section (for example, a child signing up individually on our marketing site), please contact us using the information in Section 14 (Contact Us), and we will investigate and take appropriate steps to delete the information if required.
+10.5 Public-Sector and Funding-Related Data
+Many of our customers are public-sector or publicly funded entities (such as school districts, public universities, and government agencies). When we process personal information in connection with public funding workflows:
+                                                                                                                                                                                                      * We treat grant-related data, including information about employees, contractors, and community stakeholders, as Customer Content and process it solely to provide the Services and support the organization’s funding work;
+
+                                                                                                                                                                                                      * We recognize that certain records may be subject to public records, retention, and audit requirements, and we will cooperate with the institution in meeting those obligations to the extent required by our agreements and applicable law; and
+
+                                                                                                                                                                                                      * We do not independently publish or disclose identifiable grant or funding data about a particular institution, except with that institution’s permission or as required by law.
+
+10.6 Additional Agreements and State-Specific Requirements
+Some states and jurisdictions require specific contractual commitments when vendors process student or public-sector data (for example, state K–12 privacy laws or state agency procurement rules). Where required:
+                                                                                                                                                                                                         * We will enter into a student data privacy agreement, data processing agreement, or similar instrument with the institution that incorporates the applicable state or local requirements;
+
+                                                                                                                                                                                                         * That agreement will govern our use, disclosure, retention, and deletion of covered data (including student data) to the extent it differs from or supplements this Privacy Policy; and
+
+                                                                                                                                                                                                         * We will work with the institution in good faith to address reasonable requests related to privacy, security, and data governance within the scope of our Services.
+
+If you are a K–12 district, higher education institution, or other public-sector entity and have questions about how this Privacy Policy applies to your data, or if you require a specific data privacy agreement, please contact us using the information in Section 14 (Contact Us).
+11. Your Privacy Rights and Choices
+11.1 Overview
+Because GrantWare AI is a B2B platform, we typically process personal information on behalf of your organization (for example, your school district, university, or nonprofit). In those cases, your organization is usually the entity that decides how your personal information is used, and your privacy rights may need to be exercised through that organization.
+Depending on where you live and how you interact with us, you may have certain rights and choices with respect to your personal information, as described below.
+11.2 Your General Choices
+Regardless of where you live, you generally have the following choices:
+                                                                                                                                                                                                            * Account and profile information.
+ You and your organization may update certain account and profile details directly in the Services (for example, your name, role, or contact information) or by contacting us or your Workspace administrator.
+
+                                                                                                                                                                                                            * Email and communication preferences.
+ We may send you product, support, and administrative messages that are necessary to provide the Services. For optional marketing or informational emails (such as newsletters or invitations to webinars), you can opt out at any time by clicking the unsubscribe link in the email or contacting us using the information in Section 14 (Contact Us). Your organization may still receive important operational communications about its account.
+
+                                                                                                                                                                                                            * Cookies and similar technologies.
+ You can manage cookies through your browser settings and, where available, through in-product cookie preferences as described in Section 4 (Cookies and Similar Technologies). If you disable certain cookies, parts of the Platform may not function properly.
+
+                                                                                                                                                                                                            * Use of AI Features.
+ Your organization may choose how and when to use AI Features, including configuring role-based access and deciding what types of information may be submitted as prompts. If you have concerns about your information being used with AI Features, please contact your Workspace administrator or privacy contact.
+
+11.3 Rights Under Certain U.S. State Laws
+Some U.S. state privacy laws (for example, laws that provide “consumer privacy” rights) may give residents the right to:
+                                                                                                                                                                                                               * Request access to certain personal information we hold about them;
+
+                                                                                                                                                                                                               * Request that we delete certain personal information;
+
+                                                                                                                                                                                                               * Request that we correct inaccurate personal information;
+
+                                                                                                                                                                                                               * Request information about how we collect, use, and share personal information; and
+
+                                                                                                                                                                                                               * In some cases, opt out of certain types of processing, such as “selling” or “sharing” personal information or using personal information for targeted advertising.
+
+If you are a resident of a U.S. state that grants you these or similar rights and you wish to exercise them in connection with personal information that GrantWare AI controls (for example, information collected on our marketing Site where we act as a “business” or “controller”), you may contact us using the information in Section 14 (Contact Us). We may need to verify your identity and location before responding to your request, and we may deny or limit requests as permitted by law.
+In many cases, however—especially where you use the Services as part of an Organization Workspace—we act as a service provider or processor to your organization, and your organization controls your personal information. In those situations, we may need to redirect your request to your organization or work with your organization to help them respond, in accordance with our contract with them and applicable law.
+We do not sell personal information in the sense of a data broker, and we do not “sell” or “share” personal information for targeted advertising as those terms are commonly defined in state privacy laws. If this changes in the future, we will update this Privacy Policy and provide any notices or opt-out mechanisms required by law.
+11.4 Rights in the EEA, UK, and Other Jurisdictions (If Applicable)
+If we offer the Services to organizations in the European Economic Area (EEA), United Kingdom (UK), or other jurisdictions with similar data protection laws, and we act as a controller of personal information in limited contexts (for example, for our own marketing relationships), individuals in those regions may have additional rights under applicable law, such as:
+                                                                                                                                                                                                                  * The right to request access to, or a copy of, personal information we hold about them;
+
+                                                                                                                                                                                                                  * The right to request correction (rectification) of inaccurate personal information;
+
+                                                                                                                                                                                                                  * The right to request deletion (erasure) of personal information in certain circumstances;
+
+                                                                                                                                                                                                                  * The right to object to or request restriction of certain processing; and
+
+                                                                                                                                                                                                                  * The right to data portability for certain personal information.
+
+Where we process personal information on behalf of an organization in those regions, that organization is typically the controller, and we act as a processor. In such cases, individuals should direct their requests to the relevant organization, and we will support that organization in responding, as required by our agreements and applicable law.
+11.5 Exercising Your Rights
+To exercise any of the rights described in this Section (where they apply to you), you or your organization may contact us using the information in Section 14 (Contact Us). When you submit a request:
+                                                                                                                                                                                                                     * We may ask for information needed to verify your identity and understand your request;
+
+                                                                                                                                                                                                                     * If we process your information on behalf of an organization, we may refer your request to that organization or ask for their direction; and
+
+                                                                                                                                                                                                                     * We may not be able to fulfill your request in all cases, for example, where we are legally required to retain certain information, where responding would adversely affect the rights of others, or where an exemption applies under applicable law.
+
+We will not discriminate against you for exercising your privacy rights where such protections are required by law.
+If you have concerns about how your organization uses your personal information in the Services, we encourage you to contact your organization’s administrator or privacy contact first, as they control the settings and retention for your Workspace.
+12. Third-Party Sites, Services, and Links
+12.1 Third-Party Websites and Portals
+ The Platform may contain links to or allow you to navigate to third-party websites, portals, and resources that we do not operate or control—for example:
+                                                                                                                                                                                                                        * Grantor or funder portals where you submit applications;
+
+                                                                                                                                                                                                                        * Government databases or RFP/NOFO listings;
+
+                                                                                                                                                                                                                        * Vendor or partner sites referenced in the Services.
+
+These third-party sites are governed by their own terms and privacy policies, not this Privacy Policy. We are not responsible for the privacy, security, or content practices of these third parties. We encourage you and your organization to review the applicable terms and privacy policies before providing personal information or uploading documents to those sites.
+12.2 Third-Party Services and Integrations
+ The Services may allow your organization to connect or integrate with Third-Party Services, such as:
+                                                                                                                                                                                                                           * Identity and single sign-on (SSO) providers;
+
+                                                                                                                                                                                                                           * Data or document sources;
+
+                                                                                                                                                                                                                           * Productivity tools or other applications.
+
+When you enable a Third-Party Service or integration, your organization may allow that provider to access certain information from the Services, or may direct us to share certain information with that provider. The use of your information by any Third-Party Service is governed by that provider’s own privacy policy and terms, not this Privacy Policy, and we are not responsible for their handling of your information.
+Your organization is responsible for:
+                                                                                                                                                                                                                              * Evaluating whether to enable a Third-Party Service;
+
+                                                                                                                                                                                                                              * Reviewing and accepting that provider’s terms and privacy policy; and
+
+                                                                                                                                                                                                                              * Configuring and managing any data flows between the Services and the Third-Party Service.
+
+12.3 No Endorsement
+ Any links, references, or integrations to third parties are provided for convenience or functionality and do not constitute an endorsement or recommendation by GrantWare AI of those third parties, their products, services, or privacy practices.
+13. Changes to This Privacy Policy
+13.1 We May Update This Privacy Policy
+ We may update or modify this Privacy Policy from time to time to reflect changes in our practices, the Services, or applicable laws. When we do so, we will update the “Last Updated” date at the top of this Privacy Policy.
+13.2 Notice of Material Changes
+ If we make changes that materially affect how we collect, use, or share personal information, we will provide additional notice to your organization, which may include:
+                                                                                                                                                                                                                                 * Posting a prominent notice within the Services or on our Sites;
+
+                                                                                                                                                                                                                                 * Sending an email to the primary contact or administrator associated with your organization’s account; and/or
+
+                                                                                                                                                                                                                                 * Providing notice through other reasonable channels.
+
+Where required by law, we will obtain consent from your organization or otherwise give your organization an opportunity to review the changes before they become effective.
+13.3 Continued Use of the Services
+ Unless otherwise stated, the updated Privacy Policy will become effective on the date indicated in the notice or at the top of the policy. Your organization’s continued use of the Services after the effective date of any changes will constitute acceptance of the updated Privacy Policy. If your organization does not agree to the updated policy, it should discontinue use of the Services and may contact us to discuss options.
+13.4 Archived Versions
+ If we make material changes, we may keep prior versions of this Privacy Policy for reference. You may contact us using the information in Section 14 (Contact Us) if you would like to request a copy of an earlier version.
+14. Contact Us
+If you have any questions or concerns about this Privacy Policy, our privacy practices, or how we handle personal information, you can contact us at:
+                                                                                                                                                                                                                                    * Email: ryan@grantware.ai 
+
+                                                                                                                                                                                                                                    * Mail:
+ GrantWare AI, Inc.
+97 Chester ST
+Boston, MA, 02134, USA
+If you are an Authorized User or your information is processed in connection with an Organization Workspace (for example, your school district, university, or nonprofit), you may also wish to contact your organization’s administrator or privacy/contact person first, as they control the configuration and use of the Services for your Workspace. We will work with your organization, where applicable, to help address any questions or requests related to your personal information.
