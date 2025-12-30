@@ -141,6 +141,19 @@ export function FooterSection() {
               </Link>
             </div>
           </div>
+
+          {/* Resources Column */}
+          <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
+            <div className="text-gray-500 text-sm font-medium leading-5">Resources</div>
+            <div className="flex flex-col justify-center items-start gap-2">
+              <Link 
+                href="/blog"
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
+                Blog
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
 
