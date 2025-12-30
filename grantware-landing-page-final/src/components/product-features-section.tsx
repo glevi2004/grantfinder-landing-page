@@ -53,7 +53,7 @@ export function ProductFeaturesSection() {
     {
       title: "Manage & Track",
       description: "Centralized dashboard to track applications, deadlines, and compliance in one place.",
-      // videoSrc will be added when video is ready
+      videoSrc: "/videos/platform-features/manage-applications.mp4",
     },
   ]
 
