@@ -48,7 +48,7 @@ export function ProductFeaturesSection() {
     {
       title: "Draft with AI",
       description: "Generate compelling proposals faster with intelligent writing assistance and templates.",
-      // videoSrc will be added when video is ready
+      videoSrc: "/videos/platform-features/draft-with-ai.mp4",
     },
     {
       title: "Manage & Track",
