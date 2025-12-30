@@ -1,9 +1,12 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef, useCallback } from "react"
 import type React from "react"
 import { motion } from "framer-motion"
 // import { useTheme } from "@/components/theme-context"
+
+// Default fallback duration for tabs without videos (in seconds)
+const FALLBACK_DURATION = 5
 
 // Badge component styled for light background
 function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
@@ -17,42 +20,174 @@ function Badge({ icon, text }: { icon: React.ReactNode; text: string }) {
   )
 }
 
+interface FeatureCard {
+  title: string
+  description: string
+  videoSrc?: string
+}
+
 export function ProductFeaturesSection() {
   // const { isGradient } = useTheme()
   const [activeCard, setActiveCard] = useState(0)
   const [animationKey, setAnimationKey] = useState(0)
+  const [durations, setDurations] = useState<Record<number, number>>({})
+  const [isInView, setIsInView] = useState(false)
+  const [isVideoReady, setIsVideoReady] = useState(false)
+  const [hasStarted, setHasStarted] = useState(false)
+  
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const sectionRef = useRef<HTMLDivElement>(null)
+  const fallbackTimerRef = useRef<NodeJS.Timeout | null>(null)
 
-  const cards = [
+  const cards: FeatureCard[] = [
     {
       title: "Discover Opportunities",
       description: "AI-powered grant matching finds the best funding opportunities tailored to your organization.",
+      videoSrc: "/videos/platform-features/discover-opportunities.mp4",
     },
     {
       title: "Draft with AI",
       description: "Generate compelling proposals faster with intelligent writing assistance and templates.",
+      videoSrc: "/videos/platform-features/draft-with-ai.mp4",
     },
     {
       title: "Manage & Track",
       description: "Centralized dashboard to track applications, deadlines, and compliance in one place.",
+      // videoSrc will be added when video is ready
     },
   ]
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setActiveCard((prev) => (prev + 1) % cards.length)
-      setAnimationKey((prev) => prev + 1)
-    }, 5000)
+  const activeCardData = cards[activeCard]
+  const hasVideo = !!activeCardData.videoSrc
 
-    return () => clearInterval(interval)
+  // Get the duration for the current card (use video duration if known, else fallback)
+  const currentDuration = durations[activeCard] ?? FALLBACK_DURATION
+
+  // Check if we should start/run the progress animation
+  // For video tabs: only when video is ready (metadata loaded)
+  // For non-video tabs: immediately when in view
+  const shouldAnimate = isInView && hasStarted && (hasVideo ? isVideoReady : true)
+
+  // Advance to the next card
+  const advanceToNextCard = useCallback(() => {
+    setActiveCard((prev) => (prev + 1) % cards.length)
+    setAnimationKey((prev) => prev + 1)
+    setIsVideoReady(false) // Reset for next video
   }, [cards.length])
 
-  const handleCardClick = (index: number) => {
+  // Clear any existing fallback timer
+  const clearFallbackTimer = useCallback(() => {
+    if (fallbackTimerRef.current) {
+      clearTimeout(fallbackTimerRef.current)
+      fallbackTimerRef.current = null
+    }
+  }, [])
+
+  // Start fallback timer for tabs without videos
+  const startFallbackTimer = useCallback((duration: number) => {
+    clearFallbackTimer()
+    fallbackTimerRef.current = setTimeout(() => {
+      advanceToNextCard()
+    }, duration * 1000)
+  }, [clearFallbackTimer, advanceToNextCard])
+
+  // Handle video metadata loaded - store duration and mark as ready
+  const handleLoadedMetadata = useCallback(() => {
+    if (videoRef.current) {
+      const duration = videoRef.current.duration
+      setDurations((prev) => ({
+        ...prev,
+        [activeCard]: duration,
+      }))
+      setIsVideoReady(true)
+    }
+  }, [activeCard])
+
+  // Handle video ended - advance to next card
+  const handleVideoEnded = useCallback(() => {
+    advanceToNextCard()
+  }, [advanceToNextCard])
+
+  // Handle card click
+  const handleCardClick = useCallback((index: number) => {
+    clearFallbackTimer()
     setActiveCard(index)
     setAnimationKey((prev) => prev + 1)
-  }
+    setIsVideoReady(false) // Reset video ready state
+    setHasStarted(true) // User interaction means we should start
+  }, [clearFallbackTimer])
+
+  // IntersectionObserver to detect when section is in view
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0]
+        setIsInView(entry.isIntersecting)
+        
+        // Start on first view
+        if (entry.isIntersecting && !hasStarted) {
+          setHasStarted(true)
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of section is visible
+        rootMargin: "-50px 0px", // Add some margin for better UX
+      }
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+    }
+  }, [hasStarted])
+
+  // Effect to manage video playback based on view state and video readiness
+  useEffect(() => {
+    if (!isInView || !hasStarted) {
+      // Pause video and clear timers when not in view
+      if (videoRef.current) {
+        videoRef.current.pause()
+      }
+      clearFallbackTimer()
+      return
+    }
+
+    // In view and started
+    if (hasVideo && videoRef.current) {
+      // For video tabs: play the video
+      videoRef.current.currentTime = 0
+      videoRef.current.play().catch(() => {
+        // Autoplay blocked - use fallback
+        setIsVideoReady(true)
+        startFallbackTimer(FALLBACK_DURATION)
+      })
+    } else {
+      // For non-video tabs: start fallback timer
+      startFallbackTimer(currentDuration)
+    }
+
+    return () => {
+      clearFallbackTimer()
+    }
+  }, [activeCard, hasVideo, isInView, hasStarted, clearFallbackTimer, startFallbackTimer, currentDuration])
+
+  // Effect to start fallback timer for non-video tabs when shouldAnimate becomes true
+  useEffect(() => {
+    if (shouldAnimate && !hasVideo) {
+      startFallbackTimer(currentDuration)
+    }
+  }, [shouldAnimate, hasVideo, currentDuration, startFallbackTimer])
 
   return (
-    <section id="features" className="w-full flex flex-col justify-center items-center bg-transparent py-16 md:py-24">
+    <section 
+      ref={sectionRef}
+      id="features" 
+      className="w-full flex flex-col justify-center items-center bg-transparent py-16 md:py-24"
+    >
       {/* Header Section */}
       <div className="w-full px-6 md:px-12 pb-12 md:pb-16 flex justify-center items-center">
         <motion.div 
@@ -79,11 +214,20 @@ export function ProductFeaturesSection() {
 
       {/* Content Section - Centered Grid */}
       <div className="w-full max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-[380px_1fr] gap-8 lg:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-[320px_1fr] gap-8 lg:gap-8 items-stretch">
           {/* Left Column - Feature Cards */}
-          <div className="w-full flex flex-col justify-center items-stretch gap-4 order-2 lg:order-1">
+          <div className="w-full flex flex-col justify-between items-stretch gap-4 order-2 lg:order-1">
             {cards.map((card, index) => {
               const isActive = index === activeCard
+              // Get duration for this specific card's progress bar
+              // Only use actual duration if we have it, otherwise use fallback
+              const cardDuration = durations[index] ?? FALLBACK_DURATION
+              
+              // Determine if this card's progress should animate
+              // For active video tabs: only animate when video is ready
+              // For active non-video tabs: animate when in view
+              const cardHasVideo = !!card.videoSrc
+              const shouldAnimateProgress = isActive && shouldAnimate && (cardHasVideo ? isVideoReady : true)
 
               return (
                 <motion.div
@@ -104,10 +248,13 @@ export function ProductFeaturesSection() {
                     className={`w-full h-1 overflow-hidden bg-gray-200 ${isActive ? "opacity-100" : "opacity-0"}`}
                   >
                     <div
-                      key={animationKey}
+                      key={`${animationKey}-${index}-${isVideoReady}`}
                       className="h-1 bg-[#5b8cff]"
                       style={{
-                        animation: isActive ? "progressBar 5s linear forwards" : "none",
+                        animation: shouldAnimateProgress 
+                          ? `progressBar ${cardDuration}s linear forwards` 
+                          : "none",
+                        width: shouldAnimateProgress ? undefined : "0%",
                       }}
                     />
                   </div>
@@ -128,26 +275,38 @@ export function ProductFeaturesSection() {
             })}
           </div>
 
-          {/* Right Column - Image/Preview Box */}
-          <div className="w-full flex justify-center lg:justify-end items-center order-1 lg:order-2">
+          {/* Right Column - Video/Preview Box */}
+          <div className="w-full flex justify-center lg:justify-start items-stretch order-1 lg:order-2">
             <motion.div 
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="w-full max-w-[580px] h-[280px] md:h-[420px] bg-white shadow-xl border border-white/30 overflow-hidden rounded-2xl flex flex-col justify-center items-center"
+              className="w-full min-h-[320px] md:min-h-[400px] lg:min-h-0 bg-white shadow-xl border border-gray-200 overflow-hidden rounded-2xl flex flex-col justify-center items-center"
             >
-              <div
-                className={`w-full h-full transition-all duration-300 flex items-center justify-center ${
-                  activeCard === 0
-                    ? "bg-gradient-to-br from-blue-50 to-blue-100"
-                    : activeCard === 1
+              {hasVideo ? (
+                <video
+                  ref={videoRef}
+                  key={activeCard}
+                  src={activeCardData.videoSrc}
+                  muted
+                  playsInline
+                  preload="metadata"
+                  onLoadedMetadata={handleLoadedMetadata}
+                  onEnded={handleVideoEnded}
+                  className="w-full h-full object-cover"
+                />
+              ) : (
+                <div
+                  className={`w-full h-full transition-all duration-300 flex items-center justify-center ${
+                    activeCard === 1
                       ? "bg-gradient-to-br from-indigo-50 to-indigo-100"
                       : "bg-gradient-to-br from-slate-50 to-slate-100"
-                }`}
-              >
-                <span className="text-gray-400 text-sm">Preview Area</span>
-              </div>
+                  }`}
+                >
+                  <span className="text-gray-400 text-sm">Video coming soon</span>
+                </div>
+              )}
             </motion.div>
           </div>
         </div>
