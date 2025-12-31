@@ -86,13 +86,14 @@ export function FooterSection() {
               >
                 Workflow
               </a>
-              <a 
+              {/* Pricing - COMMENTED OUT - To re-enable, uncomment below */}
+              {/* <a 
                 href="#pricing" 
                 onClick={(e) => handleSmoothScroll(e, "pricing")}
                 className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
               >
                 Pricing
-              </a>
+              </a> */}
               <a 
                 href="#faq" 
                 onClick={(e) => handleSmoothScroll(e, "faq")}
@@ -138,6 +139,19 @@ export function FooterSection() {
               </Link>
               <Link href="/privacy" className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors">
                 Privacy Policy
+              </Link>
+            </div>
+          </div>
+
+          {/* Resources Column */}
+          <div className="flex flex-col justify-start items-start gap-3 flex-1 min-w-[120px]">
+            <div className="text-gray-500 text-sm font-medium leading-5">Resources</div>
+            <div className="flex flex-col justify-center items-start gap-2">
+              <Link 
+                href="/blog"
+                className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
+              >
+                Blog
               </Link>
             </div>
           </div>

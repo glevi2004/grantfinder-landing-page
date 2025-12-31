@@ -70,13 +70,14 @@ export function HeaderPill() {
               >
                 Process
               </a>
-              <a
+              {/* Pricing - COMMENTED OUT - To re-enable, uncomment below */}
+              {/* <a
                 href="#pricing"
                 onClick={(e) => handleSmoothScroll(e, "pricing")}
                 className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Pricing
-              </a>
+              </a> */}
               <a
                 href="#faq"
                 onClick={(e) => handleSmoothScroll(e, "faq")}
@@ -103,12 +104,28 @@ export function HeaderPill() {
                 {isGradient ? "☀️ Light" : "🌈 Gradient"}
               </button> */}
 
-              <ShimmerButton 
+              {/* Get Started - COMMENTED OUT - To re-enable, uncomment below */}
+              {/* <ShimmerButton 
                 size="sm" 
                 className="rounded-xl px-5 text-sm"
                 onClick={() => trackEvent("get_started_click", { location: "navbar", label: "Get Started" })}
               >
                 Get Started
+              </ShimmerButton> */}
+
+              <ShimmerButton 
+                size="sm" 
+                className="rounded-xl px-5 text-sm"
+                asChild
+              >
+                <a
+                  href="https://cal.com/team/grantware-ai/grantware-ai-demo-chat?overlayCalendar=true"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackEvent("book_call_click", { location: "navbar", label: "Book a call" })}
+                >
+                  Book a call
+                </a>
               </ShimmerButton>
             </div>
           </div>
