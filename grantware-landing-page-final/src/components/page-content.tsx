@@ -88,8 +88,8 @@ function PageContentInner() {
           ]}
         />
 
-        {/* Section 6: Pricing */}
-        <PricingSection />
+        {/* Section 6: Pricing - COMMENTED OUT - To re-enable, uncomment below */}
+        {/* <PricingSection /> */}
 
         {/* Section 7: FAQ */}
         <FAQSection />

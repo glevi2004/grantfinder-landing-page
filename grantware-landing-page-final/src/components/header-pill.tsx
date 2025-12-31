@@ -70,13 +70,14 @@ export function HeaderPill() {
               >
                 Process
               </a>
-              <a
+              {/* Pricing - COMMENTED OUT - To re-enable, uncomment below */}
+              {/* <a
                 href="#pricing"
                 onClick={(e) => handleSmoothScroll(e, "pricing")}
                 className="text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
               >
                 Pricing
-              </a>
+              </a> */}
               <a
                 href="#faq"
                 onClick={(e) => handleSmoothScroll(e, "faq")}

@@ -86,13 +86,14 @@ export function FooterSection() {
               >
                 Workflow
               </a>
-              <a 
+              {/* Pricing - COMMENTED OUT - To re-enable, uncomment below */}
+              {/* <a 
                 href="#pricing" 
                 onClick={(e) => handleSmoothScroll(e, "pricing")}
                 className="text-gray-700 text-sm font-normal leading-5 hover:text-[#5b8cff] transition-colors cursor-pointer"
               >
                 Pricing
-              </a>
+              </a> */}
               <a 
                 href="#faq" 
                 onClick={(e) => handleSmoothScroll(e, "faq")}
